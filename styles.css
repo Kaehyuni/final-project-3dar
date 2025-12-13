@@ -24,7 +24,7 @@
 
  Insert all your glorious CSS styles below! */
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ global fonts ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* ⊹⁺₊𓂃⋆⁺₊⊹ fonts ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 /* hanken-grotesk-regular - latin */
 @font-face {
@@ -53,7 +53,7 @@
   src: url("fonts/hanken-grotesk-v12-latin-900.woff2") format("woff2");
 }
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ base reset and page defaults ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* ⊹⁺₊𓂃⋆⁺₊⊹ global reset ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 *,
 *::before,
@@ -68,125 +68,49 @@ body {
 
 body {
   margin: 0;
-  font-family: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  font-weight: 400;
+  font-family: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #1D3461;
+  background-color: #FFFFFF;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.92);
-  background-color: #1D3461;
-  background-image: linear-gradient(180deg, #1D3461 0%, #1F487E 60%, #1D3461 100%);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* Keep content above background layers */
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
-a {
-  color: #FFFFFF;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+/* ⊹⁺₊𓂃⋆⁺₊⊹ page background pattern layer ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* This matches your HTML:
+   <div class="page-background"><img src="images/bg_pattern.svg" alt=""></div>
+*/
+
+.page-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-a:hover {
-  color: #FB3640;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  font-weight: 900;
-  line-height: 1.2;
-  margin: 0 0 12px 0;
-  color: #FFFFFF;
-}
-
-p {
-  margin: 0 0 14px 0;
-}
-
-blockquote {
-  margin: 18px 0;
-  padding: 14px 16px;
-  border-left: 5px solid #FB3640;
-  background-color: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.92);
-}
-
-strong {
-  font-weight: 900;
-}
-
-/* ⊹⁺₊𓂃⋆⁺₊⊹ layout spacing system ⊹⁺₊𓂃⋆⁺₊⊹ */
-
-.hero,
-.about,
-.inspiration,
-.then-and-now,
-.using-ar,
-.compatibility,
-.ar-gallery,
-.call-to-action,
-.topic-1,
-.topic-2,
-.topic-3,
-.contact section,
-footer {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.about,
-.inspiration,
-.then-and-now,
-.using-ar,
-.compatibility,
-.ar-gallery,
-.call-to-action,
-.topic-1,
-.topic-2,
-.topic-3,
-.contact section {
-  padding-top: 34px;
-  padding-bottom: 34px;
-}
-
-.about,
-.inspiration,
-.then-and-now,
-.using-ar,
-.compatibility,
-.ar-gallery,
-.call-to-action,
-.topic-1,
-.topic-2,
-.topic-3,
-.contact section {
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-ul,
-ol {
-  margin: 12px 0 0 0;
-  padding-left: 22px;
-}
-
-li {
-  margin: 8px 0;
+.page-background img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.12;
 }
 
 /* ⊹⁺₊𓂃⋆⁺₊⊹ navigation ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 nav {
+  background-color: #1D3461;
+  padding: 14px 18px;
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(29, 52, 97, 0.92);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
+  border-bottom: 2px solid #1F487E;
 }
 
 nav ul {
@@ -194,183 +118,231 @@ nav ul {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  gap: 14px;
+  gap: 18px;
+  padding: 0;
   margin: 0;
-  padding: 12px 16px;
   flex-wrap: wrap;
 }
 
 nav ul li {
-  background-color: rgba(31, 72, 126, 0.95);
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 
-nav ul li:hover {
-  background-color: rgba(36, 123, 160, 0.95);
-  border-color: rgba(255, 255, 255, 0.26);
-  transform: translateY(-2px);
-}
-
-nav a {
+nav ul li a {
+  display: inline-block;
   text-decoration: none;
   font-weight: 900;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
   color: #FFFFFF;
+  background-color: #1F487E;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
 }
 
-nav a:hover {
-  color: #FFFFFF;
+nav ul li a:hover,
+nav ul li a:focus-visible {
+  background-color: #247BA0;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(29, 52, 97, 0.25);
+  outline: none;
 }
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ hero banner with parallax ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* ⊹⁺₊𓂃⋆⁺₊⊹ BioBridge banner (shared on every page) ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* This matches your HTML:
+   <header class="site-banner">
+     <div class="banner-layers">
+       <img class="banner-layer-1" ...>
+       <img class="banner-layer-2" ...>
+     </div>
+     <div class="banner-content"><h1>BioBridge</h1></div>
+   </header>
+*/
 
-.hero {
-  max-width: 100%;
+.site-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  padding: 28px 18px;
+  border-bottom: 3px solid #1F487E;
+  background-color: #1D3461;
+}
+
+/* Parallax-style depth without JavaScript.
+   This uses perspective, so the layers feel like they move differently while scrolling. */
+.site-banner {
+  perspective: 1px;
+  transform-style: preserve-3d;
+}
+
+.banner-layers {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.banner-layers img {
+  position: absolute;
+  inset: -8% -6%;
+  width: 112%;
+  height: 116%;
+  object-fit: cover;
+  opacity: 0.95;
+}
+
+.banner-layer-1 {
+  transform: translateZ(-1px) scale(2);
+  opacity: 0.55;
+}
+
+.banner-layer-2 {
+  transform: translateZ(-0.6px) scale(1.6);
+  opacity: 0.65;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(29, 52, 97, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.banner-content h1 {
   margin: 0;
-  padding-top: 74px;
-  padding-bottom: 74px;
-
-  background-image:
-    linear-gradient(180deg, rgba(29, 52, 97, 0.86) 0%, rgba(31, 72, 126, 0.78) 55%, rgba(29, 52, 97, 0.9) 100%),
-    url("images/banner.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  background-attachment: fixed;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 0.6px;
 }
 
-.hero h1 {
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: clamp(34px, 4vw, 54px);
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+@media (max-width: 520px) {
+  .site-banner {
+    min-height: 190px;
+  }
+  .banner-content {
+    width: min(92vw, 560px);
+  }
 }
 
-.hero-text {
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 14px;
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.9);
-}
+/* ⊹⁺₊𓂃⋆⁺₊⊹ shared section layout ⊹⁺₊𓂃⋆⁺₊⊹ */
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ section surfaces ⊹⁺₊𓂃⋆⁺₊⊹ */
-
+.hero,
 .about,
 .inspiration,
 .then-and-now,
+.call-to-action,
 .using-ar,
 .compatibility,
 .ar-gallery,
+.contact section,
 .topic-1,
 .topic-2,
-.topic-3,
-.contact section {
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  margin-top: 18px;
-  margin-bottom: 18px;
+.topic-3 {
+  width: min(980px, 92vw);
+  margin: 26px auto;
+  padding: 22px 22px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.82);
+  border: 2px solid rgba(31, 72, 126, 0.18);
+  box-shadow: 0 16px 40px rgba(29, 52, 97, 0.08);
 }
 
-.about h2,
-.inspiration h2,
-.then-and-now h2,
-.using-ar h2,
-.compatibility h2,
-.ar-gallery h2,
-.call-to-action h2,
-.topic-1 h2,
-.topic-2 h2,
-.topic-3 h2,
-.contact h1,
-.contact h2 {
-  color: #FFFFFF;
+.hero h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 900;
+  color: #1D3461;
 }
 
-.about p,
-.inspiration p,
-.then-and-now p,
-.using-ar p,
-.compatibility p,
-.ar-gallery p,
-.topic-1 p,
-.topic-2 p,
-.topic-3 p,
-.contact p {
-  color: rgba(255, 255, 255, 0.9);
+.hero-text {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #1D3461;
 }
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ two-column grid and cards ⊹⁺₊𓂃⋆⁺₊⊹ */
+h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.6rem;
+  color: #1D3461;
+  font-weight: 900;
+}
+
+h3 {
+  margin: 14px 0 8px 0;
+  font-size: 1.15rem;
+  color: #1F487E;
+  font-weight: 900;
+}
+
+p {
+  margin: 0 0 12px 0;
+}
+
+blockquote {
+  margin: 16px 0;
+  padding: 14px 16px;
+  border-left: 6px solid #FB3640;
+  background-color: rgba(36, 123, 160, 0.10);
+  border-radius: 10px;
+  color: #1D3461;
+  font-style: italic;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ two-column and cards (flex + grid) ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 .two-column {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin-top: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 14px;
 }
 
 .card {
   background-color: rgba(255, 255, 255, 0.92);
-  color: #1D3461;
+  border: 2px solid rgba(31, 72, 126, 0.16);
   border-radius: 16px;
-  padding: 18px;
-  border: 1px solid rgba(29, 52, 97, 0.18);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  padding: 18px 18px;
+  box-shadow: 0 12px 26px rgba(29, 52, 97, 0.08);
 }
 
-.card h3 {
-  color: #1D3461;
-  margin-bottom: 10px;
-}
-
-.card p {
-  color: rgba(29, 52, 97, 0.9);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
-}
-
-.ar-gallery img {
+.card img {
+  max-width: 100%;
+  height: auto;
   border-radius: 12px;
-  border: 1px solid rgba(29, 52, 97, 0.16);
-  margin-top: 8px;
-  margin-bottom: 8px;
+  border: 2px solid rgba(31, 72, 126, 0.18);
 }
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ call to action and buttons ⊹⁺₊𓂃⋆⁺₊⊹ */
-
-.call-to-action {
-  background-image:
-    linear-gradient(180deg, rgba(36, 123, 160, 0.25) 0%, rgba(31, 72, 126, 0.24) 100%);
+@media (max-width: 780px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
 }
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ buttons ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 .hero-buttons {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
-  margin-top: 16px;
+  gap: 12px;
+  margin-top: 14px;
 }
 
 .button {
   display: inline-block;
-  padding: 12px 16px;
-  border-radius: 12px;
   text-decoration: none;
   font-weight: 900;
-  letter-spacing: 0.2px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  transition: transform 180ms ease, filter 180ms ease, background-color 180ms ease;
+  border-radius: 12px;
+  padding: 12px 16px;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
 
 .button.primary {
@@ -383,190 +355,111 @@ nav a:hover {
   color: #FFFFFF;
 }
 
-.button:hover {
+.button:hover,
+.button:focus-visible {
   transform: translateY(-2px);
-  filter: brightness(1.02);
+  box-shadow: 0 12px 24px rgba(29, 52, 97, 0.22);
+  outline: none;
 }
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ resources page lists ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* ⊹⁺₊𓂃⋆⁺₊⊹ lists and links ⊹⁺₊𓂃⋆⁺₊⊹ */
 
-.topic-1 h3,
-.topic-2 h3,
-.topic-3 h3 {
-  margin-top: 16px;
-  margin-bottom: 6px;
-  color: rgba(255, 255, 255, 0.95);
+ul,
+ol {
+  margin: 10px 0 0 18px;
+  padding: 0;
 }
+
+li {
+  margin: 6px 0;
+}
+
+a {
+  color: #1F487E;
+}
+
+a:hover,
+a:focus-visible {
+  color: #FB3640;
+  outline: none;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ resources page styling ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 .topic-1 ul,
 .topic-2 ul,
 .topic-3 ul {
-  padding-left: 18px;
+  margin-left: 18px;
 }
 
 .topic-1 a,
 .topic-2 a,
 .topic-3 a {
-  color: #FFFFFF;
+  font-weight: 900;
 }
 
-.topic-1 a:hover,
-.topic-2 a:hover,
-.topic-3 a:hover {
-  color: #FB3640;
-}
-
-/* ⊹⁺₊𓂃⋆⁺₊⊹ contact page layout ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* ⊹⁺₊𓂃⋆⁺₊⊹ contact page styling ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 main.contact {
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 24px;
-  padding-bottom: 34px;
-}
-
-.notice h1 {
-  font-size: clamp(28px, 3.2vw, 40px);
+  padding-bottom: 10px;
 }
 
 .warning-box {
-  background-color: rgba(251, 54, 64, 0.12);
-  border: 1px solid rgba(251, 54, 64, 0.35);
+  border: 3px solid #FB3640;
+  background-color: rgba(251, 54, 64, 0.10);
+  padding: 16px 16px;
   border-radius: 16px;
-  padding: 16px;
-  margin-top: 14px;
 }
 
 .warning-box h2 {
-  margin-bottom: 8px;
-}
-
-.semester-term {
-  margin-top: 14px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background-color: rgba(36, 123, 160, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 0;
+  color: #FB3640;
 }
 
 .emails a,
 .booking a,
 .location a {
-  color: #FFFFFF;
+  font-weight: 900;
 }
 
-.emails a:hover,
-.booking a:hover,
-.location a:hover {
-  color: #FB3640;
-}
-
-/* ⊹⁺₊𓂃⋆⁺₊⊹ hours of operation chart styling ⊹⁺₊𓂃⋆⁺₊⊹ */
-/* This styles your existing lists so they look like a clean chart without changing HTML. */
-
-.hours h3 {
-  margin-top: 18px;
-  margin-bottom: 10px;
-}
-
+/* Optional “chart-style” look for your hours lists */
 .hours ul {
   list-style: none;
-  padding-left: 0;
-  margin-top: 10px;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background-color: rgba(255, 255, 255, 0.06);
+  margin: 10px 0 0 0;
+  padding: 0;
 }
 
-.hours ul li {
-  margin: 0;
-  padding: 12px 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.hours ul li:nth-child(even) {
-  background-color: rgba(36, 123, 160, 0.10);
-}
-
-.hours ul li:last-child {
-  border-bottom: none;
+.hours li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border-radius: 12px;
+  border: 2px solid rgba(31, 72, 126, 0.16);
+  background-color: rgba(36, 123, 160, 0.08);
 }
 
 /* ⊹⁺₊𓂃⋆⁺₊⊹ footer ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 footer {
-  max-width: 100%;
-  margin-top: 24px;
-  padding-top: 26px;
-  padding-bottom: 28px;
+  width: min(980px, 92vw);
+  margin: 26px auto 40px auto;
+  padding: 18px 18px;
+  border-radius: 16px;
+  background-color: rgba(29, 52, 97, 0.90);
+  color: #FFFFFF;
+  border: 2px solid rgba(31, 72, 126, 0.40);
   text-align: center;
-  background-color: rgba(29, 52, 97, 0.92);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-footer p {
-  margin: 6px 0;
-  color: rgba(255, 255, 255, 0.9);
+footer a {
+  color: #FFFFFF;
+  font-weight: 900;
 }
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ subtle page animations ⊹⁺₊𓂃⋆⁺₊⊹ */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero h1,
-.hero .hero-text {
-  animation: fadeUp 520ms ease both;
-}
-
-.about,
-.inspiration,
-.then-and-now,
-.using-ar,
-.compatibility,
-.ar-gallery,
-.topic-1,
-.topic-2,
-.topic-3,
-.call-to-action,
-.contact section {
-  animation: fadeUp 520ms ease both;
-}
-
-/* ⊹⁺₊𓂃⋆⁺₊⊹ responsive layout ⊹⁺₊𓂃⋆⁺₊⊹ */
-
-@media (min-width: 760px) {
-  nav ul {
-    gap: 22px;
-  }
-
-  .two-column {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .hero-text {
-    font-size: 19px;
-  }
-}
-
-/* ⊹⁺₊𓂃⋆⁺₊⊹ parallax safety for mobile ⊹⁺₊𓂃⋆⁺₊⊹ */
-/* Some mobile browsers ignore fixed backgrounds. This keeps it smooth. */
-
-@media (max-width: 760px) {
-  .hero {
-    background-attachment: scroll;
-  }
+footer a:hover,
+footer a:focus-visible {
+  color: #FB3640;
+  outline: none;
 }
