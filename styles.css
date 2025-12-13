@@ -24,17 +24,549 @@
 
  Insert all your glorious CSS styles below! */
 
+/* ⊹⁺₊𓂃⋆⁺₊⊹ global fonts ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+/* hanken-grotesk-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/hanken-grotesk-v12-latin-regular.woff2") format("woff2");
+}
+
+/* hanken-grotesk-italic - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Hanken Grotesk";
+  font-style: italic;
+  font-weight: 400;
+  src: url("fonts/hanken-grotesk-v12-latin-italic.woff2") format("woff2");
+}
+
+/* hanken-grotesk-900 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/hanken-grotesk-v12-latin-900.woff2") format("woff2");
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ base reset and page defaults ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+  background-color: #1D3461;
+  background-image: linear-gradient(180deg, #1D3461 0%, #1F487E 60%, #1D3461 100%);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: #FB3640;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
+  color: #FFFFFF;
+}
+
+p {
+  margin: 0 0 14px 0;
+}
+
+blockquote {
+  margin: 18px 0;
+  padding: 14px 16px;
+  border-left: 5px solid #FB3640;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+strong {
+  font-weight: 900;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ layout spacing system ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.hero,
+.about,
+.inspiration,
+.then-and-now,
+.using-ar,
+.compatibility,
+.ar-gallery,
+.call-to-action,
+.topic-1,
+.topic-2,
+.topic-3,
+.contact section,
+footer {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.about,
+.inspiration,
+.then-and-now,
+.using-ar,
+.compatibility,
+.ar-gallery,
+.call-to-action,
+.topic-1,
+.topic-2,
+.topic-3,
+.contact section {
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.about,
+.inspiration,
+.then-and-now,
+.using-ar,
+.compatibility,
+.ar-gallery,
+.call-to-action,
+.topic-1,
+.topic-2,
+.topic-3,
+.contact section {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul,
+ol {
+  margin: 12px 0 0 0;
+  padding-left: 22px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ navigation ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(29, 52, 97, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+}
+
 nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-direction: row;
-      gap: 40px; /*spread out the text*/
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 14px;
+  margin: 0;
+  padding: 12px 16px;
+  flex-wrap: wrap;
 }
 
 nav ul li {
-      background-color: dodgerblue;
-      padding: 10px;
-      border-radius: 5px;
+  background-color: rgba(31, 72, 126, 0.95);
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
 }
 
+nav ul li:hover {
+  background-color: rgba(36, 123, 160, 0.95);
+  border-color: rgba(255, 255, 255, 0.26);
+  transform: translateY(-2px);
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  color: #FFFFFF;
+}
+
+nav a:hover {
+  color: #FFFFFF;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ hero banner with parallax ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.hero {
+  max-width: 100%;
+  margin: 0;
+  padding-top: 74px;
+  padding-bottom: 74px;
+
+  background-image:
+    linear-gradient(180deg, rgba(29, 52, 97, 0.86) 0%, rgba(31, 72, 126, 0.78) 55%, rgba(29, 52, 97, 0.9) 100%),
+    url("images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero h1 {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(34px, 4vw, 54px);
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.hero-text {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 14px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ section surfaces ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.about,
+.inspiration,
+.then-and-now,
+.using-ar,
+.compatibility,
+.ar-gallery,
+.topic-1,
+.topic-2,
+.topic-3,
+.contact section {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.about h2,
+.inspiration h2,
+.then-and-now h2,
+.using-ar h2,
+.compatibility h2,
+.ar-gallery h2,
+.call-to-action h2,
+.topic-1 h2,
+.topic-2 h2,
+.topic-3 h2,
+.contact h1,
+.contact h2 {
+  color: #FFFFFF;
+}
+
+.about p,
+.inspiration p,
+.then-and-now p,
+.using-ar p,
+.compatibility p,
+.ar-gallery p,
+.topic-1 p,
+.topic-2 p,
+.topic-3 p,
+.contact p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ two-column grid and cards ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #1D3461;
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid rgba(29, 52, 97, 0.18);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card h3 {
+  color: #1D3461;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: rgba(29, 52, 97, 0.9);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+}
+
+.ar-gallery img {
+  border-radius: 12px;
+  border: 1px solid rgba(29, 52, 97, 0.16);
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ call to action and buttons ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.call-to-action {
+  background-image:
+    linear-gradient(180deg, rgba(36, 123, 160, 0.25) 0%, rgba(31, 72, 126, 0.24) 100%);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 180ms ease, filter 180ms ease, background-color 180ms ease;
+}
+
+.button.primary {
+  background-color: #FB3640;
+  color: #FFFFFF;
+}
+
+.button.secondary {
+  background-color: #247BA0;
+  color: #FFFFFF;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.02);
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ resources page lists ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.topic-1 h3,
+.topic-2 h3,
+.topic-3 h3 {
+  margin-top: 16px;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.topic-1 ul,
+.topic-2 ul,
+.topic-3 ul {
+  padding-left: 18px;
+}
+
+.topic-1 a,
+.topic-2 a,
+.topic-3 a {
+  color: #FFFFFF;
+}
+
+.topic-1 a:hover,
+.topic-2 a:hover,
+.topic-3 a:hover {
+  color: #FB3640;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ contact page layout ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+main.contact {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 24px;
+  padding-bottom: 34px;
+}
+
+.notice h1 {
+  font-size: clamp(28px, 3.2vw, 40px);
+}
+
+.warning-box {
+  background-color: rgba(251, 54, 64, 0.12);
+  border: 1px solid rgba(251, 54, 64, 0.35);
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 14px;
+}
+
+.warning-box h2 {
+  margin-bottom: 8px;
+}
+
+.semester-term {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background-color: rgba(36, 123, 160, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.emails a,
+.booking a,
+.location a {
+  color: #FFFFFF;
+}
+
+.emails a:hover,
+.booking a:hover,
+.location a:hover {
+  color: #FB3640;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ hours of operation chart styling ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* This styles your existing lists so they look like a clean chart without changing HTML. */
+
+.hours h3 {
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.hours ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.hours ul li {
+  margin: 0;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hours ul li:nth-child(even) {
+  background-color: rgba(36, 123, 160, 0.10);
+}
+
+.hours ul li:last-child {
+  border-bottom: none;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ footer ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+footer {
+  max-width: 100%;
+  margin-top: 24px;
+  padding-top: 26px;
+  padding-bottom: 28px;
+  text-align: center;
+  background-color: rgba(29, 52, 97, 0.92);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+footer p {
+  margin: 6px 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ subtle page animations ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1,
+.hero .hero-text {
+  animation: fadeUp 520ms ease both;
+}
+
+.about,
+.inspiration,
+.then-and-now,
+.using-ar,
+.compatibility,
+.ar-gallery,
+.topic-1,
+.topic-2,
+.topic-3,
+.call-to-action,
+.contact section {
+  animation: fadeUp 520ms ease both;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ responsive layout ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+@media (min-width: 760px) {
+  nav ul {
+    gap: 22px;
+  }
+
+  .two-column {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-text {
+    font-size: 19px;
+  }
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ parallax safety for mobile ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* Some mobile browsers ignore fixed backgrounds. This keeps it smooth. */
+
+@media (max-width: 760px) {
+  .hero {
+    background-attachment: scroll;
+  }
+}
