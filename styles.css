@@ -172,8 +172,7 @@ nav ul li a:focus-visible {
   background-color: #1D3461;
 }
 
-/* Parallax-style depth without JavaScript.
-   This uses perspective, so the layers feel like they move differently while scrolling. */
+/* Parallax-style depth. This uses perspective, so the layers feel like they move differently while scrolling. */
 .site-banner {
   perspective: 1px;
   transform-style: preserve-3d;
@@ -325,6 +324,37 @@ blockquote {
   .two-column {
     grid-template-columns: 1fr;
   }
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ inspiration layout ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.inspiration-layout {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.inspiration-image {
+  flex: 1;
+}
+
+.inspiration-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(29, 52, 97, 0.25);
+}
+
+.inspiration-text {
+  flex: 1.2;
+}
+
+.inspiration blockquote {
+  margin: 20px 0;
+  padding-left: 16px;
+  border-left: 4px solid #247BA0;
+  color: #1D3461;
+  font-style: italic;
 }
 
 /* ⊹⁺₊𓂃⋆⁺₊⊹ buttons ⊹⁺₊𓂃⋆⁺₊⊹ */
