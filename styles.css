@@ -23,7 +23,6 @@
        
 
  Insert all your glorious CSS styles below! */
-
 /* ⊹⁺₊𓂃⋆⁺₊⊹ fonts ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 /* hanken-grotesk-regular - latin */
@@ -80,10 +79,7 @@ body > * {
   z-index: 1;
 }
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ page background pattern layer ⊹⁺₊𓂃⋆⁺₊⊹ */
-/* This matches your HTML:
-   <div class="page-background"><img src="images/bg_pattern.svg" alt=""></div>
-*/
+/* ⊹⁺₊𓂃⋆⁺₊⊹ webpage background pattern ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 .page-background {
   position: fixed;
@@ -100,6 +96,76 @@ body > * {
   height: 100%;
   object-fit: cover;
   opacity: 0.12;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ banner ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.site-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  padding: 28px 18px;
+  border-bottom: 3px solid #1F487E;
+  background-color: #1D3461;
+
+  perspective: 1px;
+  transform-style: preserve-3d;
+}
+
+.banner-layers {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* This is what makes big banner images "fit" */
+.banner-layers img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Depth layers */
+.banner-layer-1 {
+  transform: translateZ(-1px) scale(2);
+  opacity: 0.55;
+}
+
+.banner-layer-2 {
+  transform: translateZ(-0.6px) scale(1.6);
+  opacity: 0.65;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(29, 52, 97, 0.55);
+  backdrop-filter: blur(4px);
+
+  animation: fadeUp 0.9s ease-out both;
+}
+
+.banner-content h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  color: #247BA0;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.35), 0 10px 22px rgba(29, 52, 97, 0.35);
+}
+
+@media (max-width: 520px) {
+  .site-banner {
+    min-height: 190px;
+  }
 }
 
 /* ⊹⁺₊𓂃⋆⁺₊⊹ navigation ⊹⁺₊𓂃⋆⁺₊⊹ */
@@ -145,90 +211,9 @@ nav ul li a {
 nav ul li a:hover,
 nav ul li a:focus-visible {
   background-color: #247BA0;
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.03);
   box-shadow: 0 10px 22px rgba(29, 52, 97, 0.25);
   outline: none;
-}
-
-/* ⊹⁺₊𓂃⋆⁺₊⊹ BioBridge banner (shared on every page) ⊹⁺₊𓂃⋆⁺₊⊹ */
-/* This matches your HTML:
-   <header class="site-banner">
-     <div class="banner-layers">
-       <img class="banner-layer-1" ...>
-       <img class="banner-layer-2" ...>
-     </div>
-     <div class="banner-content"><h1>BioBridge</h1></div>
-   </header>
-*/
-
-.site-banner {
-  position: relative;
-  overflow: hidden;
-  min-height: 220px;
-  display: grid;
-  place-items: center;
-  padding: 28px 18px;
-  border-bottom: 3px solid #1F487E;
-  background-color: #1D3461;
-}
-
-/* Parallax-style depth. This uses perspective, so the layers feel like they move differently while scrolling. */
-.site-banner {
-  perspective: 1px;
-  transform-style: preserve-3d;
-}
-
-.banner-layers {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.banner-layers img {
-  position: absolute;
-  inset: -8% -6%;
-  width: 112%;
-  height: 116%;
-  object-fit: cover;
-  opacity: 0.95;
-}
-
-.banner-layer-1 {
-  transform: translateZ(-1px) scale(2);
-  opacity: 0.55;
-}
-
-.banner-layer-2 {
-  transform: translateZ(-0.6px) scale(1.6);
-  opacity: 0.65;
-}
-
-.banner-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: #FFFFFF;
-  padding: 14px 16px;
-  border-radius: 14px;
-  background: rgba(29, 52, 97, 0.55);
-  backdrop-filter: blur(4px);
-}
-
-.banner-content h1 {
-  margin: 0;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 900;
-  letter-spacing: 0.6px;
-}
-
-@media (max-width: 520px) {
-  .site-banner {
-    min-height: 190px;
-  }
-  .banner-content {
-    width: min(92vw, 560px);
-  }
 }
 
 /* ⊹⁺₊𓂃⋆⁺₊⊹ shared section layout ⊹⁺₊𓂃⋆⁺₊⊹ */
@@ -252,6 +237,8 @@ nav ul li a:focus-visible {
   background-color: rgba(255, 255, 255, 0.82);
   border: 2px solid rgba(31, 72, 126, 0.18);
   box-shadow: 0 16px 40px rgba(29, 52, 97, 0.08);
+
+  animation: fadeUp 0.8s ease-out both;
 }
 
 .hero h1 {
@@ -296,7 +283,7 @@ blockquote {
   font-style: italic;
 }
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ two-column and cards (flex + grid) ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* ⊹⁺₊𓂃⋆⁺₊⊹ two-column + card system ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 .two-column {
   display: grid;
@@ -311,6 +298,9 @@ blockquote {
   border-radius: 16px;
   padding: 18px 18px;
   box-shadow: 0 12px 26px rgba(29, 52, 97, 0.08);
+
+  opacity: 0;
+  animation: popIn 0.6s ease-out both;
 }
 
 .card img {
@@ -326,35 +316,53 @@ blockquote {
   }
 }
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ inspiration layout ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* ⊹⁺₊𓂃⋆⁺₊⊹ inspiration image left, text right ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* This works with your CURRENT HTML structure inside <section class="inspiration"> */
 
-.inspiration-layout {
-  display: flex;
-  gap: 40px;
-  align-items: center;
+.inspiration {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.4fr);
+  gap: 22px;
+  align-items: start;
 }
 
-.inspiration-image {
-  flex: 1;
+/* Put the image container in column 1 */
+.inspiration .inspiration-image {
+  grid-column: 1;
 }
 
-.inspiration-image img {
+.inspiration .inspiration-image img {
   width: 100%;
   height: auto;
+  max-height: 360px;
+  object-fit: cover;
   border-radius: 16px;
+  border: 2px solid rgba(31, 72, 126, 0.18);
   box-shadow: 0 12px 28px rgba(29, 52, 97, 0.25);
 }
 
-.inspiration-text {
-  flex: 1.2;
+/* Force everything else (heading, paragraphs, quote) into column 2 */
+.inspiration h2,
+.inspiration p,
+.inspiration blockquote {
+  grid-column: 2;
 }
 
-.inspiration blockquote {
-  margin: 20px 0;
-  padding-left: 16px;
-  border-left: 4px solid #247BA0;
-  color: #1D3461;
-  font-style: italic;
+@media (max-width: 820px) {
+  .inspiration {
+    grid-template-columns: 1fr;
+  }
+
+  .inspiration .inspiration-image,
+  .inspiration h2,
+  .inspiration p,
+  .inspiration blockquote {
+    grid-column: auto;
+  }
+
+  .inspiration .inspiration-image img {
+    max-height: 300px;
+  }
 }
 
 /* ⊹⁺₊𓂃⋆⁺₊⊹ buttons ⊹⁺₊𓂃⋆⁺₊⊹ */
@@ -414,21 +422,7 @@ a:focus-visible {
   outline: none;
 }
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ resources page styling ⊹⁺₊𓂃⋆⁺₊⊹ */
-
-.topic-1 ul,
-.topic-2 ul,
-.topic-3 ul {
-  margin-left: 18px;
-}
-
-.topic-1 a,
-.topic-2 a,
-.topic-3 a {
-  font-weight: 900;
-}
-
-/* ⊹⁺₊𓂃⋆⁺₊⊹ contact page styling ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* ⊹⁺₊𓂃⋆⁺₊⊹ contact page ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 main.contact {
   padding-bottom: 10px;
@@ -452,7 +446,7 @@ main.contact {
   font-weight: 900;
 }
 
-/* Optional “chart-style” look for your hours lists */
+/* “chart-style” hours lists */
 .hours ul {
   list-style: none;
   margin: 10px 0 0 0;
@@ -496,7 +490,6 @@ footer a:focus-visible {
 
 /* ⊹⁺₊𓂃⋆⁺₊⊹ animations ⊹⁺₊𓂃⋆⁺₊⊹ */
 
-/* Fade up on load */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -508,7 +501,6 @@ footer a:focus-visible {
   }
 }
 
-/* Pop in */
 @keyframes popIn {
   from {
     opacity: 0;
@@ -518,54 +510,6 @@ footer a:focus-visible {
     opacity: 1;
     transform: scale(1);
   }
-}
-
-/* Slide from left */
-@keyframes slideLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-32px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Slide from right */
-@keyframes slideRight {
-  from {
-    opacity: 0;
-    transform: translateX(32px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* ⊹⁺₊𓂃⋆⁺₊⊹ section entrance ⊹⁺₊𓂃⋆⁺₊⊹ */
-
-.hero,
-.about,
-.inspiration,
-.then-and-now,
-.using-ar,
-.compatibility,
-.ar-gallery,
-.topic-1,
-.topic-2,
-.topic-3,
-.contact section,
-.call-to-action {
-  animation: fadeUp 0.8s ease-out both;
-}
-
-/* ⊹⁺₊𓂃⋆⁺₊⊹ card entrance ⊹⁺₊𓂃⋆⁺₊⊹ */
-
-.card {
-  opacity: 0;
-  animation: popIn 0.6s ease-out both;
 }
 
 /* staggered effect */
@@ -578,38 +522,7 @@ footer a:focus-visible {
 .card:nth-child(7) { animation-delay: 0.65s; }
 .card:nth-child(8) { animation-delay: 0.75s; }
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ banner title ⊹⁺₊𓂃⋆⁺₊⊹ */
-
-.banner-content {
-  animation: fadeUp 0.9s ease-out both;
-}
-
-/* ⊹⁺₊𓂃⋆⁺₊⊹ nav micro motion ⊹⁺₊𓂃⋆⁺₊⊹ */
-
-nav ul li a {
-  display: inline-block;
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
-
-nav ul li a:hover,
-nav ul li a:focus-visible {
-  transform: translateY(-2px) scale(1.03);
-}
-
-/* ⊹⁺₊𓂃⋆⁺₊⊹ button motion ⊹⁺₊𓂃⋆⁺₊⊹ */
-
-.button {
-  display: inline-block;
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
-
-.button:hover,
-.button:focus-visible {
-  transform: translateY(-3px);
-}
-
-/* ⊹⁺₊𓂃⋆⁺₊⊹ AR card hover pop ⊹⁺₊𓂃⋆⁺₊⊹ */
-
+/* hover pop for cards */
 .ar-gallery .card,
 .then-and-now .card,
 .compatibility .card {
@@ -625,29 +538,7 @@ nav ul li a:focus-visible {
 .then-and-now .card:focus-within,
 .compatibility .card:focus-within {
   transform: translateY(-6px) scale(1.035);
-}
-
-/* inner content pop */
-.ar-gallery .card h3,
-.ar-gallery .card p,
-.ar-gallery .card img,
-.ar-gallery .card a,
-.then-and-now .card h3,
-.then-and-now .card p,
-.compatibility .card h3,
-.compatibility .card p {
-  transition: transform 180ms ease;
-}
-
-.ar-gallery .card:hover h3,
-.ar-gallery .card:hover p,
-.ar-gallery .card:hover img,
-.ar-gallery .card:hover a,
-.then-and-now .card:hover h3,
-.then-and-now .card:hover p,
-.compatibility .card:hover h3,
-.compatibility .card:hover p {
-  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(29, 52, 97, 0.18);
 }
 
 /* ⊹⁺₊𓂃⋆⁺₊⊹ reduced motion ⊹⁺₊𓂃⋆⁺₊⊹ */
@@ -678,19 +569,5 @@ nav ul li a:focus-visible {
   .then-and-now .card,
   .compatibility .card {
     transition: none;
-  }
-}
-
-@media (max-width: 900px) {
-  .inspiration-layout {
-    flex-direction: column;
-  }
-
-  .inspiration-image {
-    flex: none;
-  }
-
-  .inspiration-image img {
-    max-height: 420px;
   }
 }
