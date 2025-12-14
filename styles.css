@@ -463,3 +463,161 @@ footer a:focus-visible {
   color: #FB3640;
   outline: none;
 }
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ animations ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+/* Fade up on load */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pop in */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide from left */
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide from right */
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ section entrance ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.hero,
+.about,
+.inspiration,
+.then-and-now,
+.using-ar,
+.compatibility,
+.ar-gallery,
+.topic-1,
+.topic-2,
+.topic-3,
+.contact section,
+.call-to-action {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ card entrance ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.card {
+  animation: popIn 0.6s ease-out both;
+}
+
+/* staggered effect */
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.15s; }
+.card:nth-child(3) { animation-delay: 0.25s; }
+.card:nth-child(4) { animation-delay: 0.35s; }
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ banner title ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.banner-content {
+  animation: fadeUp 0.9s ease-out both;
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ nav micro motion ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+nav ul li a {
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus-visible {
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ button motion ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.button {
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-3px);
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ AR card hover pop ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+.ar-gallery .card,
+.then-and-now .card,
+.compatibility .card {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  transform: translateY(0) scale(1);
+  will-change: transform;
+}
+
+.ar-gallery .card:hover,
+.then-and-now .card:hover,
+.compatibility .card:hover,
+.ar-gallery .card:focus-within,
+.then-and-now .card:focus-within,
+.compatibility .card:focus-within {
+  transform: translateY(-6px) scale(1.035);
+}
+
+/* inner content pop */
+.ar-gallery .card h3,
+.ar-gallery .card p,
+.ar-gallery .card img,
+.ar-gallery .card a,
+.then-and-now .card h3,
+.then-and-now .card p,
+.compatibility .card h3,
+.compatibility .card p {
+  transition: transform 180ms ease;
+}
+
+.ar-gallery .card:hover h3,
+.ar-gallery .card:hover p,
+.ar-gallery .card:hover img,
+.ar-gallery .card:hover a,
+.then-and-now .card:hover h3,
+.then-and-now .card:hover p,
+.compatibility .card:hover h3,
+.compatibility .card:hover p {
+  transform: translateY(-2px);
+}
+
+/* ⊹⁺₊𓂃⋆⁺₊⊹ accessibility ⊹⁺₊𓂃⋆⁺₊⊹ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
