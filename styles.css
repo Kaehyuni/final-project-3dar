@@ -680,3 +680,17 @@ nav ul li a:focus-visible {
     transition: none;
   }
 }
+
+@media (max-width: 900px) {
+  .inspiration-layout {
+    flex-direction: column;
+  }
+
+  .inspiration-image {
+    flex: none;
+  }
+
+  .inspiration-image img {
+    max-height: 420px;
+  }
+}
