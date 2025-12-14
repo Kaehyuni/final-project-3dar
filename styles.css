@@ -534,6 +534,7 @@ footer a:focus-visible {
 /* ⊹⁺₊𓂃⋆⁺₊⊹ card entrance ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 .card {
+  opacity: 0;
   animation: popIn 0.6s ease-out both;
 }
 
@@ -542,6 +543,10 @@ footer a:focus-visible {
 .card:nth-child(2) { animation-delay: 0.15s; }
 .card:nth-child(3) { animation-delay: 0.25s; }
 .card:nth-child(4) { animation-delay: 0.35s; }
+.card:nth-child(5) { animation-delay: 0.45s; }
+.card:nth-child(6) { animation-delay: 0.55s; }
+.card:nth-child(7) { animation-delay: 0.65s; }
+.card:nth-child(8) { animation-delay: 0.75s; }
 
 /* ⊹⁺₊𓂃⋆⁺₊⊹ banner title ⊹⁺₊𓂃⋆⁺₊⊹ */
 
@@ -552,6 +557,7 @@ footer a:focus-visible {
 /* ⊹⁺₊𓂃⋆⁺₊⊹ nav micro motion ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 nav ul li a {
+  display: inline-block;
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
@@ -563,6 +569,7 @@ nav ul li a:focus-visible {
 /* ⊹⁺₊𓂃⋆⁺₊⊹ button motion ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 .button {
+  display: inline-block;
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
@@ -613,11 +620,33 @@ nav ul li a:focus-visible {
   transform: translateY(-2px);
 }
 
-/* ⊹⁺₊𓂃⋆⁺₊⊹ accessibility ⊹⁺₊𓂃⋆⁺₊⊹ */
+/* ⊹⁺₊𓂃⋆⁺₊⊹ reduced motion ⊹⁺₊𓂃⋆⁺₊⊹ */
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
+  .hero,
+  .about,
+  .inspiration,
+  .then-and-now,
+  .using-ar,
+  .compatibility,
+  .ar-gallery,
+  .topic-1,
+  .topic-2,
+  .topic-3,
+  .contact section,
+  .call-to-action,
+  .card,
+  .banner-content {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  nav ul li a,
+  .button,
+  .ar-gallery .card,
+  .then-and-now .card,
+  .compatibility .card {
+    transition: none;
   }
 }
