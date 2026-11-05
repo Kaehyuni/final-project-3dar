@@ -3,58 +3,47 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Final - 3D Augemented Reality </title>
-	<link rel="stylesheet" href="styles.css">
+	<title>Tutoring & Contact | BioBridge</title>
+	<meta name="description" content="Independent biology learning resources from Kenny Nguyen: visual study guides, 3D and AR models, and tutoring information for Dallas College students.">
+  <meta name="theme-color" content="#003385">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
-  <!-- Webpage Background--> 
-  <div class="page-background">
- 	  <img src="images/bg_pattern.svg" alt="">
-  </div>
-
-  <!-- Banner Background--> 	
- <header class="site-banner">
-  <div class="banner-layers">
-    <img class="banner-layer-1" src="images/bg_banner_1.svg" alt="">
-    <img class="banner-layer-2" src="images/bg_banner_2.svg" alt="">
-  </div>
-
-  <div class="banner-content">
-    <h1>BioBridge</h1>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="BioBridge home">BioBridge</a>
+    <a class="header-contact" href="contact.html">Find tutoring support <span aria-hidden="true">↗</span></a>
   </div>
 </header>
-	
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Homepage</a></li>
-      <li><a href="3dar.html">3D Augmented Reality</a></li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<section class="video-banner" aria-label="Tutoring at the Learning Commons">
+  <video id="banner-video" muted loop playsinline preload="none" poster="images/banner-poster.jpg" aria-label="Decorative footage of the biology tutoring area"><source src="images/tutoring-banner.mp4" type="video/mp4"></video>
+  <div class="banner-title"><p>Biology tutoring &amp; academic coaching</p><span>BioBridge</span></div>
+  <button class="video-toggle" id="video-toggle" type="button" hidden>Play banner</button>
+</section>
+<nav class="site-nav" aria-label="Main navigation"><div class="nav-inner"><ul><li><a href="index.html">Home</a></li><li><a href="3dar.html">3D / AR Lab</a></li><li><a href="resources.html">Study Resources</a></li><li><a href="contact.html" aria-current="page">Tutoring & Contact</a></li></ul></div></nav>
+<aside class="independent-notice" aria-label="Website independence"><div><strong>Independent student resource.</strong> Not affiliated with Dallas College or its Learning Commons. <a href="#site-disclaimer">About this site <span aria-hidden="true">↓</span></a></div></aside>
 
-  <main class="contact">
+
+  <main class="contact" id="main-content" tabindex="-1">
 
     <!-- Important Notice -->
     <section class="notice">
-      <h1>Contact and Booking</h1>
+      <h1>Tutoring &amp; Contact</h1><p class="hero-lead">Find appointment information, contact details, and campus tutoring hours.</p>
 
       <div class="warning-box">
         <h2>Important Notice</h2>
         <p>
-          You cannot book an appointment with me through email. Appointments must be scheduled using Navigate.
+          Appointments are scheduled through Navigate. This independent website does not accept appointment bookings.
         </p>
         <p>
-          You are welcome to email me questions before your appointment, such as what to bring and what topic you want to focus on.
-          However, I cannot answer course content questions through email. Dallas College tutoring policies prohibit tutoring through email.
-          For teaching and lecture style questions, please contact your professor.
+          Before your session, choose the topics you want to work on and bring your notes, course materials, and specific questions.
+          For questions about lectures, assignments, or course expectations, contact your professor.
         </p>
       </div>
 
-      <div class="semester-term">
-        <p><strong>Current Dallas College Term:</strong> <span id="termText">Winter Term</span></p>
-      </div>
+      <p class="service-note">For current schedules and appointment availability, check <a href="https://www.dallascollege.edu/resources/tutoring/">Dallas College’s official tutoring page</a> and Navigate.</p>
     </section>
 
     <!-- Book an Appointment -->
@@ -64,17 +53,13 @@
         Use Navigate to schedule an appointment with me:
       </p>
       <p>
-        <a href="https://dallascollege.campus.eab.com/pal/_TsLscdNkR">Book with Navigate</a>
+        <a class="button primary" href="https://dallascollege.campus.eab.com/pal/_TsLscdNkR">Book with Navigate <span aria-hidden="true">↗</span></a>
       </p>
     </section>
 
     <!-- Email Contacts -->
     <section class="emails">
-      <h2>Email</h2>
-      <p>
-        <strong>Email me:</strong>
-        <a href="mailto:knguyn@dallascollege.edu">knguyn@dallascollege.edu</a>
-      </p>
+      <h2>Campus support</h2>
       <p>
         <strong>Richland Campus Learning Commons:</strong>
         <a href="mailto:LearningCommons@DallasCollege.edu">LearningCommons@DallasCollege.edu</a>
@@ -88,29 +73,29 @@
     <!-- Phone -->
     <section class="phone">
       <h2>Information Desk Phone</h2>
-      <p><strong>Phone:</strong> 972-238-6081</p>
-      <p><strong>Phone:</strong> 972-238-6226</p>
+
+      <p><a href="tel:+19722386226">972-238-6226</a></p>
     </section>
 
     <!-- Location -->
     <section class="location">
-      <h2>Visit Us</h2>
+      <h2>Find campus tutoring</h2>
       <p>
-        <strong>Richland Campus Learning Commons</strong><br>
+        <strong>Richland Campus Learning Commons</strong><br>Lavaca Hall, Room L100<br>
         12800 Abrams Road<br>
         Dallas, TX 75243
       </p>
       <p>
-        <strong>Campus Map (La Vaca Hall):</strong><br>
+        <strong>Campus Map (Lavaca Hall):</strong><br>
         <a href="https://map.concept3d.com/?id=2044#!ce/66885?ct/75932,75909,75908,72762,70147,70114,70109,70104,70103,70098,69958,69949,69946,69938,69923,69922,69920,69917,69912,69911,69910,69908,69903,69901,69898,69888,69887,69885,69854,67432,67431,67430,67429,67428,67427,67050,67049,67048,67047,67045,67040,66947,66946,66944,66941,66940,66938,66937,66933,66932,66931,66930,66929,66918,66917,66087,72763,72764,72765,72766,72767,72768,72769,69927,69894?m/676329?s/">
-          View Learning Commons (Richland) in La Vaca Hall
+          View Learning Commons (Richland) in Lavaca Hall
         </a>
       </p>
     </section>
 
     <!-- Hours -->
     <section class="hours">
-      <h2>Hours of Operation</h2>
+      <h2>Campus tutoring hours</h2><p class="service-note">Campus hours are separate from my individual availability. Hours may vary between semesters and around holidays. <a href="https://www.dallascollege.edu/resources/tutoring/">Confirm current hours with Dallas College</a>.</p>
 
       <h3>Regular Semesters (Fall and Spring)</h3>
       <ul>
@@ -120,7 +105,7 @@
         <li>Sun: Closed</li>
       </ul>
 
-      <h3>Summer Terms, Winter Terms, and Mini-mesters</h3>
+      <h3>Summer Terms and Mini-mesters</h3>
       <ul>
         <li>Mon-Fri: 8 a.m. - 5 p.m.</li>
         <li>Sat-Sun: Closed</li>
@@ -153,16 +138,17 @@
   </main>
 
   <!-- Footer -->
-  <footer>
-    <p><strong>Kenny Nguyen</strong></p>
-    <p>Biology Tutor & Academic Coach</p>
-    <p>Dallas College · Richland Campus Learning Commons</p>
-    <p>
-      <a href="mailto:knguyn@dallascollege.edu">knguyn@dallascollege.edu</a>
-    </p>
-    <p>© 2025 Kenny Nguyen. All rights reserved.</p>
-  </footer>
-	
+
+
+
+<footer class="site-footer" id="site-disclaimer">
+  <div class="footer-inner">
+    <div class="footer-top"><div><a class="footer-brand" href="index.html">BioBridge<span aria-hidden="true">.</span></a><p>Biology tutoring and visual study resources.</p></div><div class="footer-contact"><strong>Kenny Nguyen</strong><p>Biology Tutor &amp; Academic Coach</p><a href="contact.html">Tutoring information</a></div></div>
+    <div class="footer-resource"><div class="logo-panel"><a href="https://www.dallascollege.edu/resources/tutoring/" aria-label="Visit the official Dallas College Learning Commons tutoring website"><img src="images/learning-commons.svg" alt="Learning Commons — Dallas College" width="1425" height="300" loading="lazy"></a></div><div><p class="eyebrow">Official college resources</p><p>Looking for campus services, current hours, or appointments?</p><a href="https://www.dallascollege.edu/resources/tutoring/">Visit Dallas College Tutoring Services <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p><strong>About this independent website</strong><br>BioBridge is an independent resource created by Kenny Nguyen to support students in his tutoring work. It is not affiliated with, sponsored by, or endorsed by Dallas College or its Learning Commons. The Learning Commons logo identifies the linked college resource and does not imply an affiliation or endorsement.</p><p>© <span data-year>2026</span> Kenny Nguyen.<br>Independent student resource.</p></div>
+  </div>
+</footer>
+
 </body>
 </html>
 

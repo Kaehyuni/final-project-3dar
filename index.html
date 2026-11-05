@@ -3,51 +3,38 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Final - 3D Augmented Reality</title>
-	<link rel="stylesheet" href="styles.css">
+	<title>BioBridge | Biology Tutoring & Visual Learning</title>
+	<meta name="description" content="Independent biology learning resources from Kenny Nguyen: visual study guides, 3D and AR models, and tutoring information for Dallas College students.">
+  <meta name="theme-color" content="#003385">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
-
-<!-- Webpage Background--> 
-  <div class="page-background">
- 	  <img src="images/bg_pattern.svg" alt="">
-  </div>
-
-  <!-- Banner Background--> 	
- <header class="site-banner">
-  <div class="banner-layers">
-    <img class="banner-layer-1" src="images/bg_banner_1.svg" alt="">
-    <img class="banner-layer-2" src="images/bg_banner_2.svg" alt="">
-  </div>
-
-  <div class="banner-content">
-    <h1>BioBridge</h1>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="BioBridge home">BioBridge</a>
+    <a class="header-contact" href="contact.html">Find tutoring support <span aria-hidden="true">↗</span></a>
   </div>
 </header>
+<section class="video-banner" aria-label="Tutoring at the Learning Commons">
+  <video id="banner-video" muted loop playsinline preload="none" poster="images/banner-poster.jpg" aria-label="Decorative footage of the biology tutoring area"><source src="images/tutoring-banner.mp4" type="video/mp4"></video>
+  <div class="banner-title"><p>Biology tutoring &amp; academic coaching</p><span>BioBridge</span></div>
+  <button class="video-toggle" id="video-toggle" type="button" hidden>Play banner</button>
+</section>
+<nav class="site-nav" aria-label="Main navigation"><div class="nav-inner"><ul><li><a href="index.html" aria-current="page">Home</a></li><li><a href="3dar.html">3D / AR Lab</a></li><li><a href="resources.html">Study Resources</a></li><li><a href="contact.html">Tutoring & Contact</a></li></ul></div></nav>
+<aside class="independent-notice" aria-label="Website independence"><div><strong>Independent student resource.</strong> Not affiliated with Dallas College or its Learning Commons. <a href="#site-disclaimer">About this site <span aria-hidden="true">↓</span></a></div></aside>
+<main id="main-content" tabindex="-1">
 
-<!-- Navigation -->
-<nav>
-  <ul>
-    <li><a href="index.html">Homepage</a></li>
-    <li><a href="3dar.html">3D Augmented Reality</a></li>
-    <li><a href="resources.html">Resources</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
 
-<!-- Hero Section -->
-<header class="hero">
-  <h1>Biology Made Visual</h1>
-  <p class="hero-text">
-    Hi, I’m <strong>Kenny Nguyen</strong>, a <strong>Biology Tutor & Academic Coach</strong> at
-    Dallas College Richland Campus Learning Commons.
-    BioBridge uses visual learning and augmented reality to help students truly understand biology,
-    not just memorize it.
-  </p>
-</header> 
+<section class="home-intro" aria-labelledby="home-heading">
+  <div><p class="eyebrow">Welcome to BioBridge</p><h1 id="home-heading">Biology tutoring and<br>visual study resources</h1></div>
+  <div class="intro-copy"><p>Hi, I’m <strong>Kenny Nguyen</strong>, a Biology Tutor &amp; Academic Coach at Dallas College’s Richland Campus Learning Commons. I created this independent website to share the visual tools I use to help students understand biology.</p><p>Explore a 3D model, review a topic, or find information about tutoring.</p><a class="button primary" href="contact.html">Find tutoring support <span aria-hidden="true">→</span></a></div>
+</section>
+<section class="study-directory" aria-labelledby="study-heading"><div><p class="eyebrow">Choose a study tool</p><h2 id="study-heading">What are you working on?</h2><p>Start with a model or a topic that connects to your class.</p></div><div class="study-links"><a href="3dar.html"><strong>3D / AR Lab</strong><span>Cells, mitochondria, membranes, and DNA</span><b aria-hidden="true">→</b></a><a href="resources.html"><strong>Biology study resources</strong><span>Cell types, membrane transport, and protein synthesis</span><b aria-hidden="true">→</b></a></div></section>
 
 <!-- About Section -->
-<section class="about">
+<section class="about home-about">
   <h2>About BioBridge</h2>
   <p>
     Many students struggle with biology because it is often taught through dense textbooks
@@ -56,11 +43,10 @@
   <p>
     As a Biology Tutor and Academic Coach, I work one on one with students to break down complex
     topics like cell structure, membrane transport, and protein synthesis using
-    visual explanations and interactive tools. I see how difficult it can be for students to
+    visual explanations and interactive tools.</p><p>I see how difficult it can be for students to
     engage and learn when they are overwhelmed by long streams of information all at once.
     This is especially true when exploring information from textbooks and lecture PowerPoints.
-    It becomes harder for students to digest the material.
-    To make learning easier, I want to share my experience in finding effective resources,
+    It becomes harder for students to digest the material.</p><p>To make learning easier, I want to share my experience in finding effective resources,
     including 3D augmented reality tools that students can interact with, as well as strong
     visual explanations through videos.
     I believe education can be represented as something interactive.
@@ -85,7 +71,7 @@
     That experience shaped how I support students today. BioBridge continues that same philosophy.
     Learning is most effective when students can see, explore, and interact with what they study.
   </p>
-</section>	
+</section>
 
 <!-- Then & Now Section -->
 <section class="then-and-now">
@@ -110,28 +96,28 @@
 
 <!-- Call to Action -->
 <section class="call-to-action">
-  <h2>Ready to Explore Biology?</h2>
+  <h2>Continue studying</h2>
   <p>
     Visit the 3D / AR Lab to explore interactive models, or browse curated resources
     to support your biology studies.
   </p>
   <div class="hero-buttons">
-    <a href="3dar.html" class="button primary">Try the AR Lab</a>
+    <a href="3dar.html" class="button primary">Open the AR Lab</a>
     <a href="contact.html" class="button secondary">Get Tutoring Help</a>
   </div>
 </section>
 
 <!-- Footer -->
-<footer>
-  <p><strong>Kenny Nguyen</strong></p>
-  <p>Biology Tutor & Academic Coach</p>
-  <p>Dallas College · Richland Campus Learning Commons</p>
-  <p>
-    <a href="mailto:knguyn@dallascollege.edu">
-      knguyn@dallascollege.edu
-    </a>
-  </p>
-  <p>© 2025 Kenny Nguyen. All rights reserved.</p>
+
+
+</main>
+
+<footer class="site-footer" id="site-disclaimer">
+  <div class="footer-inner">
+    <div class="footer-top"><div><a class="footer-brand" href="index.html">BioBridge<span aria-hidden="true">.</span></a><p>Biology tutoring and visual study resources.</p></div><div class="footer-contact"><strong>Kenny Nguyen</strong><p>Biology Tutor &amp; Academic Coach</p><a href="contact.html">Tutoring information</a></div></div>
+    <div class="footer-resource"><div class="logo-panel"><a href="https://www.dallascollege.edu/resources/tutoring/" aria-label="Visit the official Dallas College Learning Commons tutoring website"><img src="images/learning-commons.svg" alt="Learning Commons — Dallas College" width="1425" height="300" loading="lazy"></a></div><div><p class="eyebrow">Official college resources</p><p>Looking for campus services, current hours, or appointments?</p><a href="https://www.dallascollege.edu/resources/tutoring/">Visit Dallas College Tutoring Services <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p><strong>About this independent website</strong><br>BioBridge is an independent resource created by Kenny Nguyen to support students in his tutoring work. It is not affiliated with, sponsored by, or endorsed by Dallas College or its Learning Commons. The Learning Commons logo identifies the linked college resource and does not imply an affiliation or endorsement.</p><p>© <span data-year>2026</span> Kenny Nguyen.<br>Independent student resource.</p></div>
+  </div>
 </footer>
 
 </body>
