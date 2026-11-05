@@ -12,11 +12,13 @@ There is no package installation or build step.
 
 The existing Netlify project is `khn-3dar-rlc`, connected to the `main` branch of `Kaehyuni/final-project-3dar`. Publish the repository root. Keep HTML, CSS, JavaScript, fonts and images together.
 
+The author’s role is Biology/Chemistry/Digital Art Academic Coach.
+
 ## Assets and maintenance
 
 - Dallas College colors: blue `#003385`, red `#E52626`, silver `#D6D2C4`.
-- Montserrat fonts and Learning Commons SVG come from the supplied Dallas College asset kit. The logo is the supplied vector reconstruction and links to the official college tutoring resource. Keep `fonts/OFL.txt` with the bundled fonts.
-- `images/tutoring-banner.mp4` is a web-compatible conversion of the supplied MOV. `images/banner-poster.jpg` provides the still fallback. Banner playback is muted, offers a pause control, and respects reduced motion and data-saving preferences.
+- Montserrat fonts and Learning Commons SVG come from the supplied Dallas College asset kit. The logo is the supplied vector reconstruction and appears in the site header. Keep `fonts/OFL.txt` with the bundled fonts.
+- `images/tutoring-banner.mp4` is a web-compatible conversion of the supplied MOV. `images/banner-poster.jpg` provides the still fallback. Banner playback is muted, has no visible playback controls, and respects reduced motion and data-saving preferences.
 - Campus location, phone, and published tutoring hours were checked against the official tutoring page on November 5, 2026. Students should use that linked official page for current schedules. The original Navigate appointment link and biology resource/model destinations are retained.
 - Kenny’s email address has been removed from the published pages. The campus Learning Commons contact remains a separate institutional resource.
 
