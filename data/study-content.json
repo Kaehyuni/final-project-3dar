@@ -1,0 +1,5045 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-11-05",
+  "contentStatus": "Original authored educational seed content; independent biology/chemistry educator review pending. Source citations are not endorsements or reviewer approval.",
+  "author": "BioBridge development draft for Kaehyuni (Kenny) Nguyen",
+  "modelNotice": "The cell model is a simplified animal-cell teaching model. Colors, size ratios, locations and counts are illustrative, not measured cellular data.",
+  "corpusNotice": "This is a finite local retrieval corpus, not a generative foundation model. Aliases are alternate search phrases, not additional canonical Q&A. Do not claim a 10,000-question library.",
+  "sources": [
+    {
+      "id": "CELL-COMPARTMENTS",
+      "title": "The Compartmentalization of Cells — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK26907/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-MEMBRANE",
+      "title": "Cell Membranes — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9928/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-NUCLEUS",
+      "title": "The Nuclear Envelope and Traffic between the Nucleus and Cytoplasm — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9927/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-NUCLEOLUS",
+      "title": "The Nucleolus — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9939/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-CHROMATIN",
+      "title": "Internal Organization of the Nucleus — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9915/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-RIBOSOME",
+      "title": "Translation of mRNA — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9849/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-ER",
+      "title": "The Endoplasmic Reticulum — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9889/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-SORTING",
+      "title": "Protein Sorting and Transport — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9897/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-GOLGI",
+      "title": "The Endoplasmic Reticulum, Golgi Apparatus, and Lysosomes: Summary — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9888/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-MITOCHONDRIA",
+      "title": "Mitochondria — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9896/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-LYSOSOME",
+      "title": "Lysosomes — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9953/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-PEROXISOME",
+      "title": "Peroxisomes — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9930/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-SKELETON",
+      "title": "The Cytoskeleton and Cell Movement — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9893/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "CELL-FILAMENTS",
+      "title": "The Self-Assembly and Dynamic Structure of Cytoskeletal Filaments — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK26862/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "TRANSPORT-SMALL",
+      "title": "Transport of Small Molecules — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9847/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "TRANSPORT-PRINCIPLES",
+      "title": "Principles of Membrane Transport — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK26815/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "ENERGY-MITO",
+      "title": "The Mitochondrion — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK26894/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "ENERGY-METABOLIC",
+      "title": "Metabolic Energy — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9903/",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Scientific reference only; original BioBridge wording. NCBI hosting does not make the underlying book or its figures public domain. No source figures or passages are reused."
+    },
+    {
+      "id": "BIO-PROKARYOTE",
+      "title": "Biology 2e: Prokaryotic Cells — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-EUKARYOTE",
+      "title": "Biology 2e: Eukaryotic Cells — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-WATER",
+      "title": "Biology 2e: Water — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/2-2-water",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-CARB",
+      "title": "Biology 2e: Carbohydrates — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/3-2-carbohydrates",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-LIPID",
+      "title": "Biology 2e: Lipids — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/3-3-lipids",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-PROTEIN",
+      "title": "Biology 2e: Proteins — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/3-4-proteins",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-NUCLEIC",
+      "title": "Biology 2e: Nucleic Acids — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/3-5-nucleic-acids",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-PASSIVE",
+      "title": "Biology 2e: Passive Transport — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/5-2-passive-transport",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-ACTIVE",
+      "title": "Biology 2e: Active Transport — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/5-3-active-transport",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-BULK",
+      "title": "Biology 2e: Bulk Transport — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/5-4-bulk-transport",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-ENERGY",
+      "title": "Biology 2e: Potential Kinetic Free And Activation Energy — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/6-2-potential-kinetic-free-and-activation-energy",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-ATP",
+      "title": "Biology 2e: Atp Adenosine Triphosphate — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/6-4-atp-adenosine-triphosphate",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-ENZYME",
+      "title": "Biology 2e: Enzymes — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/6-5-enzymes",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-GLYCOLYSIS",
+      "title": "Biology 2e: Glycolysis — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/7-2-glycolysis",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-CYCLE",
+      "title": "Biology 2e: Oxidation Of Pyruvate And The Citric Acid Cycle — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/7-3-oxidation-of-pyruvate-and-the-citric-acid-cycle",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-ETC",
+      "title": "Biology 2e: Oxidative Phosphorylation — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/7-4-oxidative-phosphorylation",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-FERMENT",
+      "title": "Biology 2e: Metabolism Without Oxygen — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/7-5-metabolism-without-oxygen",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-PHOTO-LIGHT",
+      "title": "Biology 2e: The Light Dependent Reactions Of Photosynthesis — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/8-2-the-light-dependent-reactions-of-photosynthesis",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-PHOTO-CALVIN",
+      "title": "Biology 2e: Using Light Energy To Make Organic Molecules — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/8-3-using-light-energy-to-make-organic-molecules",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-CELL-CYCLE",
+      "title": "Biology 2e: The Cell Cycle — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/10-2-the-cell-cycle",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-MEIOSIS",
+      "title": "Biology 2e: The Process Of Meiosis — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/11-1-the-process-of-meiosis",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-MENDEL",
+      "title": "Biology 2e: Characteristics And Traits — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/12-2-characteristics-and-traits",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-DNA-REPLICATION",
+      "title": "Biology 2e: Dna Replication In Prokaryotes — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/14-4-dna-replication-in-prokaryotes",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-RNA-PROCESS",
+      "title": "Biology 2e: Rna Processing In Eukaryotes — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/15-4-rna-processing-in-eukaryotes",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-TRANSLATION",
+      "title": "Biology 2e: Ribosomes And Protein Synthesis — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/15-5-ribosomes-and-protein-synthesis",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-EVOLUTION",
+      "title": "Biology 2e: Population Evolution — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/19-1-population-evolution",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-PHYLOGENY",
+      "title": "Biology 2e: Determining Evolutionary Relationships — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/20-2-determining-evolutionary-relationships",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-PLANT",
+      "title": "Biology 2e: Early Plant Life — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/25-1-early-plant-life",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "BIO-ECOLOGY",
+      "title": "Biology 2e: Energy Flow Through Ecosystems — OpenStax",
+      "url": "https://openstax.org/books/biology-2e/pages/46-2-energy-flow-through-ecosystems",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "GENOME-DNA",
+      "title": "Deoxyribonucleic Acid DNA — NHGRI Talking Glossary",
+      "url": "https://www.genome.gov/genetics-glossary/Deoxyribonucleic-Acid-DNA",
+      "kind": "Federal scientific teaching reference",
+      "licenseNote": "Citation only. BioBridge explanations are original educational summaries of scientific facts; no source image, assessment or passage is reproduced. Source availability is not a license for its protected expression."
+    },
+    {
+      "id": "GENOME-RNA",
+      "title": "Ribonucleic Acid RNA — NHGRI Talking Glossary",
+      "url": "https://www.genome.gov/genetics-glossary/Ribonucleic-Acid-RNA",
+      "kind": "Federal scientific teaching reference",
+      "licenseNote": "Citation only. BioBridge explanations are original educational summaries of scientific facts; no source image, assessment or passage is reproduced. Source availability is not a license for its protected expression."
+    },
+    {
+      "id": "GENOME-TRANSCRIPTION",
+      "title": "Transcription — NHGRI Talking Glossary",
+      "url": "https://www.genome.gov/genetics-glossary/Transcription",
+      "kind": "Federal scientific teaching reference",
+      "licenseNote": "Citation only. BioBridge explanations are original educational summaries of scientific facts; no source image, assessment or passage is reproduced. Source availability is not a license for its protected expression."
+    },
+    {
+      "id": "GENOME-MUTATION",
+      "title": "Mutation — NHGRI Talking Glossary",
+      "url": "https://www.genome.gov/genetics-glossary/Mutation",
+      "kind": "Federal scientific teaching reference",
+      "licenseNote": "Citation only. BioBridge explanations are original educational summaries of scientific facts; no source image, assessment or passage is reproduced. Source availability is not a license for its protected expression."
+    },
+    {
+      "id": "GENOME-GENE",
+      "title": "Gene — NHGRI Talking Glossary",
+      "url": "https://www.genome.gov/genetics-glossary/Gene",
+      "kind": "Federal scientific teaching reference",
+      "licenseNote": "Citation only. BioBridge explanations are original educational summaries of scientific facts; no source image, assessment or passage is reproduced. Source availability is not a license for its protected expression."
+    },
+    {
+      "id": "GENOME-ALLELE",
+      "title": "Allele — NHGRI Talking Glossary",
+      "url": "https://www.genome.gov/genetics-glossary/Allele",
+      "kind": "Federal scientific teaching reference",
+      "licenseNote": "Citation only. BioBridge explanations are original educational summaries of scientific facts; no source image, assessment or passage is reproduced. Source availability is not a license for its protected expression."
+    },
+    {
+      "id": "GENOME-RNA-FACT",
+      "title": "Ribonucleic Acid (RNA) Fact Sheet — NHGRI",
+      "url": "https://www.genome.gov/about-genomics/educational-resources/fact-sheets/ribonucleic-acid-fact-sheet",
+      "kind": "Federal scientific teaching reference",
+      "licenseNote": "Citation only. BioBridge explanations are original educational summaries of scientific facts; no source image, assessment or passage is reproduced. Source availability is not a license for its protected expression."
+    },
+    {
+      "id": "NIST-MOLE",
+      "title": "SI unit definitions: the mole — NIST SP 330, section 2",
+      "url": "https://www.nist.gov/pml/special-publication-330/sp-330-section-2",
+      "kind": "Measurement standard",
+      "licenseNote": "Citation only. BioBridge explanations are original educational summaries of scientific facts; no source image, assessment or passage is reproduced. Source availability is not a license for its protected expression."
+    },
+    {
+      "id": "IUPAC-CONCENTRATION",
+      "title": "Amount concentration — IUPAC Gold Book A00295",
+      "url": "https://goldbook.iupac.org/terms/view/A00295",
+      "kind": "Scientific terminology standard",
+      "licenseNote": "Citation only. BioBridge explanations are original educational summaries of scientific facts; no source image, assessment or passage is reproduced. Source availability is not a license for its protected expression."
+    },
+    {
+      "id": "IUPAC-PH",
+      "title": "pH — IUPAC Gold Book P04524",
+      "url": "https://goldbook.iupac.org/terms/view/P04524",
+      "kind": "Scientific terminology standard",
+      "licenseNote": "Citation only. BioBridge explanations are original educational summaries of scientific facts; no source image, assessment or passage is reproduced. Source availability is not a license for its protected expression."
+    },
+    {
+      "id": "CHEM-MATTER",
+      "title": "Chemistry 2e: Phases And Classification Of Matter — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/1-2-phases-and-classification-of-matter",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-PROPERTIES",
+      "title": "Chemistry 2e: Physical And Chemical Properties — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/1-3-physical-and-chemical-properties",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-MEASURE",
+      "title": "Chemistry 2e: Measurements — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/1-4-measurements",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-SIGFIG",
+      "title": "Chemistry 2e: Measurement Uncertainty Accuracy And Precision — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/1-5-measurement-uncertainty-accuracy-and-precision",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-UNITS",
+      "title": "Chemistry 2e: Mathematical Treatment Of Measurement Results — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/1-6-mathematical-treatment-of-measurement-results",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-ATOM",
+      "title": "Chemistry 2e: Atomic Structure And Symbolism — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-FORMULAS",
+      "title": "Chemistry 2e: Chemical Formulas — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/2-4-chemical-formulas",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-PERIODIC",
+      "title": "Chemistry 2e: The Periodic Table — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/2-5-the-periodic-table",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-NAMING",
+      "title": "Chemistry 2e: Chemical Nomenclature — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/2-7-chemical-nomenclature",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-MASS",
+      "title": "Chemistry 2e: Formula Mass And The Mole Concept — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/3-1-formula-mass-and-the-mole-concept",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-EMPIRICAL",
+      "title": "Chemistry 2e: Determining Empirical And Molecular Formulas — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/3-2-determining-empirical-and-molecular-formulas",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-MOLARITY",
+      "title": "Chemistry 2e: Molarity — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/3-3-molarity",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-BALANCE",
+      "title": "Chemistry 2e: Writing And Balancing Chemical Equations — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/4-1-writing-and-balancing-chemical-equations",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-REACTIONS",
+      "title": "Chemistry 2e: Classifying Chemical Reactions — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-STOICH",
+      "title": "Chemistry 2e: Reaction Stoichiometry — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/4-3-reaction-stoichiometry",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-YIELD",
+      "title": "Chemistry 2e: Reaction Yields — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/4-4-reaction-yields",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-THERMO",
+      "title": "Chemistry 2e: Energy Basics — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/5-1-energy-basics",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-CALORIMETRY",
+      "title": "Chemistry 2e: Calorimetry — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/5-2-calorimetry",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-ENTHALPY",
+      "title": "Chemistry 2e: Enthalpy — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/5-3-enthalpy",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-LIGHT",
+      "title": "Chemistry 2e: Electromagnetic Energy — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/6-1-electromagnetic-energy",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-ORBITAL",
+      "title": "Chemistry 2e: Development Of Quantum Theory — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/6-3-development-of-quantum-theory",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-ELECTRONS",
+      "title": "Chemistry 2e: Electronic Structure Of Atoms Electron Configurations — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/6-4-electronic-structure-of-atoms-electron-configurations",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-TRENDS",
+      "title": "Chemistry 2e: Periodic Variations In Element Properties — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/6-5-periodic-variations-in-element-properties",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-IONIC",
+      "title": "Chemistry 2e: Ionic Bonding — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/7-1-ionic-bonding",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-COVALENT",
+      "title": "Chemistry 2e: Covalent Bonding — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/7-2-covalent-bonding",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-LEWIS",
+      "title": "Chemistry 2e: Lewis Symbols And Structures — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/7-3-lewis-symbols-and-structures",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-FORMAL",
+      "title": "Chemistry 2e: Formal Charges And Resonance — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/7-4-formal-charges-and-resonance",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-SHAPE",
+      "title": "Chemistry 2e: Molecular Structure And Polarity — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/7-6-molecular-structure-and-polarity",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-GAS",
+      "title": "Chemistry 2e: Relating Pressure Volume Amount And Temperature The Ideal Gas Law — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/9-2-relating-pressure-volume-amount-and-temperature-the-ideal-gas-law",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-IMF",
+      "title": "Chemistry 2e: Intermolecular Forces — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/10-1-intermolecular-forces",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-ACID",
+      "title": "Chemistry 2e: Bronsted Lowry Acids And Bases — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/14-1-bronsted-lowry-acids-and-bases",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    },
+    {
+      "id": "CHEM-PH",
+      "title": "Chemistry 2e: Ph And Poh — OpenStax",
+      "url": "https://openstax.org/books/chemistry-2e/pages/14-2-ph-and-poh",
+      "kind": "Scientific textbook reference",
+      "licenseNote": "Citation to scientific facts only. No OpenStax prose, questions, worksheets or images imported. OpenStax AI-offering reuse restrictions require separate evaluation before any source-content ingestion."
+    }
+  ],
+  "parts": [
+    {
+      "id": "membrane",
+      "name": "Plasma membrane",
+      "aliases": [
+        "cell membrane",
+        "phospholipid bilayer"
+      ],
+      "summary": "A selective boundary that controls exchange and receives signals.",
+      "detail": "The bilayer separates aqueous environments. Embedded proteins perform transport, signaling and attachment; surface carbohydrates help with recognition. The model enlarges these components so they can be studied.",
+      "components": "Phospholipids, membrane proteins, sterols such as cholesterol in animal cells, and attached carbohydrates.",
+      "misconception": "It is not a rigid wall or a completely sealed plastic bag.",
+      "sources": [
+        "CELL-MEMBRANE"
+      ]
+    },
+    {
+      "id": "cytoplasm",
+      "name": "Cytoplasm",
+      "aliases": [
+        "cytosol",
+        "cell interior"
+      ],
+      "summary": "The region outside the nucleus, including cytosol and its structures.",
+      "detail": "Cytosol is the crowded water-based fluid in which many metabolic reactions occur. Cytoplasm includes that fluid plus organelles and other structures outside the nucleus. The clear model surface is a visibility choice.",
+      "components": "Water, dissolved ions, metabolites, proteins, cytoskeletal filaments and organelles.",
+      "misconception": "Cytoplasm and cytosol are related terms, not exact synonyms.",
+      "sources": [
+        "CELL-COMPARTMENTS"
+      ]
+    },
+    {
+      "id": "nucleus",
+      "name": "Nucleus",
+      "aliases": [
+        "nuclear envelope",
+        "nuclear pore"
+      ],
+      "summary": "A compartment that houses most DNA in this eukaryotic cell.",
+      "detail": "The nuclear envelope has two membranes and regulated pores. DNA replication and transcription of nuclear genes occur here. RNA and many proteins move through the pores.",
+      "components": "Two lipid-bilayer membranes, nuclear pore proteins, nuclear lamina, chromatin and nucleoplasm.",
+      "misconception": "The nucleus does not directly build proteins or contain all cellular DNA.",
+      "sources": [
+        "CELL-NUCLEUS"
+      ]
+    },
+    {
+      "id": "nucleolus",
+      "name": "Nucleolus",
+      "aliases": [
+        "nucleoli",
+        "ribosome assembly"
+      ],
+      "summary": "A non-membrane-bound region involved in making ribosomal subunits.",
+      "detail": "Much ribosomal RNA is produced and processed here, and it joins ribosomal proteins. Subunits leave the nucleus before participating in translation.",
+      "components": "Ribosomal RNA, ribosome assembly proteins and chromosomal regions carrying rRNA genes.",
+      "misconception": "The nucleolus is a region inside the nucleus, not a smaller membrane-bound nucleus.",
+      "sources": [
+        "CELL-NUCLEOLUS"
+      ]
+    },
+    {
+      "id": "chromatin",
+      "name": "Chromatin",
+      "aliases": [
+        "chromosome",
+        "histone",
+        "DNA packaging"
+      ],
+      "summary": "DNA packaged with associated proteins inside the nucleus.",
+      "detail": "Packaging helps fit DNA into the nucleus and influences access to genes. Chromatin changes its organization during the cell cycle; condensed division-stage chromosomes are one state of this material.",
+      "components": "DNA, histone proteins and other DNA-associated proteins.",
+      "misconception": "Chromatin does not turn into a different chemical substance when chromosomes condense.",
+      "sources": [
+        "CELL-CHROMATIN"
+      ]
+    },
+    {
+      "id": "ribosomes",
+      "name": "Ribosomes",
+      "aliases": [
+        "ribosome",
+        "free ribosome",
+        "bound ribosome"
+      ],
+      "summary": "RNA-protein complexes that translate mRNA into polypeptides.",
+      "detail": "A ribosome positions mRNA and tRNAs so amino acids can be joined. Some ribosomes are free in cytosol; others bind the ER while translating proteins with appropriate targeting signals.",
+      "components": "A small and a large subunit, each containing ribosomal RNA and proteins.",
+      "misconception": "Ribosomes are not membrane-bound organelles, and they do not make amino acids from scratch.",
+      "sources": [
+        "CELL-RIBOSOME"
+      ]
+    },
+    {
+      "id": "rough-er",
+      "name": "Rough endoplasmic reticulum",
+      "aliases": [
+        "rough ER",
+        "RER"
+      ],
+      "summary": "Membranes where many secreted and membrane proteins enter the endomembrane pathway.",
+      "detail": "Attached ribosomes make its cytosolic surface appear rough. Appropriate new proteins enter or insert into ER membrane, where folding and early processing occur.",
+      "components": "Lipid-bilayer sheets and tubules, an internal lumen, attached ribosomes and folding/processing proteins.",
+      "misconception": "The ER does not synthesize every protein; targeting signals determine routing.",
+      "sources": [
+        "CELL-ER"
+      ]
+    },
+    {
+      "id": "smooth-er",
+      "name": "Smooth endoplasmic reticulum",
+      "aliases": [
+        "smooth ER",
+        "SER"
+      ],
+      "summary": "ER regions involved in lipid synthesis and specialized cellular tasks.",
+      "detail": "Smooth ER has no dense covering of bound ribosomes. Its functions depend on cell type, including lipid production, calcium storage and particular detoxification reactions.",
+      "components": "Lipid-bilayer tubules, internal lumen and enzymes; specialized calcium-handling proteins in some cells.",
+      "misconception": "Smooth and rough ER are connected regions of an ER network, not unrelated organelles.",
+      "sources": [
+        "CELL-ER"
+      ]
+    },
+    {
+      "id": "golgi",
+      "name": "Golgi apparatus",
+      "aliases": [
+        "Golgi body",
+        "Golgi complex"
+      ],
+      "summary": "A membrane system that modifies and sorts cargo in the secretory pathway.",
+      "detail": "Cargo arriving from the ER is processed across Golgi compartments and sorted toward destinations such as the plasma membrane, secretion or the endosomal/lysosomal pathway.",
+      "components": "Stacks of lipid-bilayer sacs called cisternae, processing enzymes and associated transport vesicles.",
+      "misconception": "The Golgi sorts and processes proteins; ribosomes synthesize their polypeptide chains.",
+      "sources": [
+        "CELL-GOLGI"
+      ]
+    },
+    {
+      "id": "mitochondria",
+      "name": "Mitochondrion",
+      "aliases": [
+        "mitochondria",
+        "cristae",
+        "matrix"
+      ],
+      "summary": "An organelle that links fuel oxidation to much of this cell’s ATP production.",
+      "detail": "The inner membrane supports electron transport and ATP synthesis. The matrix hosts several fuel-processing reactions. Mitochondria also have roles beyond ATP production.",
+      "components": "Outer and inner lipid-bilayer membranes, cristae, intermembrane space, matrix enzymes, mitochondrial DNA and ribosomes.",
+      "misconception": "Mitochondria convert energy; they do not create energy or perform glycolysis.",
+      "sources": [
+        "CELL-MITOCHONDRIA"
+      ]
+    },
+    {
+      "id": "lysosomes",
+      "name": "Lysosomes",
+      "aliases": [
+        "lysosome",
+        "acid hydrolase",
+        "autophagy"
+      ],
+      "summary": "Acidic compartments that break down and recycle cellular material.",
+      "detail": "Digestive enzymes act on delivered cargo. Proton pumps help maintain the acidic interior. This supports turnover of internal components and material taken up from outside.",
+      "components": "A lipid-bilayer membrane, proton pumps, acidic fluid and hydrolytic enzymes.",
+      "misconception": "Lysosomes recycle useful components; “garbage can” leaves out that function.",
+      "sources": [
+        "CELL-LYSOSOME"
+      ]
+    },
+    {
+      "id": "peroxisomes",
+      "name": "Peroxisomes",
+      "aliases": [
+        "peroxisome",
+        "catalase"
+      ],
+      "summary": "Compartments for specific oxidation reactions and peroxide handling.",
+      "detail": "Some reactions make hydrogen peroxide. Catalase helps break it down. Peroxisomes contribute to lipid metabolism; they are chemically and functionally different from lysosomes.",
+      "components": "A single lipid-bilayer membrane, oxidative enzymes and catalase.",
+      "misconception": "Peroxisomes are not simply another name for lysosomes.",
+      "sources": [
+        "CELL-PEROXISOME"
+      ]
+    },
+    {
+      "id": "cytoskeleton",
+      "name": "Cytoskeleton",
+      "aliases": [
+        "microtubule",
+        "microfilament",
+        "actin",
+        "intermediate filament"
+      ],
+      "summary": "A dynamic protein network that supports organization, shape and movement.",
+      "detail": "Filaments assemble and disassemble. Motors can carry cargo along selected tracks, and cytoskeletal systems participate in cell division and changes in cell shape.",
+      "components": "Actin filaments, tubulin-based microtubules, intermediate filaments and associated proteins.",
+      "misconception": "This is a changing molecular network rather than a permanent rigid skeleton.",
+      "sources": [
+        "CELL-SKELETON"
+      ]
+    },
+    {
+      "id": "vesicles",
+      "name": "Transport vesicles",
+      "aliases": [
+        "vesicle",
+        "secretory vesicle",
+        "transport vesicle"
+      ],
+      "summary": "Small membrane-enclosed carriers that move selected cargo.",
+      "detail": "Budding and fusion move membrane and cargo among compatible compartments. Cargo selection and targeting proteins help deliver material to an appropriate destination.",
+      "components": "A lipid-bilayer membrane, cargo, and transient coat or targeting proteins.",
+      "misconception": "Vesicles do not carry every molecule everywhere; different pathways select different cargo.",
+      "sources": [
+        "CELL-SORTING"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "cell-definition",
+      "question": "What makes a cell a cell?",
+      "aliases": [
+        "what is a cell",
+        "cell basics"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cell organization"
+      ],
+      "answer": "A cell has a boundary membrane, internal chemistry, genetic information and machinery that supports life processes. Organisms may be one cell or many. This animal-cell model shows a eukaryotic example; it does not represent every cell type.",
+      "sources": [
+        "BIO-PROKARYOTE",
+        "BIO-EUKARYOTE"
+      ],
+      "followups": [
+        "How are prokaryotic and eukaryotic cells different?",
+        "What does the plasma membrane do?"
+      ]
+    },
+    {
+      "id": "cell-prokaryote",
+      "question": "How are prokaryotic and eukaryotic cells different?",
+      "aliases": [
+        "prokaryote vs eukaryote",
+        "bacteria nucleus"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cell organization"
+      ],
+      "answer": "Eukaryotic cells have a membrane-enclosed nucleus and compartments such as mitochondria and ER. Bacteria and archaea are prokaryotes: their DNA is not inside a nucleus. Both groups have membranes, DNA, cytoplasm and ribosomes.",
+      "sources": [
+        "BIO-PROKARYOTE"
+      ],
+      "followups": [
+        "Do bacteria have ribosomes?"
+      ]
+    },
+    {
+      "id": "cell-plant-animal",
+      "question": "What would change if this were a plant cell?",
+      "aliases": [
+        "plant versus animal cell",
+        "do plants have mitochondria"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cell organization"
+      ],
+      "answer": "A typical photosynthetic plant cell also has a cellulose-rich wall, plastids such as chloroplasts and a large central vacuole. It still has a membrane, nucleus, mitochondria, ER and Golgi. Not every plant cell has chloroplasts.",
+      "sources": [
+        "BIO-EUKARYOTE"
+      ],
+      "followups": [
+        "What does a chloroplast do?"
+      ]
+    },
+    {
+      "id": "cell-model-limits",
+      "question": "Is the cell model the actual color and scale of a cell?",
+      "aliases": [
+        "model scale",
+        "organelle colors"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Scientific models"
+      ],
+      "answer": "No. Colors identify parts, and sizes and spacing are adjusted for visibility. Real cells are crowded, vary in shape and change over time. Use the model to study relationships, then compare it with a labeled micrograph and its scale bar.",
+      "sources": [
+        "CELL-COMPARTMENTS"
+      ],
+      "followups": [
+        "Why are cells usually small?"
+      ]
+    },
+    {
+      "id": "cell-surface-area",
+      "question": "Why are cells usually small?",
+      "aliases": [
+        "surface area to volume ratio",
+        "why cells small"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cell organization"
+      ],
+      "answer": "As a similarly shaped cell grows, volume increases faster than surface area. More interior then depends on each unit of exchange surface. Folding, shape changes and transport systems help, but diffusion distances and exchange demands still matter.",
+      "sources": [
+        "BIO-EUKARYOTE"
+      ],
+      "followups": [
+        "What is active transport?"
+      ]
+    },
+    {
+      "id": "membrane-function",
+      "question": "What does the plasma membrane do?",
+      "aliases": [
+        "cell membrane function",
+        "plasma membrane job"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Membranes"
+      ],
+      "answer": "It separates the cell from its surroundings, regulates exchange, receives signals and helps cells attach to other structures. Its lipid bilayer is a selective barrier; transport proteins provide additional controlled routes.",
+      "sources": [
+        "CELL-MEMBRANE"
+      ],
+      "followups": [
+        "Why does a phospholipid bilayer form?",
+        "What can cross the lipid bilayer easily?"
+      ],
+      "partId": "membrane"
+    },
+    {
+      "id": "membrane-bilayer",
+      "question": "Why does a phospholipid bilayer form?",
+      "aliases": [
+        "hydrophilic head hydrophobic tail",
+        "why two layers"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Membranes"
+      ],
+      "answer": "Phospholipids have water-interacting heads and water-avoiding tails. In water, the tails tend to cluster away from water while heads face the aqueous surroundings. A bilayer places heads on both outer surfaces and tails mainly inside.",
+      "sources": [
+        "BIO-LIPID"
+      ],
+      "followups": [
+        "What does amphipathic mean?"
+      ],
+      "partId": "membrane"
+    },
+    {
+      "id": "membrane-fluid",
+      "question": "What does fluid mosaic mean?",
+      "aliases": [
+        "fluid mosaic model"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Membranes"
+      ],
+      "answer": "Fluid means many lipids and some proteins can move laterally within a membrane. Mosaic describes its varied components. Movement is constrained by factors such as attachments and local organization; the membrane is neither a solid shell nor an unrestricted liquid.",
+      "sources": [
+        "CELL-MEMBRANE"
+      ],
+      "followups": [
+        "How does cholesterol affect a membrane?"
+      ],
+      "partId": "membrane"
+    },
+    {
+      "id": "membrane-cholesterol",
+      "question": "How does cholesterol affect a membrane?",
+      "aliases": [
+        "cholesterol fluidity"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Membranes"
+      ],
+      "answer": "In animal membranes, cholesterol influences lipid packing, permeability and fluidity. It restrains some lipid motion at higher temperatures and can hinder tight packing at lower temperatures. Its effect depends on temperature and membrane composition.",
+      "sources": [
+        "BIO-LIPID"
+      ],
+      "followups": [
+        "What does fluid mosaic mean?"
+      ],
+      "partId": "membrane"
+    },
+    {
+      "id": "cytoplasm-cytosol",
+      "question": "Are cytoplasm and cytosol the same?",
+      "aliases": [
+        "cytoplasm vs cytosol"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cell organization"
+      ],
+      "answer": "Cytosol is the fluid portion outside membrane-enclosed organelles. Cytoplasm usually means the material outside the nucleus, including cytosol and the structures suspended in it. Glycolysis occurs in cytosol.",
+      "sources": [
+        "CELL-COMPARTMENTS"
+      ],
+      "followups": [
+        "Where does glycolysis happen?"
+      ],
+      "partId": "cytoplasm"
+    },
+    {
+      "id": "nucleus-function",
+      "question": "What does the nucleus do?",
+      "aliases": [
+        "nucleus function",
+        "control center"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Organelles"
+      ],
+      "answer": "It houses most of a eukaryotic cell’s DNA and separates nuclear DNA replication and transcription from cytoplasmic translation. Proteins and RNAs pass through nuclear pores. Mitochondria also contain DNA, so the nucleus does not hold every DNA molecule.",
+      "sources": [
+        "CELL-NUCLEUS"
+      ],
+      "followups": [
+        "What crosses a nuclear pore?"
+      ],
+      "partId": "nucleus"
+    },
+    {
+      "id": "nuclear-pore",
+      "question": "What crosses a nuclear pore?",
+      "aliases": [
+        "nuclear pore transport",
+        "how mRNA leaves nucleus"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Organelles"
+      ],
+      "answer": "Small substances can pass through pore channels, while larger cargo such as proteins and RNA-protein complexes uses regulated transport. For example, many nuclear proteins enter and processed mRNA leaves. DNA normally remains in the nucleus.",
+      "sources": [
+        "CELL-NUCLEUS"
+      ],
+      "followups": [
+        "How is RNA processed before translation?"
+      ],
+      "partId": "nucleus"
+    },
+    {
+      "id": "nucleolus-function",
+      "question": "What does the nucleolus make?",
+      "aliases": [
+        "nucleolus function",
+        "nucleolus vs nucleus"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Organelles"
+      ],
+      "answer": "It produces and processes much ribosomal RNA and assembles ribosomal subunits with proteins. Those subunits are exported and later join for translation. The nucleolus is not surrounded by its own membrane.",
+      "sources": [
+        "CELL-NUCLEOLUS"
+      ],
+      "followups": [
+        "What are ribosomes made of?"
+      ],
+      "partId": "nucleolus"
+    },
+    {
+      "id": "chromatin-chromosome",
+      "question": "How are chromatin and chromosomes related?",
+      "aliases": [
+        "chromatin vs chromosome",
+        "X shaped chromosome"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Chromosomes"
+      ],
+      "answer": "Chromatin is DNA with associated proteins. A chromosome is a DNA molecule packaged with proteins; its packaging changes during the cell cycle. The familiar compact X shape represents a replicated, highly condensed chromosome rather than its everyday appearance.",
+      "sources": [
+        "CELL-CHROMATIN"
+      ],
+      "followups": [
+        "What are sister chromatids?"
+      ],
+      "partId": "chromatin"
+    },
+    {
+      "id": "histone-nucleosome",
+      "question": "What is a nucleosome?",
+      "aliases": [
+        "histones",
+        "DNA packaging"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Chromosomes"
+      ],
+      "answer": "A nucleosome is a basic unit of eukaryotic chromatin: DNA wrapped around a core of histone proteins. This packaging helps organize DNA and affects how accessible it is to cellular machinery.",
+      "sources": [
+        "CELL-CHROMATIN"
+      ],
+      "followups": [
+        "How are chromatin and chromosomes related?"
+      ],
+      "partId": "chromatin"
+    },
+    {
+      "id": "ribosome-composition",
+      "question": "What are ribosomes made of?",
+      "aliases": [
+        "ribosome composition",
+        "rRNA protein"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Protein synthesis"
+      ],
+      "answer": "Ribosomes contain ribosomal RNA and proteins in large and small subunits. Their RNA has structural and catalytic roles. They are not enclosed by a lipid membrane.",
+      "sources": [
+        "CELL-RIBOSOME"
+      ],
+      "followups": [
+        "How does translation build a protein?"
+      ],
+      "partId": "ribosomes"
+    },
+    {
+      "id": "ribosome-free-bound",
+      "question": "Are free and ER-bound ribosomes different types?",
+      "aliases": [
+        "free versus bound ribosomes"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Protein sorting"
+      ],
+      "answer": "They are not permanently different ribosome types. A ribosome can bind the ER when its growing protein carries an appropriate targeting signal. Free ribosomes commonly make cytosolic proteins and proteins later imported into organelles.",
+      "sources": [
+        "CELL-ER"
+      ],
+      "followups": [
+        "Which proteins use the rough ER?"
+      ],
+      "partId": "ribosomes"
+    },
+    {
+      "id": "rough-er-route",
+      "question": "Which proteins use the rough ER?",
+      "aliases": [
+        "rough ER function",
+        "secreted protein pathway"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Protein sorting"
+      ],
+      "answer": "Many secreted proteins and proteins destined for the endomembrane system enter or insert into the ER while they are made. Targeting signals help select that route. A cytosolic enzyme generally does not travel through the ER and Golgi.",
+      "sources": [
+        "CELL-ER"
+      ],
+      "followups": [
+        "Trace a secreted protein through the cell."
+      ],
+      "partId": "rough-er"
+    },
+    {
+      "id": "rough-er-folding",
+      "question": "What happens to a protein inside the ER?",
+      "aliases": [
+        "ER protein folding",
+        "ER quality control"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Protein sorting"
+      ],
+      "answer": "The ER helps many proteins fold, form appropriate disulfide bonds and receive early carbohydrate modifications. Quality-control systems retain or remove many improperly folded proteins before export. These processes depend on the particular protein.",
+      "sources": [
+        "CELL-SORTING"
+      ],
+      "followups": [
+        "What does the Golgi apparatus do?"
+      ],
+      "partId": "rough-er"
+    },
+    {
+      "id": "smooth-er-function",
+      "question": "What does smooth ER do?",
+      "aliases": [
+        "smooth ER function",
+        "SER job"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Organelles"
+      ],
+      "answer": "Smooth ER supports lipid synthesis and specialized functions that vary by cell type. Examples include calcium storage and some detoxification reactions. It is connected with rough ER but lacks a dense covering of attached ribosomes.",
+      "sources": [
+        "BIO-EUKARYOTE"
+      ],
+      "followups": [
+        "What makes rough ER look rough?"
+      ],
+      "partId": "smooth-er"
+    },
+    {
+      "id": "rough-er-appearance",
+      "question": "What makes rough ER look rough?",
+      "aliases": [
+        "why rough endoplasmic reticulum rough"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Organelles"
+      ],
+      "answer": "Ribosomes attached to its cytosolic surface create the rough appearance in electron micrographs. The membrane itself is not textured like sandpaper. Those ribosomes are translating proteins directed into or across the ER membrane.",
+      "sources": [
+        "CELL-ER"
+      ],
+      "followups": [
+        "Are free and ER-bound ribosomes different types?"
+      ],
+      "partId": "rough-er"
+    },
+    {
+      "id": "golgi-function",
+      "question": "What does the Golgi apparatus do?",
+      "aliases": [
+        "Golgi function",
+        "cis trans Golgi"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Protein sorting"
+      ],
+      "answer": "The Golgi modifies and sorts selected proteins and lipids. Cargo from the ER reaches its cis side; processing and sorting direct it toward appropriate destinations, including secretion, the plasma membrane and the endosomal system.",
+      "sources": [
+        "CELL-GOLGI"
+      ],
+      "followups": [
+        "Trace a secreted protein through the cell."
+      ],
+      "partId": "golgi"
+    },
+    {
+      "id": "protein-secretory-path",
+      "question": "Trace a secreted protein through the cell.",
+      "aliases": [
+        "protein pathway",
+        "ER Golgi vesicle membrane",
+        "How do the rough ER and Golgi work together?",
+        "rough ER Golgi protein route"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Protein sorting"
+      ],
+      "answer": "For a typical secreted protein: translation begins, an ER-targeting signal brings the ribosome to rough ER, and the protein enters the ER. Cargo then travels to Golgi compartments and secretory vesicles, which fuse with the plasma membrane to release it.",
+      "sources": [
+        "CELL-SORTING"
+      ],
+      "followups": [
+        "What is exocytosis?"
+      ],
+      "partId": "vesicles"
+    },
+    {
+      "id": "vesicle-targeting",
+      "question": "How does a vesicle reach the right destination?",
+      "aliases": [
+        "vesicle transport",
+        "vesicle destination"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Protein sorting"
+      ],
+      "answer": "Cargo selection, coat proteins, molecular motors and membrane-recognition machinery contribute to the route. Matching fusion machinery helps a carrier fuse with a suitable target. The introductory model draws one simple path, but real trafficking includes recycling and several routes.",
+      "sources": [
+        "CELL-SORTING"
+      ],
+      "followups": [
+        "What does the cytoskeleton do?"
+      ],
+      "partId": "vesicles"
+    },
+    {
+      "id": "mitochondrion-structure",
+      "question": "What are the parts of a mitochondrion?",
+      "aliases": [
+        "mitochondrial matrix cristae",
+        "mitochondrion structure"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Organelles"
+      ],
+      "answer": "Identify outer membrane, intermembrane space, folded inner membrane and matrix. Cristae are folds of the inner membrane. Electron transport and ATP synthase are associated with the inner membrane; the matrix contains many metabolic enzymes and mitochondrial DNA.",
+      "sources": [
+        "CELL-MITOCHONDRIA"
+      ],
+      "followups": [
+        "Why does a mitochondrion have folds?"
+      ],
+      "partId": "mitochondria"
+    },
+    {
+      "id": "mitochondria-cristae",
+      "question": "Why does a mitochondrion have folds?",
+      "aliases": [
+        "cristae function",
+        "mitochondria folds"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Structure and function"
+      ],
+      "answer": "Cristae increase inner-membrane surface and organize the machinery used for oxidative phosphorylation. More visible folds in the model indicate membrane organization, not an exact prediction of ATP output.",
+      "sources": [
+        "CELL-MITOCHONDRIA"
+      ],
+      "followups": [
+        "How does ATP synthase work?"
+      ],
+      "partId": "mitochondria"
+    },
+    {
+      "id": "lysosome-acid",
+      "question": "Why is a lysosome acidic?",
+      "aliases": [
+        "lysosome pH",
+        "why lysosomes acidic"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Organelles"
+      ],
+      "answer": "Membrane proton pumps use energy to move H+ into the compartment. Its acidic environment supports lysosomal digestive enzymes. A separate membrane helps keep those conditions distinct from the cytosol.",
+      "sources": [
+        "CELL-LYSOSOME"
+      ],
+      "followups": [
+        "What is autophagy?"
+      ],
+      "partId": "lysosomes"
+    },
+    {
+      "id": "lysosome-autophagy",
+      "question": "What is autophagy?",
+      "aliases": [
+        "organelle recycling",
+        "autophagosome"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cell recycling"
+      ],
+      "answer": "Autophagy delivers portions of a cell’s own material for breakdown and recycling, often through lysosomes. For example, damaged components can be enclosed and delivered to degradative compartments. It is a regulated maintenance pathway, not simply the cell destroying itself.",
+      "sources": [
+        "CELL-LYSOSOME"
+      ],
+      "followups": [
+        "How is a peroxisome different from a lysosome?"
+      ],
+      "partId": "lysosomes"
+    },
+    {
+      "id": "peroxisome-lysosome",
+      "question": "How is a peroxisome different from a lysosome?",
+      "aliases": [
+        "peroxisome vs lysosome"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Organelles"
+      ],
+      "answer": "Lysosomes use acidic digestive chemistry to break down delivered material. Peroxisomes carry out selected oxidation reactions, including parts of lipid metabolism, and handle hydrogen peroxide with enzymes such as catalase. They are distinct compartments.",
+      "sources": [
+        "CELL-PEROXISOME"
+      ],
+      "followups": [
+        "Why can catalase help protect a cell?"
+      ],
+      "partId": "peroxisomes"
+    },
+    {
+      "id": "peroxisome-catalase",
+      "question": "Why can catalase help protect a cell?",
+      "aliases": [
+        "catalase hydrogen peroxide"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Enzymes"
+      ],
+      "answer": "Some peroxisomal reactions produce hydrogen peroxide. Catalase can convert hydrogen peroxide to water and oxygen, limiting its accumulation. The overall reaction is 2 H2O2 → 2 H2O + O2.",
+      "sources": [
+        "CELL-PEROXISOME"
+      ],
+      "followups": [
+        "How do enzymes speed reactions?"
+      ],
+      "partId": "peroxisomes"
+    },
+    {
+      "id": "cytoskeleton-function",
+      "question": "What does the cytoskeleton do?",
+      "aliases": [
+        "cytoskeleton function"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Structure and function"
+      ],
+      "answer": "It helps organize cell shape, position structures, move cargo and carry out cell division. It is dynamic: filaments can assemble, disassemble and interact with motor proteins as the cell’s tasks change.",
+      "sources": [
+        "CELL-SKELETON"
+      ],
+      "followups": [
+        "How do microtubules differ from actin filaments?"
+      ],
+      "partId": "cytoskeleton"
+    },
+    {
+      "id": "cytoskeleton-types",
+      "question": "How do microtubules differ from actin filaments?",
+      "aliases": [
+        "actin microtubules intermediate filaments"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Structure and function"
+      ],
+      "answer": "Microtubules are tubulin-based hollow structures used in transport, spindles and other systems. Actin filaments are thinner polymers involved in the cell cortex, movement and contraction. Intermediate filaments often provide mechanical resilience. Their jobs overlap through interacting proteins.",
+      "sources": [
+        "CELL-FILAMENTS"
+      ],
+      "followups": [
+        "How do motor proteins move cargo?"
+      ],
+      "partId": "cytoskeleton"
+    },
+    {
+      "id": "cytoskeleton-motors",
+      "question": "How do motor proteins move cargo?",
+      "aliases": [
+        "kinesin dynein myosin"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cell movement"
+      ],
+      "answer": "Motors couple chemical energy, usually from ATP hydrolysis, to changes in shape that move along a filament. Kinesins and dyneins commonly work with microtubules; myosins work with actin. Direction and cargo depend on the motor.",
+      "sources": [
+        "CELL-FILAMENTS"
+      ],
+      "followups": [
+        "What is ATP?"
+      ],
+      "partId": "cytoskeleton"
+    },
+    {
+      "id": "bacteria-ribosomes",
+      "question": "Do bacteria have ribosomes?",
+      "aliases": [
+        "prokaryote ribosome"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cell organization"
+      ],
+      "answer": "Yes. Bacteria translate mRNA using ribosomes even though they have no nucleus or rough ER. Their ribosomes differ from cytosolic eukaryotic ribosomes. The absence of membrane-bound organelles does not mean the absence of organized cellular machinery.",
+      "sources": [
+        "BIO-PROKARYOTE"
+      ],
+      "followups": [
+        "How are prokaryotic and eukaryotic cells different?"
+      ]
+    },
+    {
+      "id": "cell-organelle-biomolecule",
+      "question": "Is an organelle a biomolecule?",
+      "aliases": [
+        "organelle versus molecule",
+        "what are organelles made of"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Biomolecules"
+      ],
+      "answer": "No. An organelle is a cellular structure or compartment made from many molecules. A mitochondrion, for example, contains lipids, proteins, nucleic acids, water and small molecules. Do not label an entire organelle as one polymer.",
+      "sources": [
+        "CELL-COMPARTMENTS"
+      ],
+      "followups": [
+        "What are the four major biomolecule groups?"
+      ]
+    },
+    {
+      "id": "bio-molecule-groups",
+      "question": "What are the four major biomolecule groups?",
+      "aliases": [
+        "macromolecules",
+        "four biological molecules"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Biomolecules"
+      ],
+      "answer": "Introductory biology commonly groups biomolecules as carbohydrates, lipids, proteins and nucleic acids. This is a useful organizing framework, but these families differ: lipids do not share one universal monomer-polymer pattern.",
+      "sources": [
+        "BIO-CARB",
+        "BIO-LIPID",
+        "BIO-PROTEIN",
+        "BIO-NUCLEIC"
+      ],
+      "followups": [
+        "Do all lipids have monomers?"
+      ]
+    },
+    {
+      "id": "bio-monomer-polymer",
+      "question": "What is the difference between a monomer and a polymer?",
+      "aliases": [
+        "monomer polymer difference"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Biomolecules"
+      ],
+      "answer": "A monomer is a building block that can join into a larger chain. A polymer contains many linked units. Amino acids form polypeptides; nucleotides form nucleic acids. Having several components does not automatically make a molecule a polymer.",
+      "sources": [
+        "BIO-PROTEIN",
+        "BIO-NUCLEIC"
+      ],
+      "followups": [
+        "Do all lipids have monomers?"
+      ]
+    },
+    {
+      "id": "carb-building-blocks",
+      "question": "What are the monomers and polymers of carbohydrates?",
+      "aliases": [
+        "carbohydrate monomer polymer",
+        "glucose starch glycogen cellulose"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Carbohydrates"
+      ],
+      "answer": "Monosaccharides such as glucose are simple sugars. Glycosidic bonds can link sugars into disaccharides or polysaccharides such as starch, glycogen and cellulose. These polymers differ in linkage patterns and branching, so the same sugar building block can support different functions.",
+      "sources": [
+        "BIO-CARB"
+      ],
+      "followups": [
+        "Why can humans digest starch but not cellulose?"
+      ]
+    },
+    {
+      "id": "carb-cellulose-starch",
+      "question": "Why can humans digest starch but not cellulose?",
+      "aliases": [
+        "starch vs cellulose",
+        "alpha beta glucose"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Carbohydrates"
+      ],
+      "answer": "Their glucose units have different glycosidic linkages. Human digestive enzymes break key linkages in starch but do not provide cellulase to break cellulose efficiently. Both are glucose polymers; linkage geometry changes biological behavior.",
+      "sources": [
+        "BIO-CARB"
+      ],
+      "followups": [
+        "What are the monomers and polymers of carbohydrates?"
+      ]
+    },
+    {
+      "id": "carb-glycogen",
+      "question": "Why is glycogen useful for energy storage?",
+      "aliases": [
+        "glycogen branching function"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Carbohydrates"
+      ],
+      "answer": "Glycogen is a branched glucose polymer. Many chain ends allow enzymes to add or remove glucose units at multiple locations. It stores a mobilizable fuel reserve; its branching is not the same as a membrane or structural fiber.",
+      "sources": [
+        "BIO-CARB"
+      ],
+      "followups": [
+        "Where does glycolysis happen?"
+      ]
+    },
+    {
+      "id": "lipid-no-universal-monomer",
+      "question": "Do all lipids have monomers?",
+      "aliases": [
+        "lipid monomer polymer",
+        "lipids not polymers"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Lipids"
+      ],
+      "answer": "No. Lipids are a chemically varied group defined partly by their limited solubility in water. A triglyceride contains glycerol and three fatty acids, but that does not make all lipids repeating polymers of those components. Steroids have a different ring-based structure.",
+      "sources": [
+        "BIO-LIPID"
+      ],
+      "followups": [
+        "How is a triglyceride different from a phospholipid?"
+      ]
+    },
+    {
+      "id": "lipid-triglyceride-phospholipid",
+      "question": "How is a triglyceride different from a phospholipid?",
+      "aliases": [
+        "fat vs phospholipid",
+        "triglyceride structure"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Lipids"
+      ],
+      "answer": "A triglyceride has glycerol linked to three fatty acids and commonly stores energy. A typical glycerophospholipid has two fatty-acid tails and a phosphate-containing head group. Its amphipathic structure helps it form membranes.",
+      "sources": [
+        "BIO-LIPID"
+      ],
+      "followups": [
+        "What does amphipathic mean?"
+      ]
+    },
+    {
+      "id": "lipid-amphipathic",
+      "question": "What does amphipathic mean?",
+      "aliases": [
+        "amphiphilic",
+        "hydrophilic hydrophobic"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Lipids"
+      ],
+      "answer": "An amphipathic molecule has both water-interacting and water-avoiding regions. Membrane phospholipids are examples. This mixed character explains why they can organize into bilayers in an aqueous environment.",
+      "sources": [
+        "CELL-MEMBRANE"
+      ],
+      "followups": [
+        "Why does a phospholipid bilayer form?"
+      ]
+    },
+    {
+      "id": "lipid-saturation",
+      "question": "How do saturated and unsaturated fatty acids differ?",
+      "aliases": [
+        "saturated vs unsaturated",
+        "cis double bond kink"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Lipids"
+      ],
+      "answer": "Saturated fatty-acid chains have no carbon-carbon double bonds. Unsaturated chains have one or more; cis double bonds commonly introduce bends that reduce close packing. Chain length, double-bond geometry and mixture composition all affect physical behavior.",
+      "sources": [
+        "BIO-LIPID"
+      ],
+      "followups": [
+        "How does cholesterol affect a membrane?"
+      ]
+    },
+    {
+      "id": "protein-building-blocks",
+      "question": "What are the building blocks of proteins?",
+      "aliases": [
+        "protein monomer polymer",
+        "amino acid structure"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Proteins"
+      ],
+      "answer": "Amino acids are linked by peptide bonds into polypeptides. Each amino acid has an amino group, a carboxyl group and a variable side chain attached to a central carbon. Side-chain properties influence folding and interactions.",
+      "sources": [
+        "BIO-PROTEIN"
+      ],
+      "followups": [
+        "What are the levels of protein structure?"
+      ]
+    },
+    {
+      "id": "protein-structure-levels",
+      "question": "What are the levels of protein structure?",
+      "aliases": [
+        "primary secondary tertiary quaternary"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Proteins"
+      ],
+      "answer": "Primary structure is amino-acid sequence. Secondary structure includes local patterns such as alpha helices and beta sheets. Tertiary structure is a chain’s overall folded organization. Quaternary structure describes the arrangement of multiple polypeptide subunits when present.",
+      "sources": [
+        "BIO-PROTEIN"
+      ],
+      "followups": [
+        "What happens when a protein denatures?"
+      ]
+    },
+    {
+      "id": "protein-denaturation",
+      "question": "What happens when a protein denatures?",
+      "aliases": [
+        "denature protein",
+        "heat protein shape"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Proteins"
+      ],
+      "answer": "Its usual folded organization is disrupted, often reducing function. Heat, pH changes or chemicals can alter stabilizing interactions. Denaturation does not necessarily break the peptide bonds of its primary sequence, and recovery depends on the protein and conditions.",
+      "sources": [
+        "BIO-PROTEIN"
+      ],
+      "followups": [
+        "How does temperature affect an enzyme?"
+      ]
+    },
+    {
+      "id": "nucleic-nucleotide",
+      "question": "What are the parts of a nucleotide?",
+      "aliases": [
+        "nucleotide monomer",
+        "nucleoside nucleotide difference"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Nucleic acids"
+      ],
+      "answer": "A nucleotide contains a nitrogenous base, a five-carbon sugar and one or more phosphate groups. DNA and RNA strands contain linked nucleotide units. A nucleoside has the base and sugar without the phosphate group.",
+      "sources": [
+        "BIO-NUCLEIC"
+      ],
+      "followups": [
+        "How are DNA and RNA different?"
+      ]
+    },
+    {
+      "id": "water-polarity",
+      "question": "Why is water polar?",
+      "aliases": [
+        "water bent polar",
+        "H2O polarity"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Water and polarity"
+      ],
+      "answer": "Oxygen attracts shared electrons more strongly than hydrogen, and water has a bent shape. The bond dipoles therefore do not cancel. Its partial charges allow hydrogen bonding and influence how ions and polar molecules interact with it.",
+      "sources": [
+        "BIO-WATER",
+        "CHEM-SHAPE"
+      ],
+      "followups": [
+        "How is a hydrogen bond different from a covalent bond?"
+      ]
+    },
+    {
+      "id": "water-hydrogen-bond",
+      "question": "How is a hydrogen bond different from a covalent bond?",
+      "aliases": [
+        "hydrogen versus covalent bond"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Water and polarity"
+      ],
+      "answer": "A covalent bond involves shared electrons between bonded atoms. A hydrogen bond is an attraction involving a hydrogen bonded to an electronegative atom and an appropriate electron-rich partner. In water, the O–H bonds are covalent; attractions between molecules include hydrogen bonds.",
+      "sources": [
+        "BIO-WATER"
+      ],
+      "followups": [
+        "Why is water polar?"
+      ]
+    },
+    {
+      "id": "bio-hydrolysis",
+      "question": "How do dehydration synthesis and hydrolysis differ?",
+      "aliases": [
+        "dehydration synthesis vs hydrolysis",
+        "condensation"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Biomolecules"
+      ],
+      "answer": "In an introductory condensation model, linking building blocks releases water. Hydrolysis uses water to split a bond. Actual cellular synthesis often uses activated intermediates and enzymes, so a water-drop animation is a conceptual summary rather than a complete reaction mechanism.",
+      "sources": [
+        "BIO-CARB",
+        "BIO-PROTEIN"
+      ],
+      "followups": [
+        "What is the difference between a monomer and a polymer?"
+      ]
+    },
+    {
+      "id": "enzyme-catalysis",
+      "question": "How do enzymes speed reactions?",
+      "aliases": [
+        "enzyme activation energy",
+        "catalyst"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Enzymes"
+      ],
+      "answer": "Enzymes provide a lower-activation-energy pathway. They do not change a reaction’s overall free-energy difference or equilibrium position. Most enzymes are proteins; some catalytic RNAs also function as enzymes.",
+      "sources": [
+        "BIO-ENZYME"
+      ],
+      "followups": [
+        "What does an enzyme active site do?"
+      ],
+      "chart": "energy"
+    },
+    {
+      "id": "enzyme-active-site",
+      "question": "What does an enzyme active site do?",
+      "aliases": [
+        "substrate active site",
+        "induced fit"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Enzymes"
+      ],
+      "answer": "It binds appropriate substrates and provides a chemical environment that supports the reaction. Binding and catalysis involve molecular shape and interactions, and the enzyme can change conformation. A rigid lock-and-key picture is only an introductory analogy.",
+      "sources": [
+        "BIO-ENZYME"
+      ],
+      "followups": [
+        "Why does enzyme rate level off at high substrate?"
+      ]
+    },
+    {
+      "id": "enzyme-saturation",
+      "question": "Why does enzyme rate level off at high substrate?",
+      "aliases": [
+        "enzyme saturation",
+        "Michaelis Menten"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Enzymes"
+      ],
+      "answer": "For a simple fixed-enzyme system, increasing substrate eventually leaves most active sites occupied. Reaction rate approaches a maximum set by enzyme amount and turnover. A saturation curve assumes conditions such as stable temperature and no major product inhibition.",
+      "sources": [
+        "BIO-ENZYME"
+      ],
+      "followups": [
+        "How does temperature affect an enzyme?"
+      ],
+      "chart": "enzyme"
+    },
+    {
+      "id": "enzyme-temperature",
+      "question": "How does temperature affect an enzyme?",
+      "aliases": [
+        "enzyme heat denaturation",
+        "enzyme optimum temperature"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Enzymes"
+      ],
+      "answer": "Warming can increase reaction rate over part of an enzyme’s working range. Excessive heat can disrupt its functional structure and lower activity. There is no single optimum temperature for all enzymes; the protein and experimental conditions matter.",
+      "sources": [
+        "BIO-ENZYME"
+      ],
+      "followups": [
+        "What happens when a protein denatures?"
+      ]
+    },
+    {
+      "id": "enzyme-ph",
+      "question": "Why can pH change enzyme activity?",
+      "aliases": [
+        "pH enzyme optimum"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Enzymes"
+      ],
+      "answer": "pH affects the protonation and charge of chemical groups, including groups used for binding and catalysis. Large shifts may also disrupt structure. Different enzymes operate best under different conditions, such as acidic lysosomal conditions versus cytosolic conditions.",
+      "sources": [
+        "CELL-LYSOSOME",
+        "BIO-ENZYME"
+      ],
+      "followups": [
+        "Why is a lysosome acidic?"
+      ]
+    },
+    {
+      "id": "transport-diffusion",
+      "question": "What is diffusion?",
+      "aliases": [
+        "diffussion",
+        "diffusion definition"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Transport"
+      ],
+      "answer": "Diffusion is spreading caused by random molecular motion. With a concentration difference, there is net movement from higher to lower concentration. Molecules continue moving in both directions even when there is no net change.",
+      "sources": [
+        "BIO-PASSIVE"
+      ],
+      "followups": [
+        "Does molecular movement stop at equilibrium?"
+      ]
+    },
+    {
+      "id": "transport-equilibrium",
+      "question": "Does molecular movement stop at equilibrium?",
+      "aliases": [
+        "dynamic equilibrium molecules stop"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Transport"
+      ],
+      "answer": "No. Molecules continue moving randomly. At dynamic equilibrium, opposing movements balance so there is no net concentration change under stable conditions. Equal net flow does not mean every molecule is stationary.",
+      "sources": [
+        "BIO-PASSIVE"
+      ],
+      "followups": [
+        "What is diffusion?"
+      ]
+    },
+    {
+      "id": "transport-simple-facilitated",
+      "question": "How are simple and facilitated diffusion different?",
+      "aliases": [
+        "simple versus facilitated diffusion"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Transport"
+      ],
+      "answer": "Simple diffusion crosses the lipid bilayer directly. Facilitated diffusion uses a channel or carrier protein. Both are passive: movement follows the relevant gradient rather than being driven uphill by a coupled energy source.",
+      "sources": [
+        "TRANSPORT-SMALL"
+      ],
+      "followups": [
+        "What can cross the lipid bilayer easily?"
+      ],
+      "partId": "membrane"
+    },
+    {
+      "id": "transport-permeability",
+      "question": "What can cross the lipid bilayer easily?",
+      "aliases": [
+        "membrane permeability",
+        "can glucose cross membrane"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Transport"
+      ],
+      "answer": "Small nonpolar molecules such as O2 and CO2 cross relatively easily. Ions and large polar solutes usually need transport proteins. Water can cross the bilayer, and aquaporins greatly increase its movement in many membranes.",
+      "sources": [
+        "TRANSPORT-SMALL"
+      ],
+      "followups": [
+        "What do aquaporins do?"
+      ],
+      "partId": "membrane"
+    },
+    {
+      "id": "transport-channel-carrier",
+      "question": "How is a channel different from a carrier?",
+      "aliases": [
+        "channel vs carrier protein"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Transport"
+      ],
+      "answer": "A channel provides a selective passage when open. A carrier binds a solute and changes shape to move it across. Some carriers are passive and others participate in active transport; the word protein alone does not tell you the energy direction.",
+      "sources": [
+        "TRANSPORT-SMALL"
+      ],
+      "followups": [
+        "What is active transport?"
+      ],
+      "partId": "membrane"
+    },
+    {
+      "id": "transport-osmosis",
+      "question": "What is osmosis?",
+      "aliases": [
+        "osmosis water",
+        "which way does water move"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Osmosis"
+      ],
+      "answer": "Osmosis is net water movement across a selectively permeable membrane driven by a difference in water’s chemical potential. In a simple equal-pressure setup with an impermeant solute, water moves toward the side with more effective solute particles.",
+      "sources": [
+        "BIO-PASSIVE"
+      ],
+      "followups": [
+        "What is the difference between osmolarity and tonicity?"
+      ],
+      "chart": "osmosis"
+    },
+    {
+      "id": "transport-tonicity",
+      "question": "What is the difference between osmolarity and tonicity?",
+      "aliases": [
+        "tonicity vs osmolarity",
+        "isotonic isosmotic"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Osmosis"
+      ],
+      "answer": "Osmolarity counts dissolved particles per solution volume. Tonicity predicts sustained cell-volume effects and depends on solutes that do not readily cross the relevant membrane. An equal-osmolar solution is not automatically isotonic if its solute penetrates the cell.",
+      "sources": [
+        "BIO-PASSIVE"
+      ],
+      "followups": [
+        "What happens to an animal cell in a hypertonic solution?"
+      ],
+      "chart": "osmosis"
+    },
+    {
+      "id": "transport-hypertonic",
+      "question": "What happens to an animal cell in a hypertonic solution?",
+      "aliases": [
+        "hypertonic shrink",
+        "water leaves cell"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Osmosis"
+      ],
+      "answer": "Relative to that cell and membrane, a hypertonic solution has a greater effective concentration of nonpenetrating solutes outside. Net water loss makes the cell shrink. State which membrane and solutes are involved before predicting the result.",
+      "sources": [
+        "BIO-PASSIVE"
+      ],
+      "followups": [
+        "What happens in a hypotonic solution?"
+      ],
+      "chart": "osmosis"
+    },
+    {
+      "id": "transport-hypotonic",
+      "question": "What happens in a hypotonic solution?",
+      "aliases": [
+        "hypotonic swell",
+        "plant turgor"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Osmosis"
+      ],
+      "answer": "An animal cell tends to gain water and may swell or lyse if the volume increase is excessive. A plant cell’s wall resists expansion, allowing turgor pressure to build. The prediction assumes a membrane permeable to water and effectively nonpenetrating solutes.",
+      "sources": [
+        "BIO-PASSIVE",
+        "BIO-EUKARYOTE"
+      ],
+      "followups": [
+        "Does isotonic mean water stops moving?"
+      ],
+      "chart": "osmosis"
+    },
+    {
+      "id": "transport-isotonic",
+      "question": "Does isotonic mean water stops moving?",
+      "aliases": [
+        "isotonic water movement"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Osmosis"
+      ],
+      "answer": "No. Isotonic conditions produce no sustained net volume change due to the effective solute difference. Water still moves in both directions. Isotonic is a relationship between a solution, a cell and its membrane permeability.",
+      "sources": [
+        "BIO-PASSIVE"
+      ],
+      "followups": [
+        "Does molecular movement stop at equilibrium?"
+      ],
+      "chart": "osmosis"
+    },
+    {
+      "id": "transport-aquaporin",
+      "question": "What do aquaporins do?",
+      "aliases": [
+        "water channel",
+        "aquaporins ATP"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Transport"
+      ],
+      "answer": "Aquaporins are membrane channel proteins that increase water permeability. Water still follows its driving gradient; an aquaporin does not pump water using ATP. Different aquaporin family members vary in what else they can transport.",
+      "sources": [
+        "TRANSPORT-PRINCIPLES"
+      ],
+      "followups": [
+        "What is osmosis?"
+      ],
+      "partId": "membrane"
+    },
+    {
+      "id": "transport-active",
+      "question": "What is active transport?",
+      "aliases": [
+        "active vs passive",
+        "primary secondary active transport"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Transport"
+      ],
+      "answer": "Active transport moves a substance against its electrochemical gradient by coupling movement to an energy source. Primary active transport can use ATP directly. Secondary active transport uses an ion gradient established by other energy-requiring processes.",
+      "sources": [
+        "BIO-ACTIVE"
+      ],
+      "followups": [
+        "What does the sodium-potassium pump do?"
+      ],
+      "partId": "membrane"
+    },
+    {
+      "id": "transport-electrochemical",
+      "question": "Why do ions need an electrochemical gradient?",
+      "aliases": [
+        "electrochemical versus concentration gradient",
+        "membrane potential"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Transport"
+      ],
+      "answer": "An ion responds to both concentration differences and electrical potential differences. These can reinforce or oppose each other. Predicting ion movement from concentration alone may give the wrong direction.",
+      "sources": [
+        "TRANSPORT-PRINCIPLES"
+      ],
+      "followups": [
+        "What is active transport?"
+      ],
+      "partId": "membrane"
+    },
+    {
+      "id": "transport-sodium-potassium",
+      "question": "What does the sodium-potassium pump do?",
+      "aliases": [
+        "Na K pump",
+        "3 sodium 2 potassium"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Transport"
+      ],
+      "answer": "The usual cycle uses ATP to move three Na+ out and two K+ into an animal cell. It maintains gradients used by other processes and contributes to electrical charge separation. It is a primary active transporter.",
+      "sources": [
+        "BIO-ACTIVE"
+      ],
+      "followups": [
+        "How can glucose move uphill without directly using ATP?"
+      ],
+      "partId": "membrane"
+    },
+    {
+      "id": "transport-cotransport",
+      "question": "How can glucose move uphill without directly using ATP?",
+      "aliases": [
+        "secondary active transport glucose",
+        "symport"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Transport"
+      ],
+      "answer": "In sodium-glucose cotransport, downhill Na+ movement is coupled to uphill glucose movement. The Na+ gradient is maintained by an ATP-dependent pump elsewhere in the system. The cotransporter’s lack of direct ATP hydrolysis does not make the process energetically free.",
+      "sources": [
+        "BIO-ACTIVE"
+      ],
+      "followups": [
+        "What does the sodium-potassium pump do?"
+      ],
+      "partId": "membrane"
+    },
+    {
+      "id": "transport-endocytosis",
+      "question": "What is endocytosis?",
+      "aliases": [
+        "phagocytosis pinocytosis receptor mediated"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Bulk transport"
+      ],
+      "answer": "The plasma membrane bends inward and forms an internal carrier containing material from outside. Variants include uptake of large particles, fluid and receptor-selected cargo. This is bulk membrane trafficking rather than a solute passing through a channel.",
+      "sources": [
+        "BIO-BULK"
+      ],
+      "followups": [
+        "What is exocytosis?"
+      ],
+      "partId": "vesicles"
+    },
+    {
+      "id": "transport-exocytosis",
+      "question": "What is exocytosis?",
+      "aliases": [
+        "vesicle release secretion"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Bulk transport"
+      ],
+      "answer": "A vesicle fuses with the plasma membrane, releasing soluble cargo outside and adding its membrane to the cell surface. Secreted proteins can leave by this route. It is not the same as diffusion through the bilayer.",
+      "sources": [
+        "BIO-BULK"
+      ],
+      "followups": [
+        "Trace a secreted protein through the cell."
+      ],
+      "partId": "vesicles"
+    },
+    {
+      "id": "energy-atp",
+      "question": "What is ATP?",
+      "aliases": [
+        "adenosine triphosphate",
+        "ATP energy currency"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cellular energy"
+      ],
+      "answer": "ATP is adenosine triphosphate, a nucleotide used in energy coupling. Its hydrolysis can be linked to processes such as transport, movement and biosynthesis. Cells continually regenerate ATP from ADP and phosphate rather than storing all long-term fuel as ATP.",
+      "sources": [
+        "BIO-ATP"
+      ],
+      "followups": [
+        "Does breaking an ATP bond release energy?"
+      ]
+    },
+    {
+      "id": "energy-atp-bond",
+      "question": "Does breaking an ATP bond release energy?",
+      "aliases": [
+        "high energy bond misconception"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cellular energy"
+      ],
+      "answer": "Breaking a bond requires energy. ATP hydrolysis is favorable overall because forming and stabilizing the products, including interactions with water, more than offsets the inputs under cellular conditions. Avoid saying that bond-breaking alone releases energy.",
+      "sources": [
+        "BIO-ATP"
+      ],
+      "followups": [
+        "What is activation energy?"
+      ]
+    },
+    {
+      "id": "energy-activation",
+      "question": "What is activation energy?",
+      "aliases": [
+        "activation energy vs delta G"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cellular energy"
+      ],
+      "answer": "It is the energy barrier between reactants and the transition-state region on a reaction pathway. A reaction may be favorable overall yet proceed slowly because that barrier is high. Catalysts lower the barrier without changing the overall reactant-to-product free-energy difference.",
+      "sources": [
+        "BIO-ENERGY"
+      ],
+      "followups": [
+        "How do enzymes speed reactions?"
+      ],
+      "chart": "energy"
+    },
+    {
+      "id": "respiration-purpose",
+      "question": "What is the purpose of cellular respiration?",
+      "aliases": [
+        "respiration overview",
+        "why cells respire"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cellular respiration"
+      ],
+      "answer": "Cellular respiration transfers electrons from fuel to an electron acceptor through pathways that help conserve usable energy. In aerobic respiration, oxygen is the terminal acceptor. Much captured energy supports ATP production; some energy is dispersed as heat.",
+      "sources": [
+        "ENERGY-METABOLIC"
+      ],
+      "followups": [
+        "How is cellular respiration different from breathing?"
+      ]
+    },
+    {
+      "id": "respiration-breathing",
+      "question": "How is cellular respiration different from breathing?",
+      "aliases": [
+        "breathing vs respiration"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cellular respiration"
+      ],
+      "answer": "Breathing moves air into and out of a respiratory system. Cellular respiration is cellular chemical processing of fuel and electron transfer. Breathing can supply oxygen and remove carbon dioxide for those cells, but it is not the same process.",
+      "sources": [
+        "ENERGY-METABOLIC"
+      ],
+      "followups": [
+        "Where does glycolysis happen?"
+      ]
+    },
+    {
+      "id": "respiration-glycolysis",
+      "question": "Where does glycolysis happen?",
+      "aliases": [
+        "glycolysis location products",
+        "does glycolysis need oxygen"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Glycolysis"
+      ],
+      "answer": "Glycolysis occurs in the cytosol. One glucose is converted into two pyruvate molecules, with a net two ATP and two NADH in the standard pathway. Oxygen is not a direct reactant in glycolysis.",
+      "sources": [
+        "BIO-GLYCOLYSIS"
+      ],
+      "followups": [
+        "Why is glycolysis called a net gain of two ATP?"
+      ],
+      "partId": "cytoplasm"
+    },
+    {
+      "id": "respiration-glycolysis-net",
+      "question": "Why is glycolysis called a net gain of two ATP?",
+      "aliases": [
+        "glycolysis ATP investment payoff"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Glycolysis"
+      ],
+      "answer": "The standard pathway invests two ATP and later produces four ATP per glucose. Four produced minus two used gives a net gain of two. Track glucose-level totals rather than counting only the payoff phase.",
+      "sources": [
+        "BIO-GLYCOLYSIS"
+      ],
+      "followups": [
+        "What is substrate-level phosphorylation?"
+      ]
+    },
+    {
+      "id": "respiration-substrate-atp",
+      "question": "What is substrate-level phosphorylation?",
+      "aliases": [
+        "substrate level vs oxidative phosphorylation"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cellular respiration"
+      ],
+      "answer": "An enzyme transfers a phosphate group from a phosphorylated substrate directly to ADP or another nucleotide diphosphate. This produces ATP or an equivalent nucleotide triphosphate without requiring ATP synthase and a membrane proton gradient for that step.",
+      "sources": [
+        "BIO-GLYCOLYSIS"
+      ],
+      "followups": [
+        "How does ATP synthase work?"
+      ]
+    },
+    {
+      "id": "respiration-pyruvate",
+      "question": "What happens during pyruvate oxidation?",
+      "aliases": [
+        "link reaction",
+        "pyruvate acetyl CoA"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cellular respiration"
+      ],
+      "answer": "In the standard aerobic eukaryotic route, pyruvate enters mitochondria and is converted to acetyl-CoA, producing CO2 and NADH. Per glucose, two pyruvates give two acetyl-CoA, two CO2 and two NADH. This links glycolysis with the citric acid cycle.",
+      "sources": [
+        "BIO-CYCLE"
+      ],
+      "followups": [
+        "What does the citric acid cycle produce?"
+      ],
+      "partId": "mitochondria"
+    },
+    {
+      "id": "respiration-citric-cycle",
+      "question": "What does the citric acid cycle produce?",
+      "aliases": [
+        "Krebs cycle",
+        "TCA products"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cellular respiration"
+      ],
+      "answer": "Per acetyl-CoA entering the standard cycle, the main accounting is two CO2, three NADH, one FADH2 and one ATP or GTP equivalent. Oxaloacetate is regenerated. Per glucose, this cycle normally turns twice.",
+      "sources": [
+        "BIO-CYCLE"
+      ],
+      "followups": [
+        "Why are NADH and FADH2 important?"
+      ],
+      "partId": "mitochondria"
+    },
+    {
+      "id": "respiration-electron-carriers",
+      "question": "Why are NADH and FADH2 important?",
+      "aliases": [
+        "NAD NADH FAD FADH2"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cellular respiration"
+      ],
+      "answer": "They carry electrons extracted during fuel oxidation. Electron transfer to the respiratory chain helps drive formation of a proton gradient. NAD+ and FAD must be regenerated for the upstream pathways to keep operating.",
+      "sources": [
+        "BIO-CYCLE"
+      ],
+      "followups": [
+        "What does the electron transport chain do?"
+      ]
+    },
+    {
+      "id": "respiration-etc",
+      "question": "What does the electron transport chain do?",
+      "aliases": [
+        "ETC function",
+        "electron transport chain location"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Oxidative phosphorylation"
+      ],
+      "answer": "In mitochondria, membrane complexes transfer electrons toward oxygen. Energy from parts of this transfer drives H+ pumping from the matrix toward the intermembrane space. The resulting electrochemical gradient can power ATP synthase.",
+      "sources": [
+        "BIO-ETC"
+      ],
+      "followups": [
+        "How does ATP synthase work?"
+      ],
+      "partId": "mitochondria"
+    },
+    {
+      "id": "respiration-atp-synthase",
+      "question": "How does ATP synthase work?",
+      "aliases": [
+        "chemiosmosis",
+        "proton gradient ATP"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Oxidative phosphorylation"
+      ],
+      "answer": "ATP synthase couples downhill H+ movement through the enzyme to conformational changes that support ATP formation from ADP and phosphate. In respiring mitochondria, protons return toward the matrix. The gradient, not oxygen binding to ATP synthase, supplies the immediate driving force.",
+      "sources": [
+        "BIO-ETC"
+      ],
+      "followups": [
+        "Why does aerobic respiration need oxygen?"
+      ],
+      "partId": "mitochondria"
+    },
+    {
+      "id": "respiration-oxygen",
+      "question": "Why does aerobic respiration need oxygen?",
+      "aliases": [
+        "terminal electron acceptor",
+        "oxygen role"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cellular respiration"
+      ],
+      "answer": "Oxygen accepts electrons at the end of the mitochondrial respiratory chain and is reduced to water. Without a suitable terminal acceptor, the chain cannot sustain its normal electron flow and proton pumping. Oxygen is not directly consumed by glycolysis.",
+      "sources": [
+        "BIO-ETC"
+      ],
+      "followups": [
+        "How does fermentation keep glycolysis going?"
+      ]
+    },
+    {
+      "id": "respiration-atp-yield",
+      "question": "How many ATP does one glucose produce?",
+      "aliases": [
+        "ATP yield 36 38 30 32"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cellular respiration"
+      ],
+      "answer": "A common modern teaching estimate for complete aerobic oxidation in a eukaryotic cell is about 30–32 ATP, but yield varies with shuttle systems, coupling and cellular conditions. Use your course’s stated assumptions; do not treat any single number as a universal constant.",
+      "sources": [
+        "ENERGY-MITO"
+      ],
+      "followups": [
+        "Why is glycolysis called a net gain of two ATP?"
+      ]
+    },
+    {
+      "id": "respiration-fermentation",
+      "question": "How does fermentation keep glycolysis going?",
+      "aliases": [
+        "fermentation purpose NAD+",
+        "anaerobic glycolysis"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Fermentation"
+      ],
+      "answer": "Fermentation reoxidizes NADH to NAD+ by transferring electrons to an organic molecule. Regenerated NAD+ allows glycolysis to continue. The familiar lactate and alcohol pathways do not add ATP beyond the net ATP made by glycolysis.",
+      "sources": [
+        "BIO-FERMENT"
+      ],
+      "followups": [
+        "How do lactate and alcohol fermentation differ?"
+      ]
+    },
+    {
+      "id": "respiration-ferment-types",
+      "question": "How do lactate and alcohol fermentation differ?",
+      "aliases": [
+        "lactic acid vs alcohol fermentation",
+        "ethanol lactate"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Fermentation"
+      ],
+      "answer": "Lactate fermentation reduces pyruvate to lactate while regenerating NAD+. Alcohol fermentation first releases CO2 from pyruvate and then reduces the remaining product to ethanol, also regenerating NAD+. These are simplified pathway summaries, not all anaerobic metabolism.",
+      "sources": [
+        "BIO-FERMENT"
+      ],
+      "followups": [
+        "Is fermentation the same as anaerobic respiration?"
+      ]
+    },
+    {
+      "id": "respiration-anaerobic",
+      "question": "Is fermentation the same as anaerobic respiration?",
+      "aliases": [
+        "anaerobic respiration vs fermentation"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Fermentation"
+      ],
+      "answer": "No. Fermentation does not use a respiratory electron transport chain for its defining NAD+ regeneration step. Anaerobic respiration uses an electron transport chain with a terminal acceptor other than oxygen. Both can occur without oxygen, but their mechanisms differ.",
+      "sources": [
+        "BIO-FERMENT"
+      ],
+      "followups": [
+        "How does fermentation keep glycolysis going?"
+      ]
+    },
+    {
+      "id": "photosynthesis-chloroplast",
+      "question": "What does a chloroplast do?",
+      "aliases": [
+        "chloroplast thylakoid stroma"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Photosynthesis"
+      ],
+      "answer": "A chloroplast supports photosynthesis. Light-dependent reactions use thylakoid membranes; the Calvin cycle occurs in the stroma. Chloroplasts contain their own DNA and ribosomes, but many required proteins are encoded by nuclear genes.",
+      "sources": [
+        "BIO-PHOTO-LIGHT"
+      ],
+      "followups": [
+        "What is produced by the light reactions?"
+      ]
+    },
+    {
+      "id": "photosynthesis-light",
+      "question": "What is produced by the light reactions?",
+      "aliases": [
+        "light dependent reactions",
+        "where photosynthetic oxygen comes from"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Photosynthesis"
+      ],
+      "answer": "In oxygen-producing photosynthesis, light-driven electron flow helps produce ATP and NADPH. Splitting water supplies electrons and releases O2. These products support carbon assimilation; the oxygen released comes from water rather than directly from CO2.",
+      "sources": [
+        "BIO-PHOTO-LIGHT"
+      ],
+      "followups": [
+        "What does the Calvin cycle make?"
+      ]
+    },
+    {
+      "id": "photosynthesis-calvin",
+      "question": "What does the Calvin cycle make?",
+      "aliases": [
+        "Calvin cycle dark reactions",
+        "carbon fixation"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Photosynthesis"
+      ],
+      "answer": "The Calvin cycle uses ATP and NADPH to help reduce fixed carbon into carbohydrate precursors such as G3P while regenerating RuBP. Calling it a dark reaction does not mean it runs only at night; it depends on light-reaction products and regulation.",
+      "sources": [
+        "BIO-PHOTO-CALVIN"
+      ],
+      "followups": [
+        "Do plants also perform cellular respiration?"
+      ]
+    },
+    {
+      "id": "photosynthesis-respiration",
+      "question": "Do plants also perform cellular respiration?",
+      "aliases": [
+        "plants respire at night",
+        "photosynthesis versus respiration"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Photosynthesis"
+      ],
+      "answer": "Yes. Plant cells use respiration to support ATP needs, including in darkness and in nonphotosynthetic tissues. Photosynthesis captures light energy into chemical forms; respiration helps obtain usable energy from fuels. They share some principles but are not exact reverse pathways.",
+      "sources": [
+        "BIO-PHOTO-CALVIN",
+        "ENERGY-MITO"
+      ],
+      "followups": [
+        "What is the purpose of cellular respiration?"
+      ]
+    },
+    {
+      "id": "genetics-dna-rna",
+      "question": "How are DNA and RNA different?",
+      "aliases": [
+        "DNA vs RNA",
+        "DNA RNA sugar bases"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "DNA and RNA"
+      ],
+      "answer": "DNA has deoxyribose and usually uses thymine; RNA has ribose and usually uses uracil. Cellular DNA is commonly double-stranded, while many RNAs are single strands that fold. RNA can carry information, regulate expression or participate in catalysis.",
+      "sources": [
+        "GENOME-DNA",
+        "GENOME-RNA-FACT"
+      ],
+      "followups": [
+        "What are the parts of a nucleotide?"
+      ]
+    },
+    {
+      "id": "genetics-base-pair",
+      "question": "Which bases pair in DNA and RNA?",
+      "aliases": [
+        "complementary bases",
+        "AT GC AU"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "DNA and RNA"
+      ],
+      "answer": "In standard DNA pairing, A pairs with T and G with C. In a typical RNA complementary sequence, A pairs with U and G with C. Real RNA structures can also contain noncanonical pairings; use the standard pairs for introductory sequence exercises.",
+      "sources": [
+        "BIO-NUCLEIC"
+      ],
+      "followups": [
+        "What does antiparallel mean in DNA?"
+      ]
+    },
+    {
+      "id": "genetics-antiparallel",
+      "question": "What does antiparallel mean in DNA?",
+      "aliases": [
+        "5 prime 3 prime",
+        "reverse complement"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "DNA structure"
+      ],
+      "answer": "The two DNA strands run in opposite chemical directions: one 5′→3′ and the other 3′→5′. Label the ends before finding a complement. The reverse complement is not obtained by substituting bases while keeping the same left-to-right orientation.",
+      "sources": [
+        "BIO-NUCLEIC"
+      ],
+      "followups": [
+        "Can you show a complementary DNA sequence?"
+      ]
+    },
+    {
+      "id": "genetics-complement-example",
+      "question": "Can you show a complementary DNA sequence?",
+      "aliases": [
+        "DNA complement example",
+        "ATGC complement"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Sequence practice"
+      ],
+      "answer": "For 5′-ATGC-3′, the paired strand is 3′-TACG-5′. If you must report that complementary strand in the usual 5′→3′ direction, write 5′-GCAT-3′. Always include direction labels.",
+      "sources": [
+        "BIO-NUCLEIC"
+      ],
+      "followups": [
+        "What does antiparallel mean in DNA?"
+      ]
+    },
+    {
+      "id": "genetics-gene",
+      "question": "What is a gene?",
+      "aliases": [
+        "gene versus chromosome"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Genetics vocabulary"
+      ],
+      "answer": "A gene is a DNA sequence that contributes to a functional product, such as an RNA or a protein through RNA. A gene is not a whole chromosome, and not every gene encodes a protein.",
+      "sources": [
+        "GENOME-GENE"
+      ],
+      "followups": [
+        "What is an allele?"
+      ]
+    },
+    {
+      "id": "genetics-allele",
+      "question": "What is an allele?",
+      "aliases": [
+        "allele gene difference"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Genetics vocabulary"
+      ],
+      "answer": "An allele is a version of a DNA sequence at a locus. A diploid individual typically carries two copies of an autosomal locus, which can carry the same or different alleles. Alleles are not separate organelles or inherently dominant.",
+      "sources": [
+        "GENOME-ALLELE"
+      ],
+      "followups": [
+        "What do dominant and recessive mean?"
+      ]
+    },
+    {
+      "id": "genetics-replication",
+      "question": "What does semiconservative DNA replication mean?",
+      "aliases": [
+        "semiconservative",
+        "DNA copying"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "DNA replication"
+      ],
+      "answer": "Each daughter DNA double helix contains one parental strand and one newly synthesized strand. The parental strands separate and serve as templates. This describes strand inheritance, not a half-finished chromosome.",
+      "sources": [
+        "BIO-DNA-REPLICATION"
+      ],
+      "followups": [
+        "Why are leading and lagging strands different?"
+      ]
+    },
+    {
+      "id": "genetics-leading-lagging",
+      "question": "Why are leading and lagging strands different?",
+      "aliases": [
+        "Okazaki fragments",
+        "leading vs lagging"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "DNA replication"
+      ],
+      "answer": "DNA polymerase extends a new strand 5′→3′. Because templates are antiparallel, one new strand can be made continuously toward a moving fork, while the other is made as fragments that are later joined. Both new strands still grow 5′→3′.",
+      "sources": [
+        "BIO-DNA-REPLICATION"
+      ],
+      "followups": [
+        "What do helicase, primase and ligase do?"
+      ]
+    },
+    {
+      "id": "genetics-replication-enzymes",
+      "question": "What do helicase, primase and ligase do?",
+      "aliases": [
+        "helicase primase polymerase ligase"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "DNA replication"
+      ],
+      "answer": "Helicase helps separate DNA strands. Primase makes a short RNA primer that supplies a starting 3′ end. DNA polymerase extends from a suitable end, and ligase seals remaining backbone breaks after fragment processing. Enzyme details vary among organisms.",
+      "sources": [
+        "BIO-DNA-REPLICATION"
+      ],
+      "followups": [
+        "Why are leading and lagging strands different?"
+      ]
+    },
+    {
+      "id": "genetics-transcription",
+      "question": "What is transcription?",
+      "aliases": [
+        "DNA to RNA",
+        "transcription direction"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Gene expression"
+      ],
+      "answer": "Transcription makes an RNA molecule using a DNA template. RNA polymerase builds RNA 5′→3′ while reading the template 3′→5′. The product may be mRNA or another functional RNA; transcription is not protein assembly.",
+      "sources": [
+        "GENOME-TRANSCRIPTION"
+      ],
+      "followups": [
+        "How do coding and template DNA strands differ?"
+      ]
+    },
+    {
+      "id": "genetics-template-coding",
+      "question": "How do coding and template DNA strands differ?",
+      "aliases": [
+        "template vs coding strand",
+        "sense antisense"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Gene expression"
+      ],
+      "answer": "RNA is complementary to the template strand. Its sequence matches the coding strand when both are written 5′→3′, except RNA uses U where DNA uses T. Which DNA strand is the template depends on the gene.",
+      "sources": [
+        "GENOME-RNA-FACT"
+      ],
+      "followups": [
+        "Can you show a transcription example?"
+      ]
+    },
+    {
+      "id": "genetics-transcription-example",
+      "question": "Can you show a transcription example?",
+      "aliases": [
+        "DNA RNA sequence example"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Sequence practice"
+      ],
+      "answer": "For the short template segment 3′-TACGGA-5′, the complementary RNA is 5′-AUGCCU-3′. This is a sequence-pairing exercise; six bases alone do not represent a complete gene or prove where transcription begins.",
+      "sources": [
+        "GENOME-RNA-FACT"
+      ],
+      "followups": [
+        "How do coding and template DNA strands differ?"
+      ]
+    },
+    {
+      "id": "genetics-rna-processing",
+      "question": "How is RNA processed before translation?",
+      "aliases": [
+        "RNA splicing cap tail",
+        "intron exon"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Gene expression"
+      ],
+      "answer": "Many eukaryotic pre-mRNAs receive a 5′ cap, undergo intron removal by splicing and receive a 3′ poly(A) tail. Processing contributes to stability, export and translation. These are typical eukaryotic mRNA features rather than rules for every RNA.",
+      "sources": [
+        "BIO-RNA-PROCESS"
+      ],
+      "followups": [
+        "What is alternative splicing?"
+      ]
+    },
+    {
+      "id": "genetics-alternative-splicing",
+      "question": "What is alternative splicing?",
+      "aliases": [
+        "alternative RNA splicing"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Gene expression"
+      ],
+      "answer": "Different combinations of selected pre-mRNA regions can be joined into different mature RNAs from one gene. Some variants lead to different protein forms. It changes RNA processing rather than rewriting the underlying DNA sequence.",
+      "sources": [
+        "BIO-RNA-PROCESS"
+      ],
+      "followups": [
+        "How is RNA processed before translation?"
+      ]
+    },
+    {
+      "id": "genetics-translation",
+      "question": "How does translation build a protein?",
+      "aliases": [
+        "RNA to protein",
+        "translation steps"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Protein synthesis"
+      ],
+      "answer": "A ribosome reads mRNA codons 5′→3′. tRNAs pair with suitable codons and deliver amino acids; the growing polypeptide extends from its N terminus toward its C terminus. Initiation, elongation and termination organize the process.",
+      "sources": [
+        "BIO-TRANSLATION"
+      ],
+      "followups": [
+        "What is a codon?",
+        "How does tRNA connect RNA to amino acids?"
+      ],
+      "partId": "ribosomes"
+    },
+    {
+      "id": "genetics-codon",
+      "question": "What is a codon?",
+      "aliases": [
+        "triplet code",
+        "reading frame"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Protein synthesis"
+      ],
+      "answer": "A codon is a three-nucleotide unit read in mRNA during translation. Most codons specify an amino acid; stop codons signal termination. The reading frame determines how a sequence is grouped into triplets.",
+      "sources": [
+        "BIO-TRANSLATION"
+      ],
+      "followups": [
+        "How do start and stop codons work?"
+      ]
+    },
+    {
+      "id": "genetics-trna",
+      "question": "How does tRNA connect RNA to amino acids?",
+      "aliases": [
+        "anticodon",
+        "tRNA charging"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Protein synthesis"
+      ],
+      "answer": "A tRNA has an anticodon that pairs with an mRNA codon and an attachment site for an amino acid. Aminoacyl-tRNA synthetases help attach the correct amino acid. Codon recognition and correct charging are both needed for accurate translation.",
+      "sources": [
+        "CELL-RIBOSOME"
+      ],
+      "followups": [
+        "What is a codon?"
+      ]
+    },
+    {
+      "id": "genetics-start-stop",
+      "question": "How do start and stop codons work?",
+      "aliases": [
+        "AUG UAA UAG UGA"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Protein synthesis"
+      ],
+      "answer": "AUG commonly establishes a translation start and codes for methionine in the standard code. UAA, UAG and UGA are standard stop codons recognized by release factors. Not every AUG in an RNA is an initiation site; cellular context matters.",
+      "sources": [
+        "BIO-TRANSLATION"
+      ],
+      "followups": [
+        "Can you show a short translation example?"
+      ]
+    },
+    {
+      "id": "genetics-translation-example",
+      "question": "Can you show a short translation example?",
+      "aliases": [
+        "translate AUG GCU UUU"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Sequence practice"
+      ],
+      "answer": "Using the standard code and reading from the shown AUG, 5′-AUG GCU UUU UAA-3′ specifies Met–Ala–Phe, then stop. Stop is a signal, not an amino acid. This toy example leaves out the full features needed for a functioning gene.",
+      "sources": [
+        "BIO-TRANSLATION"
+      ],
+      "followups": [
+        "What is a frameshift mutation?"
+      ]
+    },
+    {
+      "id": "genetics-mutation",
+      "question": "Are all mutations harmful?",
+      "aliases": [
+        "mutation effects",
+        "all mutations bad"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Mutation"
+      ],
+      "answer": "No. A mutation is a change in DNA sequence. Its effects depend on location, type, biological context and environment. Some have no detectable effect; others alter function beneficially or harmfully. Mutation does not mean an organism changed because it needed a trait.",
+      "sources": [
+        "GENOME-MUTATION"
+      ],
+      "followups": [
+        "How do silent, missense and nonsense mutations differ?"
+      ]
+    },
+    {
+      "id": "genetics-substitution-effects",
+      "question": "How do silent, missense and nonsense mutations differ?",
+      "aliases": [
+        "silent missense nonsense",
+        "substitution mutation"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Mutation"
+      ],
+      "answer": "In a coding-sequence example, a synonymous or silent change preserves the encoded amino acid, a missense change alters one, and a nonsense change introduces a premature stop codon. Even a synonymous change can sometimes affect expression or RNA processing.",
+      "sources": [
+        "GENOME-MUTATION",
+        "BIO-TRANSLATION"
+      ],
+      "followups": [
+        "What is a frameshift mutation?"
+      ]
+    },
+    {
+      "id": "genetics-frameshift",
+      "question": "What is a frameshift mutation?",
+      "aliases": [
+        "insertion deletion frameshift"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Mutation"
+      ],
+      "answer": "An insertion or deletion within a coding region can shift the reading frame when its length is not a multiple of three. Downstream codons then change, often including an early stop. An insertion of three bases does not shift the frame but may still affect function.",
+      "sources": [
+        "GENOME-MUTATION"
+      ],
+      "followups": [
+        "How do silent, missense and nonsense mutations differ?"
+      ]
+    },
+    {
+      "id": "genetics-sister-chromatids",
+      "question": "What are sister chromatids?",
+      "aliases": [
+        "sister chromatids vs homologs"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cell division"
+      ],
+      "answer": "After DNA replication, a duplicated chromosome consists of two sister chromatids held together until separation. Each chromatid contains a DNA molecule with associated proteins. Homologous chromosomes are the corresponding parental chromosomes, not the two sisters.",
+      "sources": [
+        "BIO-CELL-CYCLE"
+      ],
+      "followups": [
+        "How do mitosis and meiosis differ?"
+      ]
+    },
+    {
+      "id": "genetics-cell-cycle",
+      "question": "When is DNA copied in the cell cycle?",
+      "aliases": [
+        "S phase DNA",
+        "G1 S G2 M"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cell division"
+      ],
+      "answer": "Nuclear DNA is replicated during S phase, before mitosis. G1, S and G2 make up interphase in the standard cycle. Chromosome duplication is not the same event as separation of sister chromatids.",
+      "sources": [
+        "BIO-CELL-CYCLE"
+      ],
+      "followups": [
+        "What are sister chromatids?"
+      ]
+    },
+    {
+      "id": "genetics-mitosis-meiosis",
+      "question": "How do mitosis and meiosis differ?",
+      "aliases": [
+        "mitosis vs meiosis"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Cell division"
+      ],
+      "answer": "Mitosis generally separates sister chromatids while preserving chromosome-set number. Meiosis uses one DNA replication followed by two divisions, reducing chromosome-set number and generating variation. Its first division separates homologs; its second separates sisters.",
+      "sources": [
+        "BIO-MEIOSIS"
+      ],
+      "followups": [
+        "What is crossing over?"
+      ]
+    },
+    {
+      "id": "genetics-crossing-over",
+      "question": "What is crossing over?",
+      "aliases": [
+        "crossing over recombination"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Inheritance"
+      ],
+      "answer": "During meiotic prophase I, paired homologous chromosomes can exchange corresponding DNA segments between nonsister chromatids. This creates new combinations of alleles. It is an organized recombination process rather than any random break-and-swap event.",
+      "sources": [
+        "BIO-MEIOSIS"
+      ],
+      "followups": [
+        "What do haploid and diploid mean?"
+      ]
+    },
+    {
+      "id": "genetics-ploidy",
+      "question": "What do haploid and diploid mean?",
+      "aliases": [
+        "haploid diploid n 2n"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Inheritance"
+      ],
+      "answer": "Haploid means one chromosome set; diploid means two. Ploidy counts sets, not whether each chromosome has one or two chromatids. A diploid cell remains diploid after DNA replication even though its DNA amount has increased.",
+      "sources": [
+        "BIO-MEIOSIS"
+      ],
+      "followups": [
+        "What are sister chromatids?"
+      ]
+    },
+    {
+      "id": "genetics-dominance",
+      "question": "What do dominant and recessive mean?",
+      "aliases": [
+        "dominant recessive meaning"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Inheritance"
+      ],
+      "answer": "In a specified inheritance model, a dominant allele’s associated phenotype appears in a heterozygote, while a recessive phenotype is masked there. Dominant does not mean stronger, better or more common. Many traits do not follow a simple two-allele dominance model.",
+      "sources": [
+        "BIO-MENDEL"
+      ],
+      "followups": [
+        "How do I use a Punnett square?"
+      ]
+    },
+    {
+      "id": "genetics-punnett",
+      "question": "How do I use a Punnett square?",
+      "aliases": [
+        "Aa Aa cross",
+        "Punnett square"
+      ],
+      "courses": [
+        "BIOL 1406"
+      ],
+      "topics": [
+        "Inheritance"
+      ],
+      "answer": "List possible gamete alleles from each parent, combine them in the grid and interpret probabilities under the stated genetic model. For Aa × Aa with equal segregation, genotype probabilities are 1/4 AA, 1/2 Aa and 1/4 aa. These are probabilities, not guaranteed family counts.",
+      "sources": [
+        "BIO-MENDEL"
+      ],
+      "followups": [
+        "What do dominant and recessive mean?"
+      ]
+    },
+    {
+      "id": "evolution-selection",
+      "question": "How does natural selection change a population?",
+      "aliases": [
+        "natural selection adaptation"
+      ],
+      "courses": [
+        "BIOL 1407"
+      ],
+      "topics": [
+        "Evolution"
+      ],
+      "answer": "When heritable variants differ in reproductive success in a particular environment, allele frequencies can change over generations. Individuals do not evolve new traits because they try to adapt. Selection acts alongside mechanisms such as mutation, drift and gene flow.",
+      "sources": [
+        "BIO-EVOLUTION"
+      ],
+      "followups": [
+        "How is genetic drift different from natural selection?"
+      ]
+    },
+    {
+      "id": "evolution-drift",
+      "question": "How is genetic drift different from natural selection?",
+      "aliases": [
+        "genetic drift vs selection"
+      ],
+      "courses": [
+        "BIOL 1407"
+      ],
+      "topics": [
+        "Evolution"
+      ],
+      "answer": "Drift is change in allele frequencies caused by sampling chance, especially noticeable in small populations. Selection is nonrandom differential reproductive success associated with heritable differences. Both can operate in the same population.",
+      "sources": [
+        "BIO-EVOLUTION"
+      ],
+      "followups": [
+        "What is gene flow?"
+      ]
+    },
+    {
+      "id": "evolution-gene-flow",
+      "question": "What is gene flow?",
+      "aliases": [
+        "migration allele frequency"
+      ],
+      "courses": [
+        "BIOL 1407"
+      ],
+      "topics": [
+        "Evolution"
+      ],
+      "answer": "Gene flow moves alleles among populations through reproduction involving migrants or their gametes. It can introduce variants and reduce differences between populations. Migration without a genetic contribution to later generations is not necessarily gene flow.",
+      "sources": [
+        "BIO-EVOLUTION"
+      ],
+      "followups": [
+        "How does natural selection change a population?"
+      ]
+    },
+    {
+      "id": "phylogeny-relatedness",
+      "question": "How do I read relatedness on a phylogenetic tree?",
+      "aliases": [
+        "phylogenetic tree cladogram"
+      ],
+      "courses": [
+        "BIOL 1407"
+      ],
+      "topics": [
+        "Phylogeny"
+      ],
+      "answer": "Trace lineages back to their most recent common ancestor. A more recent shared ancestor indicates closer relationship in that tree. Tip order can be rotated without changing relationships; physical closeness of printed names alone is not evidence.",
+      "sources": [
+        "BIO-PHYLOGENY"
+      ],
+      "followups": [
+        "Does a phylogenetic tree show progress?"
+      ]
+    },
+    {
+      "id": "phylogeny-progress",
+      "question": "Does a phylogenetic tree show progress?",
+      "aliases": [
+        "ladder of evolution"
+      ],
+      "courses": [
+        "BIOL 1407"
+      ],
+      "topics": [
+        "Phylogeny"
+      ],
+      "answer": "No. A tree is a hypothesis of branching evolutionary relationships. Living tips have all continued evolving since their shared ancestors. Avoid treating one living species as the ancestor of another or as the final goal of evolution.",
+      "sources": [
+        "BIO-PHYLOGENY"
+      ],
+      "followups": [
+        "How do I read relatedness on a phylogenetic tree?"
+      ]
+    },
+    {
+      "id": "plant-alternation",
+      "question": "What is alternation of generations?",
+      "aliases": [
+        "sporophyte gametophyte"
+      ],
+      "courses": [
+        "BIOL 1407"
+      ],
+      "topics": [
+        "Plant life cycles"
+      ],
+      "answer": "Plant life cycles alternate a multicellular diploid sporophyte and a multicellular haploid gametophyte. Meiosis produces spores, and gametophytes produce gametes by mitosis. Fertilization restores diploidy. Which generation is most visible varies among plant groups.",
+      "sources": [
+        "BIO-PLANT"
+      ],
+      "followups": [
+        "Are spores the same as gametes?"
+      ]
+    },
+    {
+      "id": "plant-spore-gamete",
+      "question": "Are spores the same as gametes?",
+      "aliases": [
+        "spores vs gametes"
+      ],
+      "courses": [
+        "BIOL 1407"
+      ],
+      "topics": [
+        "Plant life cycles"
+      ],
+      "answer": "No. In a typical plant life cycle, a spore can grow by mitosis into a gametophyte without fusing with another cell. Gametes fuse at fertilization. Both may be haploid, but their developmental roles differ.",
+      "sources": [
+        "BIO-PLANT"
+      ],
+      "followups": [
+        "What is alternation of generations?"
+      ]
+    },
+    {
+      "id": "ecology-energy-matter",
+      "question": "Why does energy flow while matter cycles in ecosystems?",
+      "aliases": [
+        "energy flow matter cycle"
+      ],
+      "courses": [
+        "BIOL 1407"
+      ],
+      "topics": [
+        "Ecology"
+      ],
+      "answer": "Energy enters, is transferred among organisms and is progressively dispersed as heat. Chemical elements can be reused as they move among living things and the environment. A food-web model should track these as different kinds of flow.",
+      "sources": [
+        "BIO-ECOLOGY"
+      ],
+      "followups": [
+        "Is energy transfer always exactly ten percent?"
+      ]
+    },
+    {
+      "id": "ecology-ten-percent",
+      "question": "Is energy transfer always exactly ten percent?",
+      "aliases": [
+        "10 percent rule trophic"
+      ],
+      "courses": [
+        "BIOL 1407"
+      ],
+      "topics": [
+        "Ecology"
+      ],
+      "answer": "No. Ten percent is a rough teaching guideline for transfer between trophic levels. Actual ecological efficiencies vary with organisms, food quality, conditions and what is measured. Do not invent an exact ecosystem pyramid from that guideline alone.",
+      "sources": [
+        "BIO-ECOLOGY"
+      ],
+      "followups": [
+        "Why does energy flow while matter cycles in ecosystems?"
+      ]
+    },
+    {
+      "id": "chem-matter-classification",
+      "question": "How do elements, compounds and mixtures differ?",
+      "aliases": [
+        "element compound mixture"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Matter"
+      ],
+      "answer": "An element contains one kind of atom. A compound has elements chemically combined in a defined composition. A mixture contains substances together without one fixed overall composition; its components can often be separated by physical methods.",
+      "sources": [
+        "CHEM-MATTER"
+      ],
+      "followups": [
+        "How is a physical change different from a chemical change?"
+      ]
+    },
+    {
+      "id": "chem-physical-chemical",
+      "question": "How is a physical change different from a chemical change?",
+      "aliases": [
+        "physical vs chemical change"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Matter"
+      ],
+      "answer": "A physical change alters state or form without changing chemical identity. A chemical change produces different substances. Melting ice is physical; forming new products by a reaction is chemical. Color, bubbles or temperature change are clues, not sufficient proof by themselves.",
+      "sources": [
+        "CHEM-PROPERTIES"
+      ],
+      "followups": [
+        "Why does ice melting not break water molecules?"
+      ]
+    },
+    {
+      "id": "chem-melting-molecules",
+      "question": "Why does ice melting not break water molecules?",
+      "aliases": [
+        "melting bonds water"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Matter"
+      ],
+      "answer": "Melting changes how H2O molecules are arranged and interact; the covalent O–H bonds remain. Converting water into hydrogen and oxygen requires a chemical change. Distinguish intermolecular attractions from the bonds within each molecule.",
+      "sources": [
+        "CHEM-IMF"
+      ],
+      "followups": [
+        "How are intermolecular forces different from bonds?"
+      ]
+    },
+    {
+      "id": "chem-density",
+      "question": "How do I calculate density?",
+      "aliases": [
+        "density formula mass volume"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Measurement"
+      ],
+      "answer": "Use density = mass ÷ volume. If a sample has mass 24.0 g and volume 8.00 mL, its density is 3.00 g/mL. Keep the units attached and report appropriate significant figures.",
+      "sources": [
+        "CHEM-MEASURE"
+      ],
+      "followups": [
+        "How does dimensional analysis work?"
+      ]
+    },
+    {
+      "id": "chem-dimensional-analysis",
+      "question": "How does dimensional analysis work?",
+      "aliases": [
+        "unit conversion factor label method"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Measurement"
+      ],
+      "answer": "Multiply by conversion ratios arranged so unwanted units cancel. For example, 0.250 L × (1000 mL / 1 L) = 250. mL, equivalent to 2.50 × 10^2 mL. The liter-to-milliliter factor is exact; measured input precision still matters.",
+      "sources": [
+        "CHEM-UNITS"
+      ],
+      "followups": [
+        "Why do I convert Celsius to kelvin for gas laws?"
+      ]
+    },
+    {
+      "id": "chem-significant-figures",
+      "question": "How do significant figures work in calculations?",
+      "aliases": [
+        "sig figs rounding"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Measurement"
+      ],
+      "answer": "For multiplication and division, a common reporting rule uses the fewest significant figures among measured inputs. For addition and subtraction, use the least precise decimal place. Keep guard digits until the final result. Exact counts and defined conversion factors do not limit precision.",
+      "sources": [
+        "CHEM-SIGFIG"
+      ],
+      "followups": [
+        "How are accuracy and precision different?"
+      ]
+    },
+    {
+      "id": "chem-accuracy-precision",
+      "question": "How are accuracy and precision different?",
+      "aliases": [
+        "accurate precise"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Measurement"
+      ],
+      "answer": "Accuracy concerns agreement with an accepted reference value. Precision concerns how closely repeated results agree with one another. A tightly clustered set of readings can still be biased away from the reference.",
+      "sources": [
+        "CHEM-SIGFIG"
+      ],
+      "followups": [
+        "How do significant figures work in calculations?"
+      ]
+    },
+    {
+      "id": "chem-scientific-notation",
+      "question": "How do I read scientific notation?",
+      "aliases": [
+        "powers of ten",
+        "negative exponent"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Measurement"
+      ],
+      "answer": "Write a number as a factor from 1 up to, but not including, 10 multiplied by a power of ten. For example, 0.000450 = 4.50 × 10^−4. The final zero in 4.50 records stated precision.",
+      "sources": [
+        "CHEM-UNITS"
+      ],
+      "followups": [
+        "What is a mole?"
+      ]
+    },
+    {
+      "id": "chem-atomic-particles",
+      "question": "How do protons, neutrons and electrons differ?",
+      "aliases": [
+        "subatomic particles"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Atomic structure"
+      ],
+      "answer": "Protons carry positive charge and neutrons are neutral; both are in the nucleus. Electrons carry negative charge and occupy quantum states around the nucleus. Protons determine element identity; electrons strongly influence bonding and ion charge.",
+      "sources": [
+        "CHEM-ATOM"
+      ],
+      "followups": [
+        "How do atomic number and mass number differ?"
+      ]
+    },
+    {
+      "id": "chem-atomic-mass-number",
+      "question": "How do atomic number and mass number differ?",
+      "aliases": [
+        "atomic number mass number"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Atomic structure"
+      ],
+      "answer": "Atomic number is the number of protons. Mass number is protons plus neutrons for a specified isotope. The decimal atomic weight on most periodic tables is not the mass number of one atom.",
+      "sources": [
+        "CHEM-ATOM"
+      ],
+      "followups": [
+        "What is an isotope?"
+      ]
+    },
+    {
+      "id": "chem-isotope",
+      "question": "What is an isotope?",
+      "aliases": [
+        "isotopes neutrons"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Atomic structure"
+      ],
+      "answer": "Isotopes of an element have the same number of protons but different neutron counts. Carbon-12 and carbon-14 are both carbon because each has six protons; they differ in mass number. An isotope is not the same thing as an ion.",
+      "sources": [
+        "CHEM-ATOM"
+      ],
+      "followups": [
+        "How do I count electrons in an ion?"
+      ]
+    },
+    {
+      "id": "chem-ion-electrons",
+      "question": "How do I count electrons in an ion?",
+      "aliases": [
+        "cation anion electron count"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Atomic structure"
+      ],
+      "answer": "Begin with the atomic number. A positive charge means electrons have been lost; a negative charge means they have been gained. Mg2+ has 12 protons and 10 electrons; Cl− has 17 protons and 18 electrons.",
+      "sources": [
+        "CHEM-ATOM"
+      ],
+      "followups": [
+        "How do ionic and covalent bonds differ?"
+      ]
+    },
+    {
+      "id": "chem-average-atomic-mass",
+      "question": "How is average atomic mass calculated?",
+      "aliases": [
+        "weighted atomic mass isotopic abundance"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Atomic structure"
+      ],
+      "answer": "Add each isotope mass multiplied by its fractional abundance. In a fictional two-isotope sample with 75.0% at 10.0 u and 25.0% at 11.0 u, the weighted mean is about 10.3 u. This illustrative sample is not an element’s measured isotope dataset.",
+      "sources": [
+        "CHEM-ATOM"
+      ],
+      "followups": [
+        "How do atomic number and mass number differ?"
+      ]
+    },
+    {
+      "id": "chem-periodic-groups",
+      "question": "What do periodic-table groups and periods tell me?",
+      "aliases": [
+        "group period column row"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Periodic table"
+      ],
+      "answer": "Groups are columns and periods are rows. Main-group elements in a column commonly share valence-electron patterns and some chemical behavior. The pattern helps predict properties, but transition elements and real compounds require additional detail.",
+      "sources": [
+        "CHEM-PERIODIC"
+      ],
+      "followups": [
+        "What are valence electrons?"
+      ]
+    },
+    {
+      "id": "chem-valence-electrons",
+      "question": "What are valence electrons?",
+      "aliases": [
+        "outer electrons"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Electronic structure"
+      ],
+      "answer": "Valence electrons are electrons involved in an atom’s chemical interactions. For main-group introductory models, they are usually the outer-shell s and p electrons. They help explain common bonds and ion formation; transition-metal cases need a broader treatment.",
+      "sources": [
+        "CHEM-ELECTRONS"
+      ],
+      "followups": [
+        "How do I write an electron configuration?"
+      ]
+    },
+    {
+      "id": "chem-electron-configuration",
+      "question": "How do I write an electron configuration?",
+      "aliases": [
+        "Aufbau Hund Pauli",
+        "oxygen configuration"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Electronic structure"
+      ],
+      "answer": "Account for all electrons while filling allowed orbitals using energy ordering, the Pauli principle and Hund’s rule. For neutral oxygen, 1s2 2s2 2p4 accounts for eight electrons. Introductory filling order has known exceptions, so check the specific atom or ion.",
+      "sources": [
+        "CHEM-ELECTRONS"
+      ],
+      "followups": [
+        "Is an orbital the path of an electron?"
+      ]
+    },
+    {
+      "id": "chem-orbitals",
+      "question": "Is an orbital the path of an electron?",
+      "aliases": [
+        "orbital orbit difference",
+        "s p orbital shapes"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Electronic structure"
+      ],
+      "answer": "No. An orbital is a quantum-mechanical state described by a wavefunction; its probability distribution helps describe where an electron may be detected. A drawn s sphere or p lobe is a probability-surface model, not a solid object or a planetary track.",
+      "sources": [
+        "CHEM-ORBITAL"
+      ],
+      "followups": [
+        "What do photons have to do with atomic spectra?"
+      ]
+    },
+    {
+      "id": "chem-spectrum",
+      "question": "What do photons have to do with atomic spectra?",
+      "aliases": [
+        "atomic emission absorption spectra",
+        "photon wavelength energy"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Electronic structure"
+      ],
+      "answer": "An atom can absorb or emit a photon when an allowed transition changes its energy. The photon energy is E = hν = hc/λ. Discrete energy differences help explain line spectra; shorter wavelength corresponds to higher photon energy.",
+      "sources": [
+        "CHEM-LIGHT"
+      ],
+      "followups": [
+        "Is an orbital the path of an electron?"
+      ]
+    },
+    {
+      "id": "chem-periodic-radius",
+      "question": "Why does atomic radius usually decrease across a period?",
+      "aliases": [
+        "atomic radius trend"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Periodic trends"
+      ],
+      "answer": "Across a main-group period, added protons increase effective nuclear attraction while electrons enter the same principal shell. This generally draws the electron distribution inward. Radius depends on its definition, so compare a consistent type of radius.",
+      "sources": [
+        "CHEM-TRENDS"
+      ],
+      "followups": [
+        "What is ionization energy?"
+      ]
+    },
+    {
+      "id": "chem-ionization",
+      "question": "What is ionization energy?",
+      "aliases": [
+        "ionization energy trend"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Periodic trends"
+      ],
+      "answer": "First ionization energy is the energy required to remove an electron from a gaseous atom in its ground state. It generally rises across a main-group period and falls down a group, with exceptions related to electron structure.",
+      "sources": [
+        "CHEM-TRENDS"
+      ],
+      "followups": [
+        "What are valence electrons?"
+      ]
+    },
+    {
+      "id": "chem-mole",
+      "question": "What is a mole?",
+      "aliases": [
+        "Avogadro number",
+        "mol"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Moles"
+      ],
+      "answer": "A mole is an amount of substance containing exactly 6.02214076 × 10^23 specified entities. Name the entities: atoms, molecules, ions or formula units. A mole is a counting unit for amount, not a fixed mass or volume.",
+      "sources": [
+        "NIST-MOLE"
+      ],
+      "followups": [
+        "How do I convert grams to moles?"
+      ]
+    },
+    {
+      "id": "chem-molar-mass",
+      "question": "How do I find molar mass from a formula?",
+      "aliases": [
+        "molecular weight",
+        "formula mass"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Moles"
+      ],
+      "answer": "Add each element’s atomic molar mass multiplied by its subscript. Using 1.008 g/mol for H and 16.00 g/mol for O, H2O is approximately 18.02 g/mol after rounding. Parentheses multiply every atom inside them.",
+      "sources": [
+        "CHEM-MASS"
+      ],
+      "followups": [
+        "How do I convert grams to moles?"
+      ]
+    },
+    {
+      "id": "chem-grams-moles",
+      "question": "How do I convert grams to moles?",
+      "aliases": [
+        "grams to mol",
+        "mass to moles"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Moles"
+      ],
+      "answer": "Divide mass by molar mass. Using 18.02 g/mol for water, 9.01 g × (1 mol / 18.02 g) = 0.500 mol. Grams cancel. To reverse the conversion, multiply moles by molar mass.",
+      "sources": [
+        "CHEM-MASS"
+      ],
+      "followups": [
+        "How do I convert moles to particles?"
+      ]
+    },
+    {
+      "id": "chem-moles-particles",
+      "question": "How do I convert moles to particles?",
+      "aliases": [
+        "moles molecules atoms conversion"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Moles"
+      ],
+      "answer": "Multiply moles by the Avogadro constant. For 0.250 mol of molecules, the count is 0.250 mol × 6.02214076 × 10^23 molecules/mol = 1.51 × 10^23 molecules at three significant figures. Identify which particles are being counted.",
+      "sources": [
+        "NIST-MOLE"
+      ],
+      "followups": [
+        "How many oxygen atoms are in one mole of CO2?"
+      ]
+    },
+    {
+      "id": "chem-count-atoms-formula",
+      "question": "How many oxygen atoms are in one mole of CO2?",
+      "aliases": [
+        "subscript particles mole CO2"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Moles"
+      ],
+      "answer": "Each CO2 molecule contains two O atoms. One mole of CO2 therefore contains two moles of O atoms, about 1.204 × 10^24 O atoms if reporting four significant figures. It also contains one mole of carbon atoms.",
+      "sources": [
+        "CHEM-FORMULAS",
+        "NIST-MOLE"
+      ],
+      "followups": [
+        "How do I find molar mass from a formula?"
+      ]
+    },
+    {
+      "id": "chem-percent-composition",
+      "question": "How do I calculate percent composition by mass?",
+      "aliases": [
+        "mass percent composition"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Chemical formulas"
+      ],
+      "answer": "For an element in a compound, divide that element’s mass contribution per mole by the compound’s molar mass, then multiply by 100%. For H2O using 2.016 g H per 18.016 g water, hydrogen contributes about 11.19% by mass.",
+      "sources": [
+        "CHEM-EMPIRICAL"
+      ],
+      "followups": [
+        "How do empirical and molecular formulas differ?"
+      ]
+    },
+    {
+      "id": "chem-empirical-molecular",
+      "question": "How do empirical and molecular formulas differ?",
+      "aliases": [
+        "empirical vs molecular formula"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Chemical formulas"
+      ],
+      "answer": "An empirical formula gives the simplest whole-number atom ratio. A molecular formula gives the actual atom counts in a molecule. Glucose has molecular formula C6H12O6 and empirical formula CH2O. A formula unit for an ionic solid does not describe a discrete molecule.",
+      "sources": [
+        "CHEM-EMPIRICAL"
+      ],
+      "followups": [
+        "How do I derive an empirical formula from masses?"
+      ]
+    },
+    {
+      "id": "chem-empirical-workflow",
+      "question": "How do I derive an empirical formula from masses?",
+      "aliases": [
+        "empirical formula steps"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Chemical formulas"
+      ],
+      "answer": "Convert each element’s mass to moles, divide by the smallest mole amount and seek a small whole-number ratio. Multiply all ratios if needed to resolve values near simple fractions. Do not round 1.50 to 2 without scaling the full ratio.",
+      "sources": [
+        "CHEM-EMPIRICAL"
+      ],
+      "followups": [
+        "How do I convert grams to moles?"
+      ]
+    },
+    {
+      "id": "chem-bond-types",
+      "question": "How do ionic and covalent bonds differ?",
+      "aliases": [
+        "ionic vs covalent"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Bonding"
+      ],
+      "answer": "An ionic model emphasizes electrostatic attraction between oppositely charged ions in an extended structure. A covalent bond involves shared electron density between atoms. Real bonding forms a continuum; do not treat every compound as isolated ball-and-stick molecules.",
+      "sources": [
+        "CHEM-IONIC",
+        "CHEM-COVALENT"
+      ],
+      "followups": [
+        "Why does NaCl have a 1:1 formula?"
+      ]
+    },
+    {
+      "id": "chem-ionic-formula",
+      "question": "Why does NaCl have a 1:1 formula?",
+      "aliases": [
+        "ionic compound charge balance",
+        "MgCl2"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Bonding"
+      ],
+      "answer": "Na+ and Cl− balance charge in a 1:1 ratio. For Mg2+ and Cl−, two chloride ions are needed per magnesium ion, giving MgCl2. Determine the smallest charge-neutral ratio; the written ionic formula represents a formula unit.",
+      "sources": [
+        "CHEM-IONIC"
+      ],
+      "followups": [
+        "How do I name an ionic compound?"
+      ]
+    },
+    {
+      "id": "chem-name-ionic",
+      "question": "How do I name an ionic compound?",
+      "aliases": [
+        "ionic naming Roman numeral"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Nomenclature"
+      ],
+      "answer": "Name the cation, then the anion. A monatomic anion commonly ends in -ide. When a metal has multiple common charges, a Roman numeral specifies the cation charge: FeCl3 is iron(III) chloride. Polyatomic ion names are retained.",
+      "sources": [
+        "CHEM-NAMING"
+      ],
+      "followups": [
+        "How do molecular prefixes differ from ionic naming?"
+      ]
+    },
+    {
+      "id": "chem-name-molecular",
+      "question": "How do molecular prefixes differ from ionic naming?",
+      "aliases": [
+        "covalent prefixes naming"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Nomenclature"
+      ],
+      "answer": "Binary molecular compounds commonly use prefixes to indicate atom counts, such as carbon dioxide for CO2. Ionic compound formulas instead reflect charge balance and generally do not use those counting prefixes. Choose the naming system from the compound type.",
+      "sources": [
+        "CHEM-NAMING"
+      ],
+      "followups": [
+        "How do ionic and covalent bonds differ?"
+      ]
+    },
+    {
+      "id": "chem-lewis-workflow",
+      "question": "How do I draw a Lewis structure?",
+      "aliases": [
+        "Lewis dot structure steps"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Molecular structure"
+      ],
+      "answer": "Count valence electrons, adjust for charge, choose a plausible atom skeleton, connect atoms and distribute the remaining electrons. Check electron totals and appropriate duet/octet patterns, then assess formal charges. Some atoms and electron counts require exceptions to the octet guideline.",
+      "sources": [
+        "CHEM-LEWIS"
+      ],
+      "followups": [
+        "What is formal charge?"
+      ]
+    },
+    {
+      "id": "chem-formal-charge",
+      "question": "What is formal charge?",
+      "aliases": [
+        "formal charge formula"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Molecular structure"
+      ],
+      "answer": "Formal charge is a bookkeeping charge found by assigning half of each bonding pair and all lone-pair electrons to an atom. It is not generally the atom’s measured partial charge. It helps compare plausible Lewis structures alongside other chemical evidence.",
+      "sources": [
+        "CHEM-FORMAL"
+      ],
+      "followups": [
+        "What is resonance?"
+      ]
+    },
+    {
+      "id": "chem-resonance",
+      "question": "What is resonance?",
+      "aliases": [
+        "resonance structures hybrid"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Molecular structure"
+      ],
+      "answer": "Some electron distributions cannot be represented well by a single Lewis drawing. Resonance forms keep the same atom connectivity while changing electron placement. The actual species has a delocalized distribution; it does not physically switch between the drawings.",
+      "sources": [
+        "CHEM-FORMAL"
+      ],
+      "followups": [
+        "How do I draw a Lewis structure?"
+      ]
+    },
+    {
+      "id": "chem-vsepr",
+      "question": "How does VSEPR predict molecular shape?",
+      "aliases": [
+        "VSEPR electron domain geometry"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Molecular structure"
+      ],
+      "answer": "Count electron domains around a central atom and arrange them to reduce repulsions in the model. A multiple bond counts as one domain. Electron-domain geometry includes lone pairs; molecular geometry describes atom positions. This is a useful approximation, not an exact quantum calculation.",
+      "sources": [
+        "CHEM-SHAPE"
+      ],
+      "followups": [
+        "Why is water bent instead of linear?"
+      ]
+    },
+    {
+      "id": "chem-water-shape",
+      "question": "Why is water bent instead of linear?",
+      "aliases": [
+        "water 104.5 degrees",
+        "H2O bent"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Molecular structure"
+      ],
+      "answer": "Around water’s oxygen are two O–H bonding domains and two lone pairs. Their approximately tetrahedral domain arrangement leaves a bent arrangement of atoms, with an angle near 104.5°. Bond polarity and this shape make water polar.",
+      "sources": [
+        "CHEM-SHAPE"
+      ],
+      "followups": [
+        "Can a molecule have polar bonds and still be nonpolar?"
+      ]
+    },
+    {
+      "id": "chem-co2-polarity",
+      "question": "Can a molecule have polar bonds and still be nonpolar?",
+      "aliases": [
+        "CO2 nonpolar",
+        "polar bonds nonpolar molecule"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Molecular polarity"
+      ],
+      "answer": "Yes. In linear CO2, the two equal C–O bond dipoles point in opposite directions and cancel. A molecule’s overall polarity depends on both bond dipoles and three-dimensional geometry. Counting polar bonds alone is not sufficient.",
+      "sources": [
+        "CHEM-SHAPE"
+      ],
+      "followups": [
+        "Why is water bent instead of linear?"
+      ]
+    },
+    {
+      "id": "chem-shape-examples",
+      "question": "What shapes do CH4, NH3 and CO2 have?",
+      "aliases": [
+        "methane ammonia carbon dioxide shape"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Molecular structure"
+      ],
+      "answer": "In the basic VSEPR model, CH4 is tetrahedral, NH3 is trigonal pyramidal and CO2 is linear. NH3 has one lone pair on nitrogen, so its molecular geometry differs from its tetrahedral electron-domain geometry.",
+      "sources": [
+        "CHEM-SHAPE"
+      ],
+      "followups": [
+        "How does VSEPR predict molecular shape?"
+      ]
+    },
+    {
+      "id": "chem-imf-bonds",
+      "question": "How are intermolecular forces different from bonds?",
+      "aliases": [
+        "intermolecular intramolecular",
+        "boiling bonds"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Intermolecular forces"
+      ],
+      "answer": "Intermolecular forces act between particles such as molecules. Covalent bonds hold atoms together within a molecule. Boiling a molecular liquid mainly overcomes enough intermolecular attraction for molecules to separate; it does not normally break every molecule into atoms.",
+      "sources": [
+        "CHEM-IMF"
+      ],
+      "followups": [
+        "Which intermolecular forces should I identify?"
+      ]
+    },
+    {
+      "id": "chem-imf-types",
+      "question": "Which intermolecular forces should I identify?",
+      "aliases": [
+        "London dispersion dipole hydrogen bond"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Intermolecular forces"
+      ],
+      "answer": "All atoms and molecules exhibit London dispersion interactions. Polar molecules can also have dipole-dipole interactions. Introductory hydrogen-bonding examples commonly involve H bonded to N, O or F interacting with a suitable partner. Size, shape and polarizability also influence physical properties.",
+      "sources": [
+        "CHEM-IMF"
+      ],
+      "followups": [
+        "Why does ice melting not break water molecules?"
+      ]
+    },
+    {
+      "id": "chem-balance-equation",
+      "question": "How do I balance a chemical equation?",
+      "aliases": [
+        "balancing equations coefficients subscripts"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Reactions"
+      ],
+      "answer": "Change coefficients so each element has the same atom count on both sides. Do not change subscripts, which would change the substances. For example, 2 H2 + O2 → 2 H2O conserves four H atoms and two O atoms.",
+      "sources": [
+        "CHEM-BALANCE"
+      ],
+      "followups": [
+        "What does a balanced equation tell me about moles?"
+      ]
+    },
+    {
+      "id": "chem-equation-moles",
+      "question": "What does a balanced equation tell me about moles?",
+      "aliases": [
+        "mole ratio coefficient"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Stoichiometry"
+      ],
+      "answer": "Coefficients give reaction ratios among entities and among moles, not directly among grams. For 2 H2 + O2 → 2 H2O, two moles of H2 react with one mole of O2 to form two moles of H2O under the ideal reaction accounting.",
+      "sources": [
+        "CHEM-STOICH"
+      ],
+      "followups": [
+        "How do I solve a grams-to-grams stoichiometry problem?"
+      ]
+    },
+    {
+      "id": "chem-grams-grams",
+      "question": "How do I solve a grams-to-grams stoichiometry problem?",
+      "aliases": [
+        "stoichiometry workflow",
+        "mass to mass"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Stoichiometry"
+      ],
+      "answer": "Use mass of known substance → moles of known → coefficient ratio → moles of desired substance → mass of desired substance. The balanced equation supplies the middle mole ratio. Check that each unit and chemical identity cancels correctly.",
+      "sources": [
+        "CHEM-STOICH"
+      ],
+      "followups": [
+        "How do I identify the limiting reactant?"
+      ]
+    },
+    {
+      "id": "chem-stoich-example",
+      "question": "Can you show a mole-ratio calculation?",
+      "aliases": [
+        "ammonia mole ratio example"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Stoichiometry"
+      ],
+      "answer": "For N2 + 3 H2 → 2 NH3, 0.600 mol H2 × (2 mol NH3 / 3 mol H2) = 0.400 mol NH3, assuming sufficient N2 and complete ideal conversion. A mole ratio is taken from coefficients, not atom subscripts.",
+      "sources": [
+        "CHEM-STOICH"
+      ],
+      "followups": [
+        "How do I identify the limiting reactant?"
+      ]
+    },
+    {
+      "id": "chem-limiting-reactant",
+      "question": "How do I identify the limiting reactant?",
+      "aliases": [
+        "limiting reagent excess"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Stoichiometry"
+      ],
+      "answer": "Calculate the possible amount of the same product from each reactant using the balanced equation. The reactant giving less product limits the ideal yield. The smallest gram amount is not automatically limiting because molar masses and stoichiometric ratios differ.",
+      "sources": [
+        "CHEM-YIELD"
+      ],
+      "followups": [
+        "How do I calculate percent yield?"
+      ]
+    },
+    {
+      "id": "chem-percent-yield",
+      "question": "How do I calculate percent yield?",
+      "aliases": [
+        "actual theoretical yield"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Stoichiometry"
+      ],
+      "answer": "Percent yield = actual yield ÷ theoretical yield × 100%. If theory predicts 5.00 g and you isolate 4.10 g, the yield is 82.0%. An apparent yield over 100% suggests issues such as wet product, impurities or measurement/model errors.",
+      "sources": [
+        "CHEM-YIELD"
+      ],
+      "followups": [
+        "How do I identify the limiting reactant?"
+      ]
+    },
+    {
+      "id": "chem-molarity",
+      "question": "What is molarity?",
+      "aliases": [
+        "M mol per L",
+        "molarity formula"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Solutions"
+      ],
+      "answer": "Molarity is amount of solute in moles divided by total solution volume in liters. Dissolving 0.200 mol and making a final solution volume of 0.500 L gives 0.400 mol/L. Final solution volume is not necessarily the volume of solvent added.",
+      "sources": [
+        "IUPAC-CONCENTRATION",
+        "CHEM-MOLARITY"
+      ],
+      "followups": [
+        "How do I calculate dilution?"
+      ]
+    },
+    {
+      "id": "chem-dilution",
+      "question": "How do I calculate dilution?",
+      "aliases": [
+        "M1V1 M2V2",
+        "dilution stock solution"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Solutions"
+      ],
+      "answer": "For dilution of the same solute with no reaction or loss, M1V1 = M2V2 follows from conserving solute amount. To make 100.0 mL of 0.100 M from 1.00 M stock, use 10.0 mL stock and dilute to 100.0 mL total.",
+      "sources": [
+        "CHEM-MOLARITY"
+      ],
+      "followups": [
+        "What is molarity?"
+      ]
+    },
+    {
+      "id": "chem-precipitation",
+      "question": "What is a precipitation reaction?",
+      "aliases": [
+        "precipitate solubility"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Reactions"
+      ],
+      "answer": "A precipitation reaction forms a sparingly soluble solid from dissolved reactants. Predict possible ion combinations and apply the course’s solubility rules or data. The written molecular equation and net ionic equation describe the same chemical change at different levels.",
+      "sources": [
+        "CHEM-REACTIONS"
+      ],
+      "followups": [
+        "What is a net ionic equation?"
+      ]
+    },
+    {
+      "id": "chem-net-ionic",
+      "question": "What is a net ionic equation?",
+      "aliases": [
+        "spectator ions",
+        "net ionic equation"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Reactions"
+      ],
+      "answer": "It shows the species that undergo the chemical change after spectator ions are removed. For Ag+ reacting with Cl− to form a solid, the net equation is Ag+(aq) + Cl−(aq) → AgCl(s). Check both atom and charge balance.",
+      "sources": [
+        "CHEM-REACTIONS"
+      ],
+      "followups": [
+        "What is a precipitation reaction?"
+      ]
+    },
+    {
+      "id": "chem-redox",
+      "question": "How do oxidation and reduction differ?",
+      "aliases": [
+        "OIL RIG",
+        "oxidation reduction"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Redox"
+      ],
+      "answer": "Oxidation is electron loss; reduction is electron gain. They occur together because transferred electrons must go somewhere. Oxidation numbers are bookkeeping tools for recognizing redox even when complete ion-style electron transfer is not a literal bonding picture.",
+      "sources": [
+        "CHEM-REACTIONS"
+      ],
+      "followups": [
+        "What does an oxidizing agent do?"
+      ]
+    },
+    {
+      "id": "chem-redox-agent",
+      "question": "What does an oxidizing agent do?",
+      "aliases": [
+        "oxidizing reducing agent"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Redox"
+      ],
+      "answer": "An oxidizing agent causes another species to be oxidized while it is itself reduced. A reducing agent causes reduction and is itself oxidized. Track which species gains or loses electrons before naming the agent.",
+      "sources": [
+        "CHEM-REACTIONS"
+      ],
+      "followups": [
+        "How do oxidation and reduction differ?"
+      ]
+    },
+    {
+      "id": "chem-gas-law",
+      "question": "When can I use PV = nRT?",
+      "aliases": [
+        "ideal gas law",
+        "PV nRT"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Gases"
+      ],
+      "answer": "Use the ideal gas model when it is a reasonable approximation and match pressure, volume and temperature units to R. Temperature must be in kelvin. Real gases deviate most when intermolecular attractions and molecular size become important, often at high pressure or low temperature.",
+      "sources": [
+        "CHEM-GAS"
+      ],
+      "followups": [
+        "Why do I convert Celsius to kelvin for gas laws?"
+      ],
+      "chart": "gas"
+    },
+    {
+      "id": "chem-gas-kelvin",
+      "question": "Why do I convert Celsius to kelvin for gas laws?",
+      "aliases": [
+        "Celsius Kelvin gas law"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Gases"
+      ],
+      "answer": "Gas-law proportionalities use absolute thermodynamic temperature. Convert with T(K) = t(°C) + 273.15. A change from 10°C to 20°C is not a doubling of absolute temperature, so plugging Celsius directly into ratios gives the wrong result.",
+      "sources": [
+        "CHEM-GAS"
+      ],
+      "followups": [
+        "What is Boyle’s law?"
+      ],
+      "chart": "gas"
+    },
+    {
+      "id": "chem-boyle",
+      "question": "What is Boyle’s law?",
+      "aliases": [
+        "pressure volume inverse"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Gases"
+      ],
+      "answer": "For a fixed amount of ideal gas at constant temperature, pressure is inversely proportional to volume: P1V1 = P2V2. Halving volume doubles pressure in this model. State the held-constant variables before interpreting the relationship.",
+      "sources": [
+        "CHEM-GAS"
+      ],
+      "followups": [
+        "What is Charles’s law?"
+      ],
+      "chart": "gas"
+    },
+    {
+      "id": "chem-charles",
+      "question": "What is Charles’s law?",
+      "aliases": [
+        "volume temperature gas"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Gases"
+      ],
+      "answer": "For a fixed amount of ideal gas at constant pressure, volume is proportional to kelvin temperature: V1/T1 = V2/T2. The model does not mean volume doubles whenever a Celsius reading doubles.",
+      "sources": [
+        "CHEM-GAS"
+      ],
+      "followups": [
+        "Why do I convert Celsius to kelvin for gas laws?"
+      ],
+      "chart": "gas"
+    },
+    {
+      "id": "chem-heat-temperature",
+      "question": "How are heat and temperature different?",
+      "aliases": [
+        "heat vs temperature"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Thermochemistry"
+      ],
+      "answer": "Temperature characterizes thermal state; heat is energy transferred because of a temperature difference. They are not interchangeable quantities. A larger sample can require more transferred energy for the same temperature rise even when the material is identical.",
+      "sources": [
+        "CHEM-THERMO"
+      ],
+      "followups": [
+        "How do I calculate heat using q = mcΔT?"
+      ]
+    },
+    {
+      "id": "chem-calorimetry",
+      "question": "How do I calculate heat using q = mcΔT?",
+      "aliases": [
+        "q mc delta T",
+        "specific heat calculation"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Thermochemistry"
+      ],
+      "answer": "Multiply mass, specific heat capacity and temperature change under the model’s conditions. For 10.0 g water, c = 4.184 J/(g·°C) and a 5.00°C rise, q = +209 J. Heat absorbed by that sample is positive.",
+      "sources": [
+        "CHEM-CALORIMETRY"
+      ],
+      "followups": [
+        "How do endothermic and exothermic reactions differ?"
+      ]
+    },
+    {
+      "id": "chem-endothermic-exothermic",
+      "question": "How do endothermic and exothermic reactions differ?",
+      "aliases": [
+        "endo exo enthalpy sign"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Thermochemistry"
+      ],
+      "answer": "An endothermic process absorbs heat into the defined system; an exothermic process releases heat from it. At constant pressure, these correspond to positive and negative enthalpy change, respectively. Always define the system before assigning signs.",
+      "sources": [
+        "CHEM-ENTHALPY"
+      ],
+      "followups": [
+        "Do catalysts change a reaction’s overall energy change?"
+      ],
+      "chart": "energy"
+    },
+    {
+      "id": "chem-catalyst-energy",
+      "question": "Do catalysts change a reaction’s overall energy change?",
+      "aliases": [
+        "catalyst delta H delta G"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Reaction energy"
+      ],
+      "answer": "No. A catalyst changes the pathway and lowers the activation barrier, helping forward and reverse reactions proceed faster. It does not change the overall enthalpy or free-energy difference, and it does not shift equilibrium merely by catalyzing the reaction.",
+      "sources": [
+        "BIO-ENERGY",
+        "CHEM-ENTHALPY"
+      ],
+      "followups": [
+        "What is activation energy?"
+      ],
+      "chart": "energy"
+    },
+    {
+      "id": "chem-acid-base",
+      "question": "What are Brønsted-Lowry acids and bases?",
+      "aliases": [
+        "proton donor acceptor",
+        "conjugate acid base"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Acids and bases"
+      ],
+      "answer": "An acid donates a proton and a base accepts a proton. After transfer, the acid becomes its conjugate base and the base becomes its conjugate acid. Water can act as either depending on its reaction partner.",
+      "sources": [
+        "CHEM-ACID"
+      ],
+      "followups": [
+        "What does pH measure?"
+      ]
+    },
+    {
+      "id": "chem-ph",
+      "question": "What does pH measure?",
+      "aliases": [
+        "pH logarithm",
+        "hydronium concentration"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Acids and bases"
+      ],
+      "answer": "Formally, pH is based on hydrogen-ion activity. In many introductory dilute-solution calculations, pH ≈ −log10[H3O+]. At [H3O+] = 1.0 × 10^−3 M, that approximation gives pH 3.00. A one-unit pH difference corresponds to a tenfold activity ratio.",
+      "sources": [
+        "IUPAC-PH",
+        "CHEM-PH"
+      ],
+      "followups": [
+        "Is a strong acid always concentrated?"
+      ]
+    },
+    {
+      "id": "chem-strong-concentrated",
+      "question": "Is a strong acid always concentrated?",
+      "aliases": [
+        "strong vs concentrated acid",
+        "weak acid dilute"
+      ],
+      "courses": [
+        "CHEM 1405",
+        "CHEM 1411"
+      ],
+      "topics": [
+        "Acids and bases"
+      ],
+      "answer": "No. Strength describes the extent of ionization in the specified solvent and conditions; concentration describes how much solute is present per volume. A strong acid can be dilute, and a weak acid can be concentrated.",
+      "sources": [
+        "CHEM-ACID"
+      ],
+      "followups": [
+        "What are Brønsted-Lowry acids and bases?"
+      ]
+    }
+  ],
+  "counts": {
+    "canonicalAuthored": 197,
+    "independentlyReviewed": 0,
+    "cellParts": 14,
+    "sourceRecords": 89
+  }
+}
