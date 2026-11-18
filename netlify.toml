@@ -1,15 +1,25 @@
 [build]
-  publish = "."
-  command = ""
+  publish = "dist-biobridge"
+  command = "node build-published-release.mjs"
 
 [[headers]]
   for = "/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(self), microphone=(), geolocation=()"
+    Permissions-Policy = "camera=(self), microphone=(), geolocation=(self)"
 
 [[headers]]
   for = "/handouts/*.mind"
   [headers.values]
     Content-Type = "application/octet-stream"
+
+[[headers]]
+  for = "/cr8zar/models/*.usdz"
+  [headers.values]
+    Content-Type = "model/vnd.usdz+zip"
+
+[[headers]]
+  for = "/cr8zar/hela/assets/*.usdz"
+  [headers.values]
+    Content-Type = "model/vnd.usdz+zip"
