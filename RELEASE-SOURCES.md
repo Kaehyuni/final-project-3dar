@@ -1,6 +1,6 @@
 # BioBridge release sources
 
-The November 17, 2026 handout release contains all 163 printable handouts, three complete packets, and the current published 3D/AR site. The previous Git main branch predates the published HeLa updates, so publishing its original root would roll those updates back.
+The November 17, 2026 handout release contains all 163 printable handouts, three complete packets, and the current published 3D/AR site. The previous Git main branch predates the published HeLa updates, so publishing its original root would roll those updates back. The reviewed `handouts.html` is stored directly in Git because Netlify rewrites HTML links after upload; its original bytes still pass the saved checksum.
 
 `node build-published-release.mjs` assembles the complete 860-file release into `dist-biobridge`. The manifest identifies each existing production asset and each reviewed handout asset. Existing assets come from the immutable production deployment; the handout overlay comes from its completed small-upload preview. No API token is used. Reviewed handouts must match their SHA-1 checksums, and all PDFs, GLBs, and USDZ files are checked before publication. The build fails on missing files. The output includes physical asset files, not runtime proxies.
 

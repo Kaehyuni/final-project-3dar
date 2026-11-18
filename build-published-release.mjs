@@ -37,6 +37,8 @@ function validateSignature(file,data,type=''){
 }
 async function getAsset(file){
   if(localRoot)return {data:await readFile(join(localRoot,file.path)),origin:'local'};
+  // Netlify rewrites HTML links after upload. Use the reviewed source from Git.
+  if(file.source==='handouts'&&file.path.endsWith('.html'))return {data:await readFile(join(here,file.path)),origin:'Git source'};
   if(Object.hasOwn(file,'text'))return {data:Buffer.from(file.text,'utf8'),origin:'reviewed configuration'};
   const origin=file.source==='handouts'?reviewedHandouts:baseline;
   const route=file.path.replace(/index\.html$/,'').split('/').map(encodeURIComponent).join('/');
