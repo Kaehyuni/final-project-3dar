@@ -12,6 +12,16 @@ const reviewedHandouts='https://6afd177a9c3d20fb75801a83--khn-3dar-rlc.netlify.a
 const publicOrigin='https://khn-3dar-rlc.com';
 const localRoot=process.argv[2]==='--verify-local'?resolve(process.argv[3]):null;
 const output=resolve('dist-biobridge');
+const update=JSON.parse(await readFile(join(here,'android-ar-update.json'),'utf8'));
+assert(update.version==='2026-11-19'&&update.files.length===14,'Incomplete Android update');
+assert(new Set(update.files.map(x=>x.path)).size===update.files.length,'Duplicate update paths');
+for(const file of update.files){
+  assert(/^(?:cr8zar\/[a-z0-9/.-]+\.(?:js|html|json)|js\/cell\.js|cell\.html)$/.test(file.path),'Unexpected update path');
+  assert(!file.path.split('/').includes('..'),'Unsafe update path');
+  assert(typeof file.content==='string'&&file.content.length>0,'Empty source update');
+  assert(createHash('sha1').update(file.content).digest('hex')===file.sha1,'Update digest mismatch: '+file.path);
+}
+
 const sha1=data=>createHash('sha1').update(data).digest('hex');
 assert(manifest.length===860,'The complete release must contain 860 files');
 assert(new Set(manifest.map(x=>x.path)).size===manifest.length,'Duplicate release paths');
@@ -76,6 +86,21 @@ await Promise.all(Array.from({length:4},async()=>{
   }
 }));
 assert(evidence.length===860,'Incomplete assembled release');
+// Apply the reviewed text source only after the complete asset release verifies.
+// Existing PDFs, GLBs, USDZs, and their checksums remain part of the base release.
+for(const file of update.files){
+  const data=Buffer.from(file.content,'utf8');
+  const previous=evidence.findIndex(entry=>entry.path===file.path);
+  if(!localRoot){
+    const target=join(output,file.path);await mkdir(dirname(target),{recursive:true});await writeFile(target,data);
+  }
+  const entry={path:file.path,sha1:sha1(data),bytes:data.length,origin:'Reviewed Android source in Git'};
+  if(previous<0){evidence.push(entry);totalBytes+=data.length;}
+  else{totalBytes+=data.length-evidence[previous].bytes;evidence[previous]=entry;}
+}
+assert(evidence.length===863,'The updated complete release must contain 863 files');
+completed=evidence.length;
+
 const library=JSON.parse(await readFile(join(localRoot||output,'data/handout-library.json'),'utf8'));
 assert(library.items.length===163,'Expected all 163 printable entries');
 const paths=new Set(evidence.map(x=>x.path));
