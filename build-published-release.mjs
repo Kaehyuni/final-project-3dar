@@ -111,4 +111,8 @@ assert(library.items.length===163,'Expected all 163 printable entries');
 const paths=new Set(evidence.map(x=>x.path));
 for(const item of library.items)assert(paths.has(item.guideUrl.replace(/^\//,'')),'Missing handout: '+item.title);
 console.log('Complete BioBridge release:',completed,'files;',totalBytes,'bytes; 163 printable handouts.');
-if(!localRoot)await writeFile('biobridge-build-evidence.json',JSON.stringify(evidence,null,2));
+if(!localRoot){
+  const {buildBridgeAssistLibrary}=await import('./build-bridgeassist-library.mjs');
+  await buildBridgeAssistLibrary(output);
+  await writeFile('biobridge-build-evidence.json',JSON.stringify(evidence,null,2));
+}

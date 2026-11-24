@@ -1,0 +1,67 @@
+{
+  "files": [
+    {
+      "file": "bridgeassist-biol-1406.jsonl.gz",
+      "collection": "BIOL 1406",
+      "bytes": 18332744,
+      "sha256": "1664e45b77038f75b8fc237624a1e3a21a69f61ebba62cba270e340b1c8dedc9",
+      "parts": [
+        "bridgeassist-biol-1406.jsonl.gz.part1",
+        "bridgeassist-biol-1406.jsonl.gz.part2",
+        "bridgeassist-biol-1406.jsonl.gz.part3"
+      ]
+    },
+    {
+      "file": "bridgeassist-biol-1407.jsonl.gz",
+      "collection": "BIOL 1407",
+      "bytes": 15087834,
+      "sha256": "f204bbb3fcce698c1b37386488cae76ddbb750e311dc30128208d9473873b3d5",
+      "parts": [
+        "bridgeassist-biol-1407.jsonl.gz.part1",
+        "bridgeassist-biol-1407.jsonl.gz.part2",
+        "bridgeassist-biol-1407.jsonl.gz.part3"
+      ]
+    },
+    {
+      "file": "bridgeassist-chem-1405.jsonl.gz",
+      "collection": "CHEM 1405",
+      "bytes": 8996420,
+      "sha256": "252ef22956bf486ea875304d7ef41c052f467a6ebceef25172bf17c221cd2932",
+      "parts": [
+        "bridgeassist-chem-1405.jsonl.gz.part1",
+        "bridgeassist-chem-1405.jsonl.gz.part2"
+      ]
+    },
+    {
+      "file": "bridgeassist-chem-1406.jsonl.gz",
+      "collection": "CHEM 1406",
+      "bytes": 8377434,
+      "sha256": "46419efc7b6c6ba4536f1e7c8f522cf34771faf1b6c94e3852b315aec3ec362a",
+      "parts": [
+        "bridgeassist-chem-1406.jsonl.gz.part1",
+        "bridgeassist-chem-1406.jsonl.gz.part2"
+      ]
+    },
+    {
+      "file": "bridgeassist-chem-1411.jsonl.gz",
+      "collection": "CHEM 1411",
+      "bytes": 18308533,
+      "sha256": "6c0f52a1d8f6fb82020f93af90dcf5dc372c4cca8ff1581d19a55627a811a754",
+      "parts": [
+        "bridgeassist-chem-1411.jsonl.gz.part1",
+        "bridgeassist-chem-1411.jsonl.gz.part2",
+        "bridgeassist-chem-1411.jsonl.gz.part3"
+      ]
+    },
+    {
+      "file": "bridgeassist-resources.jsonl.gz",
+      "collection": "RESOURCES",
+      "bytes": 6157758,
+      "sha256": "42e94bd9cd970fae1c34333e548a35bb67fba5bf61c4a759c08102e008093f54"
+    }
+  ],
+  "sources": {
+    "file": "bridgeassist-full-sources.json",
+    "sha256": "8141e05bfe644bfb503d2a21d697127928237e1a98fa3d458f7fc4c7d01da499"
+  }
+}
