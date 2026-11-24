@@ -2,11 +2,13 @@ import assert from 'node:assert/strict';
 import {createReadStream} from 'node:fs';
 import {mkdir, readFile, writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {spawn} from 'node:child_process';
 import {dirname, join, resolve} from 'node:path';
 import {createInterface} from 'node:readline';
 import {Readable} from 'node:stream';
-import {fileURLToPath} from 'node:url';
+import {fileURLToPath, pathToFileURL} from 'node:url';
 import {createGunzip, gzipSync} from 'node:zlib';
+import {buildLearnerPrompts} from './build-learner-prompts.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const expected = new Map([
@@ -72,6 +74,9 @@ export async function buildBridgeAssistLibrary(publish, input = here) {
   const kindLists = {question: [], practice: []};
   const exact = new Map();
   const terms = new Map();
+  const teachingComponents = new Map();
+  const explanationTexts = new Set();
+  let longerExplanations = 0;
   let position = 0;
   let records = [];
   let catalog = [];
@@ -124,6 +129,27 @@ export async function buildBridgeAssistLibrary(publish, input = here) {
       assert(!recordIds.has(record.id), 'Duplicate record ID ' + record.id);
       assert(record.question && record.first_tutoring_reply && record.reference_answer && record.worked_solution.length, record.id);
       assert(record.source_ids.length && record.source_ids.every(id => Object.hasOwn(sources, id)), record.id);
+      for(const explanation of [record.first_tutoring_reply,record.reference_answer,...record.worked_solution.map(step=>step.explanation)]){
+        assert(typeof explanation==='string'&&explanation.trim(),record.id);
+        if(!explanationTexts.has(explanation)){
+          explanationTexts.add(explanation);
+          if(explanation.length>600)longerExplanations++;
+        }
+      }
+      if(kind==='question'&&course!=='RESOURCES'){
+        const pieces = record.component_questions?.map((question,index)=>({
+          question,
+          answer:record.worked_solution[index]?.explanation,
+          topic:question.match(/[“"]([^”"]+)[”"]/)?.[1]??record.worked_solution[index]?.title.replace(/^[A-C]\. /,''),
+          course,sourceIds:record.claim_source_links[index]?.source_ids
+        })) ?? [{question:record.question,answer:record.reference_answer,topic:record.topic,course,sourceIds:record.source_ids}];
+        for(const component of pieces){
+          const key=course+'|'+normalizeQuestion(component.question);
+          if(component.answer&&component.topic&&component.sourceIds?.length&&!/\b(?:pathogen|virus|viral|bioweapon|synthesis screening|culturing)\b/i.test(component.question+' '+component.topic)&&!teachingComponents.has(key)){
+            teachingComponents.set(key,component);
+          }
+        }
+      }
       const canonical = normalizeQuestion(record.question);
       const precise = exactQuestion(record.question);
       assert(!canonicalQuestions.has(precise), 'Duplicate question ' + record.id);
@@ -167,6 +193,39 @@ export async function buildBridgeAssistLibrary(publish, input = here) {
     shardSize, pageSize, collections, sources: Object.keys(sources).length, status: 'draft'};
   await writeFile(join(destination, 'manifest.json'), JSON.stringify(manifest));
   console.log('BridgeAssist release verified', manifest.questions, 'questions and', manifest.practice, 'practice problems');
+  const modules=await Promise.all([
+    import(pathToFileURL(join(publish,'js','learner-foundations.mjs'))),
+    import(pathToFileURL(join(publish,'js','learner-methods.mjs')))
+  ]);
+  for(const row of [...modules[0].foundations,...modules[1].methodGuides]){
+    const sources=row.sources??[{title:row.source?.[0],url:row.source?.[1]}];
+    if(!sources.length||!sources.every(source=>source.title&&/^https:\/\//.test(source.url)))continue;
+    const courseList=(row.courses??[]).filter(course=>expected.has(course)&&course!=='RESOURCES');
+    for(const course of courseList.length?courseList:[row.id.includes('mitotic')||row.id.includes('photosynth')||row.id.includes('respiration')?'BIOL 1406':'CHEM 1411']){
+      const subject=row.title;
+      const core=[
+        ['Can you explain '+subject+' in plain language?',row.answer??row.summary],
+        ['Why does '+subject+' matter?',row.why],
+        ['Can you give me a simple example for '+subject+'?',row.example],
+        ['How should I start a problem about '+subject+'?',row.steps?.join(' ')],
+        ['What formula should I use for '+subject+'?',row.formula&&(row.formula+'\n'+(row.answer??row.summary))]
+      ];
+      for(const [question,answer] of core){
+        if(answer)teachingComponents.set(course+'|'+normalizeQuestion(question),{question,answer,topic:subject,course,sources,priority:true});
+      }
+    }
+  }
+  const learner=await buildLearnerPrompts({destination:join(publish,'data','learner-prompts','v1'),
+    components:[...teachingComponents.values()],occupied:new Set(exact.keys()),normalize:normalizeQuestion,bucketFor,sources});
+  console.log('BridgeAssist additional learner phrasings',JSON.stringify(learner));
+  console.log('Audited original explanation fields:',explanationTexts.size,'unique texts,',longerExplanations,'longer than 600 characters.');
+  const python=process.env.BRIDGEASSIST_BUILD_PYTHON||'python3';
+  await new Promise((complete,fail)=>{
+    const child=spawn(python,[join(input,'build-learner-practice.py'),'--prior',input,'--publish',publish],
+      {stdio:'inherit',windowsHide:true});
+    child.once('error',fail);
+    child.once('close',code=>code===0?complete():fail(Error('Practice build failed with exit code '+code)));
+  });
 }
 
 if (process.argv[2] === '--library-only') {
