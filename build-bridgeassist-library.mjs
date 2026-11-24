@@ -51,7 +51,7 @@ export async function buildBridgeAssistLibrary(publish, input = here) {
     'data:text/javascript;base64,' + Buffer.from(overlays.files.find(file => file.path === 'js/full-library.mjs').content).toString('base64')
   );
   for (const file of overlays.files) {
-    assert(/^(?:js\/[a-z-]+\.(?:js|mjs|css)|data\/bridgeassist-library\/[a-zA-Z0-9.-]+\.json|assistant\.html|study\/bridgeassist-library\/index\.html)$/.test(file.path));
+    assert(/^(?:js\/[a-z-]+\.(?:js|mjs|css)|data\/bridgeassist-library\/[a-zA-Z0-9.-]+\.json|assistant\.html|study\/(?:bridgeassist-library\/index|practice|conversation)\.html)$/.test(file.path));
     assert.equal(digest(file.content), file.sha256, file.path);
     await mkdir(dirname(join(publish, file.path)), {recursive: true});
     await writeFile(join(publish, file.path), file.content);
@@ -131,7 +131,7 @@ export async function buildBridgeAssistLibrary(publish, input = here) {
       canonicalQuestions.add(precise);
       const earlier = exact.get(canonical);
       exact.set(canonical, earlier === undefined ? position : [].concat(earlier, position));
-      const topicTerms = libraryTokens([record.topic, practiceSearchTerms[record.family_id]].filter(Boolean).join(' ')).join(' ');
+      const topicTerms = [record.topic, practiceSearchTerms[record.family_id]].filter(Boolean).join(' ');
       const searchText = [record.question, topicTerms, ...(record.related_topics ?? []), ...(record.student_language_aliases ?? [])].join(' ');
       for (const term of libraryTokens(searchText)) {
         if (!terms.has(term)) terms.set(term, []);
