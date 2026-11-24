@@ -14,6 +14,13 @@ const expected = new Map([
   ['CHEM 1405', [10000, 6250]], ['CHEM 1406', [10000, 6250]],
   ['CHEM 1411', [20000, 12500]], ['RESOURCES', [20000, 0]]
 ]);
+const practiceSearchTerms = {
+  'gas-compare': 'gas law gas laws ideal gas Boyle Charles pressure volume temperature',
+  'hess-path': 'Hess law Hess laws enthalpy thermochemistry',
+  'heat-and-state': 'specific heat heat capacity calorimetry phase change',
+  'solution-mass': 'molarity concentration solute mass',
+  'mass-to-particles': 'dimensional analysis mole moles Avogadro molar mass'
+};
 const digest = bytes => createHash('sha256').update(bytes).digest('hex');
 
 export async function buildBridgeAssistLibrary(publish, input = here) {
@@ -21,7 +28,7 @@ export async function buildBridgeAssistLibrary(publish, input = here) {
   const overlays = JSON.parse(await readFile(join(input, 'bridgeassist-site-overrides.json'), 'utf8'));
   assert.equal(descriptor.files.length, expected.size);
   assert.equal(new Set(descriptor.files.map(entry => entry.collection)).size, expected.size);
-  const {libraryTokens, normalizeQuestion, exactQuestion, bucketFor} = await import(
+  const {libraryVersion, libraryTokens, normalizeQuestion, exactQuestion, bucketFor} = await import(
     'data:text/javascript;base64,' + Buffer.from(overlays.files.find(file => file.path === 'js/full-library.mjs').content).toString('base64')
   );
   for (const file of overlays.files) {
@@ -36,7 +43,8 @@ export async function buildBridgeAssistLibrary(publish, input = here) {
   const sources = JSON.parse(sourcesBytes);
   assert.equal(Object.keys(sources).length, 443);
 
-  const destination = join(publish, 'data/bridgeassist-full/v1');
+  assert(/^v\d+$/.test(libraryVersion));
+  const destination = join(publish, 'data/bridgeassist-full', libraryVersion);
   const shardSize = 128;
   const pageSize = 20;
   const recordIds = new Set();
@@ -104,7 +112,8 @@ export async function buildBridgeAssistLibrary(publish, input = here) {
       canonicalQuestions.add(precise);
       const earlier = exact.get(canonical);
       exact.set(canonical, earlier === undefined ? position : [].concat(earlier, position));
-      for (const term of libraryTokens(record.question + ' ' + record.topic)) {
+      const searchText = [record.question, record.topic, practiceSearchTerms[record.family_id]].filter(Boolean).join(' ');
+      for (const term of libraryTokens(searchText)) {
         if (!terms.has(term)) terms.set(term, []);
         terms.get(term).push(position);
       }
