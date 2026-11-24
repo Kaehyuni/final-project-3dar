@@ -19,7 +19,26 @@ const practiceSearchTerms = {
   'hess-path': 'Hess law Hess laws enthalpy thermochemistry',
   'heat-and-state': 'specific heat heat capacity calorimetry phase change',
   'solution-mass': 'molarity concentration solute mass',
-  'mass-to-particles': 'dimensional analysis mole moles Avogadro molar mass'
+  'mass-to-particles': 'dimensional analysis mole Avogadro molar mass grams particles',
+  'glycolysis-budget': 'glycolysis cellular respiration ATP NADH',
+  'citric-carbon-carriers': 'citric acid cycle Krebs cycle cellular respiration ATP NADH',
+  'calvin-resources': 'Calvin cycle photosynthesis carbon fixation ATP NADPH',
+  'mitotic-index': 'mitotic index mitosis cell cycle',
+  'meiosis-sample': 'meiosis ploidy diploid haploid chromosome chromatids',
+  'inheritance-two-loci': 'Mendelian inheritance dihybrid cross Punnett square',
+  'allele-counting': 'population genetics allele frequency genotype frequency',
+  'hardy-recessive': 'Hardy Weinberg population genetics carrier frequency',
+  'logistic-compare': 'logistic population growth carrying capacity',
+  'demographic-balance': 'population growth birth death immigration emigration',
+  'mark-recapture': 'mark recapture population size',
+  'ecosystem-energy': 'ecosystem energy flow trophic level ten percent rule',
+  'membrane-model': 'membrane transport diffusion osmosis tonicity',
+  'enzyme-data': 'enzyme enzyme activity reaction rate',
+  'dilution-aliquot': 'dilution molarity aliquot concentration',
+  'displacement-density': 'density volume displacement',
+  'isotope-mixture': 'isotope average atomic mass percent abundance',
+  'empirical-formula': 'empirical formula molecular formula percent composition',
+  'reaction-yield': 'percent yield theoretical yield limiting reactant stoichiometry'
 };
 const digest = bytes => createHash('sha256').update(bytes).digest('hex');
 
@@ -112,7 +131,8 @@ export async function buildBridgeAssistLibrary(publish, input = here) {
       canonicalQuestions.add(precise);
       const earlier = exact.get(canonical);
       exact.set(canonical, earlier === undefined ? position : [].concat(earlier, position));
-      const searchText = [record.question, record.topic, practiceSearchTerms[record.family_id]].filter(Boolean).join(' ');
+      const topicTerms = libraryTokens([record.topic, practiceSearchTerms[record.family_id]].filter(Boolean).join(' ')).join(' ');
+      const searchText = [record.question, topicTerms, ...(record.related_topics ?? []), ...(record.student_language_aliases ?? [])].join(' ');
       for (const term of libraryTokens(searchText)) {
         if (!terms.has(term)) terms.set(term, []);
         terms.get(term).push(position);
@@ -120,7 +140,7 @@ export async function buildBridgeAssistLibrary(publish, input = here) {
       counts[kind]++;
       kindLists[kind].push(position);
       records.push(record);
-      catalog.push([record.id, kind, collections.length, record.topic, record.question]);
+      catalog.push([record.id, kind, collections.length, record.topic, record.question, record.family_id, topicTerms]);
       position++;
       if (records.length === shardSize) await flush();
     }
