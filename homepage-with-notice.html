@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BioBridge | Biology Tutoring & Visual Learning</title>
+	<meta name="description" content="Independent biology learning resources from Kaehyuni (Kenny) Nguyen: visual study guides, 3D and AR models, and tutoring information for Dallas College students.">
+  <meta name="theme-color" content="#003385">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="site.js" defer></script>
+  <style>
+    #development-notice {
+      box-sizing: border-box;
+      width: min(34rem, calc(100% - 2rem));
+      max-height: calc(100% - 2rem);
+      margin: auto;
+      border: 0;
+      border-top: .4rem solid #003385;
+      border-radius: .5rem;
+      padding: clamp(1.25rem, 5vw, 2rem);
+      background: #fff;
+      color: #172338;
+      box-shadow: 0 1rem 3rem rgb(0 0 0 / .22);
+    }
+    #development-notice::backdrop { background: rgb(13 24 45 / .68); }
+    #development-notice h2 { margin: 0 0 .75rem; color: #003385; }
+    #development-notice p { margin: 0 0 1rem; }
+    #development-notice button { min-height: 44px; }
+  </style>
+</head>
+<body>
+<dialog id="development-notice" aria-labelledby="development-notice-title" aria-describedby="development-notice-message">
+  <h2 id="development-notice-title">BioBridge is still in development</h2>
+  <p id="development-notice-message">Faculty and students, please hold off on sharing this website while I update and review its content. Some information may contain errors. Always verify what you read against your course materials or another reliable source.</p>
+  <p>— Kaehyuni (Kenny)</p>
+  <form method="dialog"><button class="button primary" autofocus>Continue to BioBridge</button></form>
+</dialog>
+<script>
+  const developmentNotice = document.getElementById('development-notice');
+  developmentNotice.showModal?.();
+  developmentNotice.addEventListener('close', () => document.querySelector('.skip-link')?.focus());
+</script>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="BioBridge home"><span class="brand-bio">Bio</span><span class="brand-bridge">Bridge<svg class="brand-arch" viewBox="0 0 150 14" aria-hidden="true" focusable="false"><path d="M2 11 C48 1 100 1 148 11"/></svg></span></a>
+    <a class="header-contact" href="contact.html">Find tutoring support</a>
+  </div>
+</header>
+<section class="video-banner" aria-label="Tutoring at the Learning Commons">
+  <video id="banner-video" autoplay muted loop playsinline preload="metadata" poster="images/banner-poster.jpg" aria-label="Decorative footage of the biology tutoring area"><source src="images/tutoring-banner.mp4?v=20261105-optimized" type="video/mp4"></video>
+  <div class="banner-title"><p>Biology / Chemistry / Digital Art</p><strong>Academic Coach</strong></div>
+</section>
+<nav class="site-nav" aria-label="Main navigation"><div class="nav-inner"><ul><li><a href="index.html" aria-current="page">Home</a></li><li><a href="3dar.html">3D / AR Lab</a></li><li><a href="/assistant.html" data-same-tab>BridgeAssist</a></li><li><a href="handouts.html">Handouts</a></li><li><a href="video-sources.html">Video Sources</a></li><li><a href="contact.html">Tutoring & Contact</a></li><li><a href="references.html">References</a></li><li><a href="credits.html">Credits</a></li></ul></div></nav>
+<aside class="independent-notice" aria-label="Website independence"><div><strong>Independent student resource.</strong> Not affiliated with Dallas College or its Learning Commons. <a href="#site-disclaimer">About this site <span aria-hidden="true">↓</span></a></div></aside>
+<main id="main-content" tabindex="-1">
+
+
+<section class="home-intro" aria-labelledby="home-heading">
+  <div><p class="eyebrow">Welcome to BioBridge</p><h1 id="home-heading">Biology & chemistry<br>study resources</h1></div>
+  <div class="intro-copy"><p>Hi, I’m <strong>Kaehyuni (Kenny) Nguyen</strong>, a Biology/Chemistry/Digital Art Academic Coach at Dallas College’s Richland Campus Learning Commons. I created this independent website to share the visual tools I use to help students understand biology and chemistry.</p><p>Explore a 3D model, review a topic, or find information about tutoring.</p><a class="button primary" href="contact.html" target="_blank" rel="noopener noreferrer">Find tutoring support <span aria-hidden="true">→</span></a></div>
+</section>
+<section class="home-assist" aria-labelledby="home-assist-title">
+  <div>
+    <p class="eyebrow">BridgeAssist</p>
+    <h2 id="home-assist-title">Where are you getting stuck?</h2>
+    <p>Ask a biology or chemistry question. Get a focused explanation with links to the sources.</p>
+  </div>
+  <form id="home-assist-form">
+    <label for="home-question">What do you need help with?</label>
+    <div class="search-submit">
+      <input id="home-question" placeholder="Why does water move into a cell?" required maxlength="2000">
+      <button type="submit" class="button primary">Ask BridgeAssist</button>
+    </div>
+    <p class="small">No account required. Chat history stays in this session.</p>
+  </form>
+</section>
+<section class="study-directory" aria-labelledby="study-heading">
+  <div>
+    <h2 id="study-heading">Explore study resources</h2>
+    <p>Choose a way to study the topic you’re working on.</p>
+  </div>
+  <div class="study-links study-shortcuts">
+    <a class="study-shortcut" href="3dar.html" target="_blank" rel="noopener noreferrer">
+      <svg class="shortcut-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 3 28 10v12l-12 7-12-7V10Zm0 14L4 10m12 7 12-7m-12 7v12"/></svg>
+      <strong>3D / AR Lab</strong><span>Interactive models and cell processes</span><b aria-hidden="true">›</b>
+    </a>
+    <a class="study-shortcut study-shortcut--handouts" href="handouts.html" target="_blank" rel="noopener noreferrer">
+      <svg class="shortcut-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M7 3h12l6 6v20H7Zm12 0v6h6M11 15h10m-10 5h10m-10 5h7"/></svg>
+      <strong>Handouts</strong><span>Printable biology and chemistry references</span><b aria-hidden="true">›</b>
+    </a>
+    <a class="study-shortcut study-shortcut--videos" href="video-sources.html" target="_blank" rel="noopener noreferrer">
+      <svg class="shortcut-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="3" y="6" width="26" height="20" rx="3"/><path d="m13 11 8 5-8 5z"/></svg>
+      <strong>Video Sources</strong><span>Lessons with filters and BridgeAssist study notes</span><b aria-hidden="true">›</b>
+    </a>
+    <a class="study-shortcut-more" href="/assistant.html" data-same-tab><strong>BridgeAssist</strong><span>Ask a study question and explore the sources</span><b aria-hidden="true">›</b></a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about home-about">
+  <h2>About BioBridge</h2>
+  <p>
+    Many students struggle with biology because it is often taught through dense textbooks
+    and static diagrams. BioBridge was created to change that experience.
+  </p>
+  <p>
+    As a Biology/Chemistry/Digital Art Academic Coach, I work one on one with students to break down complex
+    topics like cell structure, membrane transport, and protein synthesis using
+    visual explanations and interactive tools.</p><p>I see how difficult it can be for students to
+    engage and learn when they are overwhelmed by long streams of information all at once.
+    This is especially true when exploring information from textbooks and lecture PowerPoints.
+    It becomes harder for students to digest the material.</p><p>To make learning easier, I want to share my experience in finding effective resources,
+    including 3D augmented reality tools that students can interact with, as well as strong
+    visual explanations through videos.
+    I believe education can be represented as something interactive.
+    This belief stayed with me from my own time as a student.
+    I hope my animations and 3D modeling can help build a bridge to better understanding in biology.
+  </p>
+</section>
+
+<!-- Inspiration Section -->
+<section class="inspiration">
+  <h2>My Inspiration</h2>
+  <p>
+    My passion for visual learning began in 7th grade with my science teacher,
+    <strong>Mr. Andy Thomason</strong>. He introduced our class to augmented reality as a way
+    to explore scientific concepts beyond the textbook.
+  </p>
+  <blockquote>
+    “Seeing biology through AR made the representation feel much more interactive.
+    We were not just reading about cells, we were exploring them.”
+  </blockquote>
+  <p>
+    That experience shaped how I support students today. BioBridge continues that same philosophy.
+    Learning is most effective when students can see, explore, and interact with what they study.
+  </p>
+</section>
+
+<!-- Then & Now Section -->
+<section class="then-and-now" id="then-and-now">
+  <h2>Then & Now</h2>
+  <div class="two-column">
+    <div class="card">
+      <h3>Then</h3>
+      <img class="then-and-now-photo then-and-now-photo--then" src="images/kenny-then.jpg" width="1280" height="960" loading="lazy" decoding="async" alt="Kenny as a middle school student with a snake resting across his shoulders">
+      <p>
+        A curious middle school student discovering augmented reality in science for the first time,
+        learning that biology could be explored instead of memorized.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Now</h3>
+      <img class="then-and-now-photo" src="images/kenny-now.jpg" width="1280" height="960" loading="lazy" decoding="async" alt="Kenny speaking into a microphone beside a presentation slide at Dallas College">
+      <p>
+        A Biology/Chemistry/Digital Art Academic Coach using those same visual tools to help college students
+        build confidence and understanding in biology.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="call-to-action">
+  <h2>Continue studying</h2>
+  <p>
+    Visit the 3D / AR Lab to explore interactive models, or browse curated resources
+    to support your biology studies.
+  </p>
+  <div class="hero-buttons">
+    <a href="3dar.html" class="button primary" target="_blank" rel="noopener noreferrer">Open the AR Lab</a>
+    <a href="contact.html" class="button secondary" target="_blank" rel="noopener noreferrer">Get Tutoring Help</a>
+  </div>
+</section>
+
+<!-- Footer -->
+
+
+</main>
+
+<footer class="site-footer" id="site-disclaimer">
+  <div class="footer-inner">
+    <div class="footer-top"><div><a class="footer-brand" href="index.html" target="_blank" rel="noopener noreferrer">BioBridge<span aria-hidden="true">.</span></a><p>Biology tutoring and visual study resources.</p></div><div class="footer-contact"><strong>Kaehyuni (Kenny) Nguyen</strong><p>Biology/Chemistry/Digital Art Academic Coach</p><a href="contact.html" target="_blank" rel="noopener noreferrer">Tutoring information</a></div></div>
+    <div class="footer-resource"><div><p class="eyebrow">Official college resources</p><p>Looking for campus services, current hours, or appointments?</p><a href="https://www.dallascollege.edu/resources/tutoring/" target="_blank" rel="noopener noreferrer">Visit Dallas College Tutoring Services <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p><strong>About this independent website</strong><br>BioBridge is an independent resource created by Kaehyuni (Kenny) Nguyen to support students in his tutoring work. It is not affiliated with, sponsored by, or endorsed by Dallas College or its Learning Commons.</p><p>© <span data-year>2026</span> Kaehyuni (Kenny) Nguyen.<br>Independent student resource.</p></div>
+  </div>
+</footer>
+
+</body>
+</html>

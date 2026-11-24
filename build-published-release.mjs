@@ -46,6 +46,9 @@ function validateSignature(file,data,type=''){
   if(!/\.html?$/.test(file.path)&&!file.path.endsWith('.toml')&&file.path!=='_headers')assert(!type.includes('text/html'),'HTML returned for asset '+file.path);
 }
 async function getAsset(file){
+  if(file.path==='index.html'&&!localRoot){
+    return {data:await readFile(join(here,'homepage-with-notice.html')),origin:'Homepage source in Git'};
+  }
   if(localRoot)return {data:await readFile(join(localRoot,file.path)),origin:'local'};
   // Netlify rewrites HTML links after upload. Use the reviewed source from Git.
   if(file.source==='handouts'&&file.path.endsWith('.html'))return {data:await readFile(join(here,file.path)),origin:'Git source'};
@@ -100,6 +103,8 @@ for(const file of update.files){
 }
 assert(evidence.length===863,'The updated complete release must contain 863 files');
 completed=evidence.length;
+const homepage=await readFile(join(here,'homepage-with-notice.html'),'utf8');
+assert(homepage.includes('id="development-notice"')&&homepage.includes('developmentNotice.showModal?.()'),'Missing homepage development notice');
 
 const library=JSON.parse(await readFile(join(localRoot||output,'data/handout-library.json'),'utf8'));
 assert(library.items.length===163,'Expected all 163 printable entries');
