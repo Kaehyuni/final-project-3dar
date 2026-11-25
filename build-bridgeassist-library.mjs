@@ -53,11 +53,23 @@ export async function buildBridgeAssistLibrary(publish, input = here) {
     'data:text/javascript;base64,' + Buffer.from(overlays.files.find(file => file.path === 'js/full-library.mjs').content).toString('base64')
   );
   for (const file of overlays.files) {
-    assert(/^(?:js\/[a-z-]+\.(?:js|mjs|css)|data\/bridgeassist-library\/[a-zA-Z0-9.-]+\.json|assistant\.html|study\/(?:bridgeassist-library\/index|practice|conversation)\.html)$/.test(file.path));
-    assert.equal(digest(file.content), file.sha256, file.path);
+    const binary=/^images\/study\/[a-z0-9-]+\.webp$/.test(file.path);
+    assert(binary||/^(?:js\/[a-z-]+\.(?:js|mjs|css)|data\/(?:study-images|bridgeassist-library)\/[a-zA-Z0-9.-]+\.json|assistant\.html|study\/(?:bridgeassist-library\/index|practice|conversation)\.html)$/.test(file.path),file.path);
+    assert.equal(file.encoding??'utf8',binary?'base64':'utf8',file.path);
+    const content=binary?Buffer.from(file.content,'base64'):file.content;
+    assert.equal(digest(content), file.sha256, file.path);
     await mkdir(dirname(join(publish, file.path)), {recursive: true});
-    await writeFile(join(publish, file.path), file.content);
+    await writeFile(join(publish, file.path), content);
   }
+  const archiveJob=[
+    join(input,'build-tutoring-archive.mjs'),join(input,'tutoring-archive.jsonl.gz'),
+    join(publish,'data','tutoring-archive','v1'),join(publish,'js','tutoring-archive.mjs')
+  ];
+  await new Promise((complete,fail)=>{
+    const child=spawn(process.execPath,archiveJob,{stdio:'inherit',windowsHide:true});
+    child.once('error',fail);
+    child.once('close',code=>code===0?complete():fail(Error('Tutoring archive build failed with exit code '+code)));
+  });
   assert.equal(descriptor.sources.file, 'bridgeassist-full-sources.json');
   const sourcesBytes = await readFile(join(input, descriptor.sources.file));
   assert.equal(digest(sourcesBytes), descriptor.sources.sha256);
